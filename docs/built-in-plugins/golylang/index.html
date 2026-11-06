@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golylang — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Multilingual sites: languages, translated content and strings, menus and the language switcher (Polylang Pro).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/" aria-current="page">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">Golylang</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Golylang</h1>
+        <p class="lead">Multilingual sites: languages, translated content and strings, menus and the language switcher (Polylang Pro).</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Golylang is Pursae's built-in multilingual plugin, a 1:1 functional clone of <strong>Polylang Pro</strong>. It is a
+native (compiled-in) plugin like Classic Editor, WPGo Cache and Golementor: it is <strong>off</strong> on a fresh
+install, it is switched on under <strong>Plugins</strong>, and while it is off it adds nothing. There are no menus, the
+<code>admin?page=mlang*</code> screens answer 403, the <code>pll/v1</code> REST namespace is hidden, posts and terms carry no
+<code>lang</code> field, there is no front-end output, and <code>/fr/</code> URLs are 404.</p>
+<p>This document lists what Polylang Pro 3.9 does. The list comes from the polylang/polylang GPL source
+(free core, 3.9.1), the polylang.pro documentation (Pro-only features) and wordpress.org. Each item is
+marked as follows:</p>
+<ul>
+<li>✅ implemented</li>
+<li>◐ implemented with a difference</li>
+<li>✗ left out, with the reason</li>
+</ul>
+<p>Code: <code>internal/server/golylang*.go</code>, <code>web/admin/templates/pages/golylang.html</code>,
+<code>internal/db/migrations/0009_golylang.sql</code>. Tests: <code>internal/server/golylang_test.go</code>.</p>
+<h2 id="data-model">Data model</h2>
+<table>
+<thead>
+<tr>
+<th>Polylang</th>
+<th>Golylang</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>language</code> taxonomy: name, slug, locale, rtl, flag, order (<code>term_group</code>)</td>
+<td><code>pll_languages</code> table, plus Pro's <code>active</code> flag</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>post_language</code> and <code>post_translations</code> (one group term per translation set)</td>
+<td><code>pll_post_langs</code> (<code>post_id</code>, <code>lang</code>, <code>grp</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>term_language</code> and <code>term_translations</code></td>
+<td><code>pll_term_langs</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Media languages (attachments)</td>
+<td><code>pll_media_langs</code></td>
+<td>◐ the table, the setting and sync mapping are in; there is no Media Library UI (see Media)</td>
+</tr>
+<tr>
+<td><code>polylang_mo</code> posts for string translations</td>
+<td><code>pll_strings</code> (<code>lang</code>, <code>original</code>, <code>translation</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Option <code>polylang</code></td>
+<td>Option <code>golylang</code>, same keys: <code>force_lang</code>, <code>hide_default</code>, <code>rewrite</code>, <code>redirect_lang</code>, <code>browser</code>, <code>media_support</code>, <code>post_types</code>, <code>taxonomies</code>, <code>sync</code>, <code>domains</code>, <code>default_lang</code>, <code>nav_menus</code>, plus Pro <code>media_duplicate</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>User meta <code>pll_filter_content</code> (admin language filter)</td>
+<td>Same key in the user's meta</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Cookie <code>pll_language</code>, 1 year, SameSite Lax</td>
+<td>Same</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Objects without a language are hidden on the front end; admin offers &quot;You can set them all to the default language.&quot;</td>
+<td>The notice and the action are the same. An object with no row is treated as the default language instead of hidden, so nothing vanishes before the admin acts. The first language added takes all existing content.</td>
+<td>◐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="languages--languages">Languages &gt; Languages</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Add new language&quot; form: Choose a language (predefined list, about 100 locales, fills the form), Full name, Locale, Language code, Text direction (left to right / right to left), Flag, Order; WordPress help texts</td>
+<td>✅ (the flag is a two-letter country code shown as an emoji flag; Polylang ships PNG flags)</td>
+</tr>
+<tr>
+<td>Validation: locale pattern <code>^[a-z]{2,3}(?:_[A-Z]{2})?(?:_[a-z0-9]+)?$</code>, code pattern <code>^[a-z][a-z0-9_-]*$</code>, unique code</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Edit language (&quot;Edit language&quot;, &quot;Update&quot;); changing the code updates <code>default_lang</code>, <code>domains</code> and <code>nav_menus</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>List columns: Full name, Locale, Code, Default language star (click to make default), Order, Flag, Posts</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Row actions Edit and Delete (with the JS confirm), plus Pro Activate/Deactivate</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Notices: Language added. / updated. / deleted.</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Creating a language creates its default category, linked to the default category</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Deleting the default language picks another default; the language's strings and menu locations go</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Downloading the WordPress <code>.mo</code> language pack</td>
+<td>✗ Pursae has no <code>.mo</code> translations of core</td>
+</tr>
+<tr>
+<td>Setup wizard</td>
+<td>✗ the Languages screen does the same steps: the first language becomes the default and takes the existing content</td>
+</tr>
+<tr>
+<td>Custom flags in <code>/wp-content/polylang/</code></td>
+<td>✗ there is no <code>wp-content</code> directory for site files; any two-letter code can be used as the flag</td>
+</tr>
+<tr>
+<td>Pro: locale fallback</td>
+<td>✗ there are no <code>.mo</code> files to fall back between</td>
+</tr>
+</tbody>
+</table>
+<h2 id="languages--settings-modules">Languages &gt; Settings (modules)</h2>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Module list table with Settings, Activate and Deactivate actions, inline configuration rows, Cancel and Save Changes</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>URL modifications</strong>: <code>force_lang</code> 0 (from content) / 1 (directory) / 2 (subdomain) / 3 (domains, with one URL per language), the plain-permalink variant (&quot;from the code in the URL&quot;, <code>?lang=</code>), &quot;Hide URL language information for default language&quot;, &quot;Remove/Keep /language/ in pretty permalinks&quot;, &quot;The front page URL contains the language code…&quot;, domain validation messages</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Detect browser language</strong>: Accept-Language with q-values matched on the full tag, then the primary subtag; <code>Vary: Accept-Language</code>; cookie first</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Media</strong>: translate media, Pro &quot;automatically duplicate media in all languages&quot;</td>
+<td>◐ the setting, the media language table and featured-image mapping in sync are in; the Media Library language column, the attachment translation UI and duplication at upload are not (Pursae's media screens are not hooked)</td>
+</tr>
+<tr>
+<td><strong>Custom post types and Taxonomies</strong>: checkbox lists of non-builtin public types and taxonomies</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Synchronization</strong>: Taxonomies, Custom fields, Comment status, Ping status, Sticky posts, Published date, Post format, Page parent, Page template, Page order, Featured image</td>
+<td>✅ terms, parent and featured image are mapped to their translations</td>
+</tr>
+<tr>
+<td>Pro <strong>Translate slugs</strong>: translated category, tag, author and search bases per language (strings group &quot;URL slugs&quot;)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Pro <strong>Share slugs</strong></td>
+<td>✓ Settings › Share slugs: translations may use the same slug; uniqueness is checked per language and URLs resolve to the request language first (needs the language from the URL; migration 0020 moves slug uniqueness from the database to the store, like WordPress)</td>
+</tr>
+<tr>
+<td>Pro <strong>Machine Translation (DeepL)</strong></td>
+<td>✗ it needs a paid third-party account and sends site content out; the module is listed with that reason</td>
+</tr>
+</tbody>
+</table>
+<h2 id="languages--translations-strings">Languages &gt; Translations (strings)</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table with checkbox, String, Name, Group, Translations (one input or textarea per language), search &quot;Search translations&quot;, &quot;Filter by group&quot; (&quot;View all groups&quot;), pagination</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Built-in strings: Site Title and Tagline (group WordPress)</td>
+<td>✅ translated on the front end</td>
+</tr>
+<tr>
+<td>Date Format and Time Format strings</td>
+<td>✗ Pursae formats dates without a request context, so there is no place to apply them</td>
+</tr>
+<tr>
+<td>Widget titles and text (legacy widgets)</td>
+<td>✗ Pursae only has block widgets</td>
+</tr>
+<tr>
+<td>Strings registered by themes (<code>pll_register_string</code>, <code>pll__</code>, <code>pll_e</code>)</td>
+<td>✅ registered on first use (group &quot;Theme&quot;), kept in the option <code>golylang_strings</code></td>
+</tr>
+<tr>
+<td>Bulk Delete for registered strings (WordPress and URL slugs strings are greyed)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>&quot;Clean strings translation database&quot;</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Admin language filter limits the columns to one language</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Pro: export (Target language, group, Download) and import (Upload)</td>
+<td>✅ in PO format, with the <code>Language</code> and <code>Site-Reference</code> headers; XLIFF is left out</td>
+</tr>
+</tbody>
+</table>
+<h2 id="content-editing">Content editing</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Posts and pages lists: one column per language (flag header, hidden for the filtered language), tick for the item's own language, pencil for an existing translation, plus to add one</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Quick Edit and Bulk Edit language select, the &quot;Filter untranslated items&quot; dropdown</td>
+<td>✗ not added, to keep the shared list-table code small; the language changes in the editor</td>
+</tr>
+<tr>
+<td>Classic editor <strong>Languages</strong> meta box: Language select, Translations table (flag, edit/add icon, choose an existing post to link), changes saved at once over admin-ajax</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Block editor <strong>Languages</strong> panel (document sidebar) with the same content</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Add translation (<code>post-new?from_post=&amp;new_lang=</code>, nonce <code>new-post-translation</code>): links the translation, copies terms (translated), featured image, custom fields, order, template, parent (translated), format and discussion settings</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Pro <strong>Duplicate content</strong> toggle (per user and post type): copies title, content and excerpt</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Pro <strong>Synchronized posts</strong>, <strong>Bulk translate</strong>, <strong>XLIFF export/import of content</strong></td>
+<td>✗ out of scope for this pass (large Pro workflows on top of the parts above)</td>
+</tr>
+<tr>
+<td>New content gets the admin filter language, or the default one</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Categories and tags: language columns, Language field on the add and edit forms, Translations rows (link an existing term, add with plus), the same name allowed in different languages, <code>from_tag</code>/<code>new_lang</code> add links</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Admin bar language filter (&quot;Filters content by language&quot;, &quot;Show all languages&quot;, one entry per language) narrows posts, pages, categories, tags and menus lists</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Static front page and posts page per language</td>
+<td>✅ each language shows its translation of the front page at its home URL, and the posts page likewise</td>
+</tr>
+<tr>
+<td>Per-language user biography</td>
+<td>✗ Pursae's profile screen is not hooked</td>
+</tr>
+</tbody>
+</table>
+<h2 id="menus-and-the-language-switcher">Menus and the language switcher</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Appearance &gt; Menus &gt; Manage Locations: one location per language (&quot;Primary Menu English&quot;, &quot;Primary Menu Français&quot;); <code>nav_menus</code> option</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>&quot;Language switcher&quot; box in Appearance &gt; Menus (adds the &quot;Languages&quot; item)</td>
+<td>✅ on the front end the item expands into one item per language</td>
+</tr>
+<tr>
+<td>Switcher options on the menu item (show flags, hide names, hide current, force home, hide if no translation)</td>
+<td>◐ set through the item's CSS classes (<code>pll-show-flags</code>, <code>pll-hide-names</code>, <code>pll-hide-current</code>, <code>pll-force-home</code>, <code>pll-hide-if-no-translation</code>), as Pursae's menu items have no meta fields</td>
+</tr>
+<tr>
+<td>Language switcher block (<code>polylang/language-switcher</code>, block editor and block widgets): dropdown, names, flags, force home, hide current, hide if no translation</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>pll_the_languages()</code> with <code>dropdown</code>, <code>show_names</code>, <code>show_flags</code>, <code>display_names_as</code>, <code>force_home</code>, <code>hide_current</code>, <code>hide_if_no_translation</code>, <code>hide_if_empty</code>, <code>post_id</code>; classes <code>lang-item</code>, <code>lang-item-{id}</code>, <code>lang-item-{slug}</code>, <code>current-lang</code>, <code>no-translation</code>, <code>lang-item-first</code></td>
+<td>✅ as the template function <code>{{pll_the_languages . &quot;dropdown=1&quot;}}</code></td>
+</tr>
+<tr>
+<td>3.9 layouts (horizontal, vertical, selector), alignment, flag aspect ratio and size</td>
+<td>✗ the legacy option set is used</td>
+</tr>
+<tr>
+<td>Classic &quot;Language switcher&quot; widget</td>
+<td>✗ Pursae only has block widgets; the block covers it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="front-end">Front end</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language from the directory (<code>/fr/</code>, <code>/language/fr/</code>), subdomain, domains or content (<code>?lang=</code>, then from the post or term)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hidden default language; <code>/en/…</code> redirects to <code>/…</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Home page: redirect to the preferred language (cookie, then browser) unless the default language is hidden and browser detection is off</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>All links carry the language: posts, pages, terms, archives, feeds, search, author, pagination</td>
+<td>✅ through a <code>links.Builder</code> filter</td>
+</tr>
+<tr>
+<td>Canonical redirect of an object requested under another language's URL</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Queries narrowed to the current language: home, archives, feeds, search, sitemaps, Recent Posts and other blocks</td>
+<td>✅ through a <code>store.QueryFilter</code> hook</td>
+</tr>
+<tr>
+<td><code>&lt;html lang&gt;</code> and <code>dir=&quot;rtl&quot;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>hreflang links (region dropped unless two languages share the language), x-default on the front page when the default language code is shown, none on paged views</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Per-language sitemaps (<code>/fr/wp-sitemap.xml</code> listing French content)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Translated site title and tagline</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Per-language menus</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Widgets restricted to one language</td>
+<td>✗ Pursae's block widgets have no per-widget settings UI to hook</td>
+</tr>
+<tr>
+<td>Auto-translation of IDs in queries (<code>PLL_AUTO_TRANSLATE</code>)</td>
+<td>✗ themes in Pursae don't query by hard-coded IDs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api">API</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pll_current_language</code>, <code>pll_default_language</code>, <code>pll__</code>, <code>pll_e</code>, <code>pll_register_string</code>, <code>pll_translate_string</code>, <code>pll_home_url</code>, <code>pll_languages_list</code>, <code>pll_get_post</code>, <code>pll_get_term</code>, <code>pll_the_languages</code></td>
+<td>✅ as theme template functions that take the view (<code>.</code>) first</td>
+</tr>
+<tr>
+<td><code>pll_set_post_language</code>, <code>pll_save_post_translations</code>, <code>pll_get_post_translations</code>, <code>pll_count_posts</code>, <code>pll_insert_post</code> and the rest of the PHP API</td>
+<td>◐ available in Go (<code>pllSetLang</code>, <code>pllSaveTranslations</code>, <code>pllTranslations</code>, <code>pllGet</code>) and over REST; no PHP</td>
+</tr>
+<tr>
+<td>WPML compatibility API and <code>wpml-config.xml</code></td>
+<td>✗ there is no PHP and no plugin or theme <code>wpml-config.xml</code> to read</td>
+</tr>
+<tr>
+<td>REST <code>pll/v1/languages</code> (list, get by id or slug, create from a locale with the predefined defaults, update, delete)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>REST <code>pll/v1/settings</code> (GET, POST)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>REST <code>lang</code> parameter on wp/v2 collections; <code>lang</code> and <code>translations</code> fields on posts, pages, categories and tags; <code>?lang=fr&amp;translations[en]=12</code> on writes</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>WP-CLI <code>wp pll</code></td>
+<td>✗ there is no WP-CLI</td>
+</tr>
+<tr>
+<td>Language capabilities (<code>translate_{lang}</code>, <code>manage_translations</code>, <code>manage_languages</code>)</td>
+<td>✗ the screens need <code>manage_options</code>, as in free Polylang; Pursae has no role editor to grant custom caps</td>
+</tr>
+<tr>
+<td>Integrations (ACF, Yoast, WooCommerce, page builders)</td>
+<td>✗ not applicable. Golementor pages translate like any page; the builder document is not synchronized, since it is content</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shared-file-changes-kept-small-for-the-parallel-plugin-sessions">Shared-file changes (kept small for the parallel plugin sessions)</h2>
+<ul>
+<li><code>plugins.go</code>: plugin row, activate/deactivate case, icon, reserved slug.</li>
+<li><code>admin.go</code>: one call each in <code>adminPage</code> and <code>adminAjax</code>.</li>
+<li><code>wpgocache.go</code> (<code>pluginAdmin</code>): the <code>mlang*</code> pages.</li>
+<li><code>server.go</code>: the request middleware, the REST registration and the link filter in <code>links()</code>.</li>
+<li><code>settings.go</code>: <code>native_golylang: false</code>.</li>
+<li><code>site.go</code>, <code>site_canonical.go</code>, <code>site_view.go</code>, <code>render.go</code>, <code>feed.go</code>: one-line hooks.</li>
+<li><code>rest.go</code>, <code>rest_posts.go</code>, <code>rest_misc.go</code>: one-line hooks.</li>
+<li><code>admin_posts.go</code>, <code>admin_terms.go</code>, <code>admin_menus.go</code>, <code>editor_block.go</code>: one-line hooks, plus generic <code>PluginCols</code>, <code>PluginHeads</code>, <code>PluginFields</code> and <code>PluginBoxes</code> fields that other plugins can reuse. The matching templates print them.</li>
+<li><code>internal/links/links.go</code>: a <code>LinkFilter</code> hook and <code>Front()</code>.</li>
+<li><code>internal/store/posts.go</code>, <code>terms.go</code>: a <code>QueryFilter</code> hook.</li>
+</ul>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/gontact-form/" rel="prev"><small>← Previous</small>Gontact Form</a>
+          <a class="next" href="../../../docs/built-in-plugins/adminsecgo/" rel="next"><small>Next →</small>AdminSecGo</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#data-model">Data model</a></li><li class="toc-h2"><a href="#languages--languages">Languages &gt; Languages</a></li><li class="toc-h2"><a href="#languages--settings-modules">Languages &gt; Settings (modules)</a></li><li class="toc-h2"><a href="#languages--translations-strings">Languages &gt; Translations (strings)</a></li><li class="toc-h2"><a href="#content-editing">Content editing</a></li><li class="toc-h2"><a href="#menus-and-the-language-switcher">Menus and the language switcher</a></li><li class="toc-h2"><a href="#front-end">Front end</a></li><li class="toc-h2"><a href="#api">API</a></li><li class="toc-h2"><a href="#shared-file-changes-kept-small-for-the-parallel-plugin-sessions">Shared-file changes (kept small for the parallel plugin sessions)</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

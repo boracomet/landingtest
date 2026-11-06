@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running your own Hub — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Deploy wpgo-hub for an organisation, connect sites to it and operate the panel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/" aria-current="page">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/hub/">Hub &amp; marketplace</a><span>/</span><span aria-current="page">Running your own Hub</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Running your own Hub</h1>
+        <p class="lead">Deploy wpgo-hub for an organisation, connect sites to it and operate the panel.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Run a private Hub when you distribute internal plugins and themes, want an internal update
+channel, or do not want sites to contact the public Hub at all.</p>
+<h2 id="deploy">Deploy</h2>
+<p><code>wpgo-hub</code> is a single binary with a PostgreSQL database and a data directory for packages and
+keys. In the Pursae compose stack it is published on host port <strong>8090</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>WPGOHUB_ADDR</code></td>
+<td><code>:8080</code></td>
+<td>listen address</td>
+</tr>
+<tr>
+<td><code>WPGOHUB_PUBLIC_URL</code></td>
+<td><code>http://localhost:8090</code></td>
+<td>used in <code>download_url</code> and other links; set it to the public <code>https://</code> address</td>
+</tr>
+<tr>
+<td><code>DATABASE_URL</code></td>
+<td><code>postgres://wpgohub:wpgohub@localhost:5432/wpgohub?sslmode=disable</code></td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td><code>WPGOHUB_DATA_DIR</code></td>
+<td><code>./data</code></td>
+<td>packages and keys</td>
+</tr>
+<tr>
+<td><code>WPGOHUB_SECRET</code></td>
+<td>random</td>
+<td>session signing; set it for restarts and replicas</td>
+</tr>
+<tr>
+<td><code>WPGOHUB_TEST_DB</code></td>
+<td>—</td>
+<td>integration tests run only when set</td>
+</tr>
+</tbody>
+</table>
+<p>Put it behind TLS like a site (<a href="../../../docs/operations/reverse-proxy-and-tls/">reverse proxy and TLS</a>).
+<code>GET /healthz</code> returns <code>ok</code> for load balancers.</p>
+<h2 id="first-run">First run</h2>
+<p>Open <code>/setup</code> to create the operator account; the panel is unusable before. Then <code>/login</code>
+(session cookie, argon2id password hash, login throttling) and:</p>
+<table>
+<thead>
+<tr>
+<th>Screen</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/admin</code></td>
+<td>overview: site count, plugins and themes, last pings, latest core release</td>
+</tr>
+<tr>
+<td><code>/admin/sites</code></td>
+<td>hosts, versions, first/last seen, <code>local</code> flag; search; delete</td>
+</tr>
+<tr>
+<td><code>/admin/plugins</code>, <code>/admin/themes</code></td>
+<td>upload a zip, publish/unpublish, versions, edit the listing, delete</td>
+</tr>
+<tr>
+<td><code>/admin/releases</code></td>
+<td>core releases: version, download and notes URLs, release notes; publish</td>
+</tr>
+<tr>
+<td><code>/admin/keys</code></td>
+<td>signing keys; generate a new one</td>
+</tr>
+<tr>
+<td><code>/admin/settings</code></td>
+<td>hub name, public URL, rate limits</td>
+</tr>
+</tbody>
+</table>
+<p>Generate a signing key under <code>/admin/keys</code> before publishing the first plugin: packages are
+re-signed with it, and sites add it to their trusted keys from <code>GET /api/v1/index</code>.</p>
+<h2 id="connect-sites">Connect sites</h2>
+<p>On each site set <code>WPGO_HUB_URL=https://hub.internal.example.com</code> (or the <code>wpgo_hub_url</code> option).
+The site then reads your catalog on Plugins › Add Plugin and Appearance › Add Theme, trusts your
+keys, shows your releases on Dashboard › Updates and pings your Hub once a day. An empty
+<code>WPGO_HUB_URL</code> disconnects a site from every Hub.</p>
+<h2 id="publishing-a-core-release">Publishing a core release</h2>
+<p><code>/admin/releases</code> stores the version, a download URL, a notes URL and Markdown notes; <code>core</code> in
+<code>GET /api/v1/index</code> and the <code>core</code> field of the ping response carry it to sites, which show it as
+an update notice. The Hub does not host the binary itself unless you point <code>download_url</code> at a
+file it serves.</p>
+<h2 id="api">API</h2>
+<p>The public API is exactly the one the public Hub exposes — <code>GET /api/v1/index</code>, <code>/plugins</code>,
+<code>/plugins/{slug}</code>, <code>/plugins/{slug}/download[/{version}]</code>, <code>/plugins/{slug}/icon</code>, the same for
+<code>/themes</code> (with <code>/screenshot</code>), <code>POST /api/v1/sites/ping</code>, <code>GET /api/v1/sites/count</code> — so tools
+written for one work with the other. Responses are JSON with <code>Cache-Control: public, max-age=300</code>
+except the ping (<code>no-store</code>) and downloads.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/hub/publishing/" rel="prev"><small>← Previous</small>Publishing</a>
+          <a class="next" href="../../../docs/operations/configuration/" rel="next"><small>Next →</small>Configuration</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#deploy">Deploy</a></li><li class="toc-h2"><a href="#first-run">First run</a></li><li class="toc-h2"><a href="#connect-sites">Connect sites</a></li><li class="toc-h2"><a href="#publishing-a-core-release">Publishing a core release</a></li><li class="toc-h2"><a href="#api">API</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

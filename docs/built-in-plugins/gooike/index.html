@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gooike — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Cookie consent: banner, scanner, consent log and script blocking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/" aria-current="page">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">Gooike</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Gooike</h1>
+        <p class="lead">Cookie consent: banner, scanner, consent log and script blocking.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Gooike is a native (compiled-in) Pursae plugin for cookie consent and cookie management. Its feature
+set is on par with the best WordPress cookie plugins (Complianz, CookieYes, Cookie Notice &amp; Compliance). It
+is built to comply by design with the <strong>GDPR / ePrivacy Directive</strong> (EU, EEA, UK), Turkey's <strong>KVKK</strong>,
+<strong>CCPA/CPRA</strong> (California) and <strong>Google Consent Mode v2</strong>. Like every native plugin it is <strong>off on a fresh
+install</strong> (<code>native_gooike</code>). While it is off, nothing of it is printed on the site, and its admin menu,
+screens, REST routes and assets answer 404. Deactivating keeps its settings and the consent log.</p>
+<p>Legend: <strong>✓</strong> implemented · <strong>≈</strong> implemented differently (reason given) · <strong>✗</strong> left out (reason given).</p>
+<h2 id="files">Files</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>internal/server/gooike.go</code></td>
+<td>settings model and defaults, on/off, plugin row, menu, routes</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_themes.go</code></td>
+<td>the 14 banner themes, fonts, positions, CSS custom properties</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_services.go</code></td>
+<td>known services, inert script rewriting, CSP sources, embed detection</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_front.go</code></td>
+<td>head / body-open / footer output, Consent Mode script, shortcodes, embed blocking</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_consent.go</code></td>
+<td>consent REST endpoint, IP anonymization, geo endpoint, purge, log queries, stats</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_scan.go</code></td>
+<td>the cookie scanner</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_admin.go</code></td>
+<td>admin screens, form actions, CSV export, live preview</td>
+</tr>
+<tr>
+<td><code>web/gooike/gooike.js</code>, <code>web/gooike/gooike.css</code></td>
+<td>front-end runtime and styles, served at <code>/wp-content/plugins/gooike/assets/</code></td>
+</tr>
+<tr>
+<td><code>web/admin/templates/pages/gooike.html</code></td>
+<td>the admin screens</td>
+</tr>
+<tr>
+<td><code>internal/db/migrations/0013_gooike.sql</code></td>
+<td>the <code>gooike_consent_log</code> table</td>
+</tr>
+<tr>
+<td><code>internal/server/gooike_test.go</code></td>
+<td>unit and integration tests</td>
+</tr>
+</tbody>
+</table>
+<p>Settings are one JSON option, <code>gooike_settings</code>: texts, design, categories, scripts, the cookie declaration
+and settings. It is read from the in-memory settings cache, so rendering a page costs no extra query.</p>
+<h2 id="1-banner-and-preferences">1. Banner and preferences</h2>
+<ul>
+<li>✓ <strong>First layer</strong>: a title, a message, links (privacy policy, cookie policy, and the KVKK information
+notice in KVKK mode) and three buttons: <strong>Reject all</strong>, <strong>Accept all</strong>, <strong>Customize</strong>. Reject and Accept
+are the same kind of button, so they are equally prominent (EDPB guidance on deceptive design).
+Customize is a secondary button.</li>
+<li>✓ <strong>Second layer</strong>: a preferences modal (<code>role=&quot;dialog&quot;</code>, <code>aria-modal</code>). It holds one switch per category
+(<code>role=&quot;switch&quot;</code>). Necessary is shown as &quot;Always active&quot;. Each category has its description and a
+collapsible list of its declared cookies (name, provider, purpose, duration). The modal also shows the
+visitor's <strong>consent ID</strong> and the date of their choice, and has the buttons Reject all, Save my choices
+and Accept all.</li>
+<li>✓ <strong>Categories</strong>: Necessary (always on), Preferences/Functional, Statistics/Analytics and Marketing,
+plus <strong>admin-defined custom categories</strong> (key, name, description, shown or hidden, Consent Mode types).
+The four built-in categories cannot be deleted. If one goes missing, sanitizing restores it.</li>
+<li>✓ <strong>Reopening and withdrawing</strong>: a floating cookie button (left or right, on by default) and the
+<code>[gooike_preferences]</code> shortcode link. Any <code>a[href=&quot;#gooike-preferences&quot;]</code> works too, and so does
+<code>Gooike.open()</code>. Withdrawing a category deletes its declared cookies (<code>*</code> patterns included, on the
+host and its parent domains). The page then reloads (configurable), because scripts that already ran
+cannot be unloaded. The decision is logged as <strong>withdraw</strong>.</li>
+<li>✓ <strong>Storage</strong>: a first-party cookie, <code>gooike_consent</code>. It is URL-encoded JSON:
+<code>{id, v (policy version), t (timestamp), c (granted categories), a (action)}</code>, with <code>SameSite=Lax</code>,
+<code>Secure</code> on https and <code>Max-Age</code> = the consent expiry (12 months by default, 1–24 allowed).</li>
+<li>✓ <strong>Re-prompt</strong>: a stored choice no longer counts when its policy version differs from the current one
+(&quot;Bump version and ask everyone again&quot; in Settings) or when it is older than the expiry.</li>
+<li>✓ <strong>Accessibility</strong>:
+<ul>
+<li>focus trap in the modal and in modal or wall banners, Esc closes the preferences, and focus returns
+to where it was;</li>
+<li>all controls are native buttons, inputs and links, keyboard operable, with visible
+<code>:focus-visible</code> rings;</li>
+<li>a polite live region announces &quot;Your choice has been saved&quot;;</li>
+<li><code>prefers-reduced-motion</code> turns off every animation;</li>
+<li>touch targets are at least 44px, and the layout is responsive (bottom-sheet modal on phones);</li>
+<li>banners and the modal are hidden when printing.</li>
+</ul>
+</li>
+<li>✓ <strong>Multilingual-ready texts</strong>: all 26 visitor-facing strings are editable under Banner › Texts,
+with &quot;Reset to defaults&quot;. There is no hard-coded English in the JS: the config carries the strings it
+needs.</li>
+</ul>
+<h2 id="2-themes-14">2. Themes (14)</h2>
+<p>Each theme is a layout with a palette, a font and a corner radius. Activating one copies its values into
+the design, which can then be customized: position (from the positions the layout offers),
+background, text, button and button text colors, font (site font, system, humanist, rounded, serif,
+mono), font size, radius, floating button and position, and <strong>custom CSS</strong> (it can never close its
+<code>&lt;style&gt;</code> element).</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Name</th>
+<th>Layout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>classic</code></td>
+<td>Classic Bar</td>
+<td>full-width bar, bottom</td>
+</tr>
+<tr>
+<td><code>topbar</code></td>
+<td>Top Bar</td>
+<td>slim bar, top</td>
+</tr>
+<tr>
+<td><code>box-left</code></td>
+<td>Floating Box Left</td>
+<td>corner card</td>
+</tr>
+<tr>
+<td><code>box-right</code></td>
+<td>Floating Box Right</td>
+<td>corner card</td>
+</tr>
+<tr>
+<td><code>modal</code></td>
+<td>Centered Modal</td>
+<td>dialog over a backdrop</td>
+</tr>
+<tr>
+<td><code>pill</code></td>
+<td>Minimal Pill</td>
+<td>one-line rounded pill</td>
+</tr>
+<tr>
+<td><code>glass</code></td>
+<td>Glass</td>
+<td>translucent card with backdrop blur</td>
+</tr>
+<tr>
+<td><code>midnight</code></td>
+<td>Midnight Dark</td>
+<td>dark bar</td>
+</tr>
+<tr>
+<td><code>brand</code></td>
+<td>Brand Color</td>
+<td>bar in the brand color with white buttons</td>
+</tr>
+<tr>
+<td><code>illustrated</code></td>
+<td>Cookie Card</td>
+<td>card with a cookie illustration</td>
+</tr>
+<tr>
+<td><code>toast</code></td>
+<td>Corner Toast</td>
+<td>small toast, top right</td>
+</tr>
+<tr>
+<td><code>wall</code></td>
+<td>Consent Wall</td>
+<td>full-screen wall for strict mode</td>
+</tr>
+<tr>
+<td><code>split</code></td>
+<td>Split Panel</td>
+<td>wide two-column panel</td>
+</tr>
+<tr>
+<td><code>sidebar</code></td>
+<td>Side Panel</td>
+<td>docked side panel (bottom sheet on phones)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>✓ <strong>Live preview</strong>: the Themes tab shows each theme as a scaled live iframe of
+<code>/wp-admin/gooike?page=preview&amp;theme=…</code> (a sample page with the banner open). The Design tab has a
+large preview that reloads as the form changes (unsaved values travel as query parameters), with
+Desktop / Mobile and Banner / Preferences toggles.</li>
+</ul>
+<h2 id="3-script-manager">3. Script manager</h2>
+<ul>
+<li>
+<p>✓ <strong>Scripts</strong>: name, category, placement (<strong>head</strong>, <strong>body open</strong> right after <code>&lt;body&gt;</code> through
+<code>wp_body_open</code>, or <strong>footer</strong>), code, and active or disabled.</p>
+</li>
+<li>
+<p>✓ <strong>Inert output</strong>: for every category except Necessary:</p>
+<ul>
+<li>each <code>&lt;script&gt;</code> is printed as <code>type=&quot;text/plain&quot; data-gooike-category=&quot;…&quot;</code>, its <code>src</code> moved to
+<code>data-gooike-src</code> and a non-JS type kept in <code>data-gooike-type</code>;</li>
+<li><code>&lt;iframe&gt;</code>, <code>&lt;img&gt;</code> and <code>&lt;embed&gt;</code> lose their <code>src</code> and <code>srcset</code> the same way;</li>
+<li><code>&lt;noscript&gt;</code> fallbacks are dropped, because they would track without consent.</li>
+</ul>
+<p>Plain JavaScript without tags is wrapped in a script. <strong>Necessary scripts are printed unchanged and run
+immediately.</strong></p>
+</li>
+<li>
+<p>✓ <strong>Activation</strong> (<code>gooike.js</code>): once a category is granted, the scripts are re-created in document
+order. A blocking external script is waited for before the next one runs, so inline code that depends
+on it works. Iframes and images get their <code>src</code> back.</p>
+</li>
+<li>
+<p>✓ <strong>Known services</strong>: you paste only the ID and Gooike writes the official snippet:</p>
+<ul>
+<li>Google Analytics 4 (<code>G-…</code>)</li>
+<li>Google Tag Manager (<code>GTM-…</code>)</li>
+<li>Meta Pixel</li>
+<li>Hotjar</li>
+<li>Microsoft Clarity</li>
+<li>LinkedIn Insight Tag</li>
+<li>TikTok Pixel</li>
+</ul>
+<p>Each service brings its default category and placement and its cookies, which join the declaration.
+It also brings its hosts, which are added to the page's <strong>Content-Security-Policy</strong> (<code>script-src</code> and
+<code>connect-src</code>, per response through <code>cspAllow</code>). The CSP gets the https origins of custom snippets too,
+plus the &quot;Extra script hosts&quot; setting.</p>
+</li>
+<li>
+<p>✓ <strong>Embeds</strong>: iframes of <strong>YouTube</strong> (including youtube-nocookie), <strong>Vimeo</strong> and <strong>Google Maps</strong> are held
+back on rendered pages, in theme templates and Golementor pages. Each shows a placeholder: &quot;This
+content is hosted by YouTube…&quot;, with a <strong>Load content</strong> button that grants the embed category
+(Marketing by default) and a link to open the content on the provider's site. These are switches on
+the Scripts screen.</p>
+</li>
+<li>
+<p>✓ <strong>Google Consent Mode v2</strong>: an inline script is printed <strong>first in <code>&lt;head&gt;</code></strong>, before the theme's
+own head script and before any tag. It runs:</p>
+<ul>
+<li><code>gtag('consent','default', …)</code> for <code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>,
+<code>analytics_storage</code>, <code>functionality_storage</code>, <code>personalization_storage</code> and <code>security_storage</code>.
+The defaults are denied under opt-in laws and granted under CCPA (ads denied when GPC is sent).
+The necessary types are always granted.</li>
+<li><code>wait_for_update</code>, <code>ads_data_redaction</code> and <code>url_passthrough</code>.</li>
+<li>If a current choice is stored, an immediate <code>gtag('consent','update', …)</code>.</li>
+</ul>
+<p>Every decision sends another update. Each category maps to Consent Mode types, and you can change the
+mapping per category. Tag Manager receives a <code>gooike_consent_update</code> dataLayer event, and the page
+receives a <code>gooike:consent</code> DOM event.</p>
+</li>
+</ul>
+<h2 id="4-cookie-declaration-and-scanner">4. Cookie declaration and scanner</h2>
+<ul>
+<li>
+<p>✓ <strong>Declaration</strong>: an admin-managed list (name, provider, category, purpose, duration). It supports add,
+edit, bulk delete and <code>*</code> prefix patterns. Pursae's own cookies are pre-declared. It is shown in
+the preferences and rendered by <code>[gooike_cookie_table]</code>, or <code>[gooike_cookie_table category=&quot;statistics&quot;]</code>
+for one category.</p>
+</li>
+<li>
+<p>✓ <strong>Scanner</strong>: it requests the home page and any extra paths you list <em>through the site itself</em>, as an
+anonymous visitor and bypassing the page cache. It then:</p>
+<ul>
+<li>lists every <code>Set-Cookie</code>, with the duration read from Max-Age or Expires, and known first-party
+cookies with their purposes;</li>
+<li>detects known services in the HTML (including in blocked scripts) and in the script manager, and
+adds their JavaScript cookies;</li>
+<li>detects YouTube, Vimeo and Maps embeds.</li>
+</ul>
+<p>Each result is marked <em>declared</em> or <em>new</em>. &quot;Add selected to the declaration&quot; adds the new ones.</p>
+</li>
+<li>
+<p>≈ <strong>Crawling with a headless browser</strong> (CookieYes, Complianz cloud scan) is left out. A server-side
+fetch cannot see cookies set by JavaScript, so those come from the known-services database instead.</p>
+</li>
+</ul>
+<h2 id="5-consent-log">5. Consent log</h2>
+<ul>
+<li>✓ <strong>Endpoint</strong>: <code>POST /wp-json/gooike/v1/consent</code>. <code>/wp-json</code> is never cached, so logging works with the
+full-page cache. The browser sends it with <code>sendBeacon</code> or <code>fetch keepalive</code>. It is validated as
+follows:
+<ul>
+<li>the consent ID is a UUID;</li>
+<li>the action is <code>accept_all</code>, <code>reject_all</code>, <code>custom</code>, <code>withdraw</code> or <code>gpc</code>;</li>
+<li>only known categories are kept;</li>
+<li>the URL is reduced to a path;</li>
+<li>a cross-site <code>Origin</code> is refused;</li>
+<li>there is a per-/24 rate limit of 30 per minute.</li>
+</ul>
+</li>
+<li>✓ <strong>Stored per decision</strong>: timestamp, consent ID, action, granted categories, policy version, regulation,
+<strong>anonymized IP</strong>, <strong>user-agent hash</strong> (a keyed HMAC), page path and whether GPC was sent. The IP is
+truncated by default (IPv4 /24, IPv6 /48); it can instead be a keyed hash or not stored at all. No raw
+IP or user agent is ever written.</li>
+<li>✓ <strong>Consent Logs screen</strong>:
+<ul>
+<li>filters by action and date range, and search by consent ID, IP or page;</li>
+<li>pagination;</li>
+<li>a details view with the full history of that consent ID;</li>
+<li><strong>CSV export</strong> with the current filters, and cells hardened against spreadsheet formulas;</li>
+<li>&quot;Delete expired records now&quot;.</li>
+</ul>
+</li>
+<li>✓ <strong>Retention</strong>: in months (12 by default; 0 keeps records forever). The daily cron event
+<code>gooike_purge_logs</code> is scheduled on activation and removed on deactivation.</li>
+<li>✓ <strong>Proof for the visitor</strong>: the consent ID is shown in the preferences modal and by
+<code>[gooike_consent_id]</code>.</li>
+<li>✓ <strong>Dashboard</strong>: the last 30 days, with totals for accept all, reject all, custom and
+changed/GPC and their percentages, a stacked bar chart per day, a status panel (theme, regulation,
+policy version, expiry, Consent Mode, scripts, cookies, privacy policy link, log retention, page cache)
+and the shortcode reference. If no privacy policy is linked, a warning shows.</li>
+</ul>
+<h2 id="6-admin">6. Admin</h2>
+<ul>
+<li>
+<p>✓ The top-level <strong>Gooike</strong> menu, after Settings, exists only while the plugin is active and only for
+administrators (<code>manage_options</code>). Its screens are Dashboard, Banner (Themes, Design with live preview,
+Texts), Categories &amp; Cookies (Categories, Cookie Declaration, Cookie Scanner), Scripts, Consent Logs
+and Settings. They use WordPress admin markup throughout: <code>wrap</code>, <code>nav-tab-wrapper</code>, <code>form-table</code>,
+<code>wp-list-table</code>, <code>postbox</code>, notices and <code>row-actions</code>. Every form is nonce-checked.</p>
+</li>
+<li>
+<p>✓ <strong>Settings</strong>:</p>
+<ul>
+<li>regulation mode: <strong>GDPR</strong> (opt-in), <strong>KVKK</strong> (opt-in with an information notice link) or
+<strong>CCPA/CPRA</strong> (opt-out: optional categories run until the visitor opts out, and Reject becomes
+&quot;Do Not Sell or Share My Personal Information&quot;, also available as <code>[gooike_do_not_sell]</code>);</li>
+<li><strong>geo targeting</strong>, off by default;</li>
+<li><strong>Global Privacy Control</strong> (on) and <strong>Do Not Track</strong> (off);</li>
+<li>policy version and bump;</li>
+<li>expiry;</li>
+<li>reload after withdrawal;</li>
+<li>privacy policy (a page, a URL, or the site's Settings › Privacy page), cookie policy URL and KVKK
+notice URL;</li>
+<li>Consent Mode with <code>wait_for_update</code>, ads redaction and URL passthrough;</li>
+<li>logging, IP storage mode and retention;</li>
+<li>extra CSP hosts.</li>
+</ul>
+</li>
+<li>
+<p>≈ <strong>Geo targeting</strong> reads the visitor's country from a CDN or proxy header (<code>CF-IPCountry</code>,
+CloudFront, Vercel, Fastly, <code>X-Country-Code</code>) through the uncached <code>GET /wp-json/gooike/v1/geo</code>. The
+page stays the same for everyone, and <code>gooike.js</code> asks once per session. The rules are:</p>
+<ul>
+<li>EU, EEA, UK and CH: GDPR;</li>
+<li>TR: KVKK;</li>
+<li>US: CCPA;</li>
+<li>other countries: configurable (no banner by default).</li>
+</ul>
+<p>Pursae ships no GeoIP database, so without a header everyone gets the main regulation.</p>
+</li>
+<li>
+<p>✓ <strong>Privacy signals</strong>: a visitor sending GPC (or DNT, when respected) is treated as having opted out. No
+banner is shown, and the decision is logged as <code>gpc</code>. Under GDPR and KVKK nothing optional runs; under
+CCPA marketing (sale and sharing) stops.</p>
+</li>
+</ul>
+<h2 id="7-native-plugin-rules-and-the-page-cache">7. Native plugin rules and the page cache</h2>
+<ul>
+<li>✓ It is off by default. While it is off: no output, the menu is gone, <code>/wp-admin/gooike</code>, the assets
+and <code>gooike/v1</code> all answer 404, and the shortcodes are left as typed.</li>
+<li>✓ Activating and deactivating, and every settings change, purge the page cache.</li>
+<li>✓ <strong>Page cache</strong>: the banner, the inert scripts, the Consent Mode script and the config are identical
+for every visitor. The consent cookie does not bypass the cache. The CSP allowance is part of the
+cached response headers. Tests check that visitors with and without consent get the same cached HTML
+(<code>X-WPGo-Cache: hit</code>).</li>
+<li>✓ The Golementor editor preview gets no banner. Logged-in users see the banner like visitors do.</li>
+</ul>
+<h2 id="8-tests">8. Tests</h2>
+<p><code>internal/server/gooike_test.go</code>:</p>
+<ul>
+<li><strong>Unit tests</strong>:
+<ul>
+<li>inert rewriting: scripts, module type, iframes, img <code>srcset</code>, noscript dropped, plain JS wrapped,
+necessary scripts untouched;</li>
+<li>IP truncation;</li>
+<li>embed host matching;</li>
+<li>CSP sources, with disabled or invalid sources excluded;</li>
+<li>sanitizing of categories;</li>
+<li>at least 12 themes.</li>
+</ul>
+</li>
+<li><strong>Integration tests</strong> (httptest and Postgres):
+<ul>
+<li>off by default: no output, 404 routes, no menu;</li>
+<li>every screen renders;</li>
+<li>banner markup and equal buttons;</li>
+<li>Consent Mode defaults are the first script;</li>
+<li>GA4 is inert in <code>&lt;head&gt;</code>, a body-open pixel comes right after <code>&lt;body&gt;</code> with its noscript dropped,
+and a necessary script runs live in the footer;</li>
+<li>the CSP allows the managed hosts;</li>
+<li>selecting a theme changes the markup and the CSS variables;</li>
+<li>design changes apply, and custom CSS cannot break out of its <code>&lt;style&gt;</code>;</li>
+<li>the cookie table, preferences link and YouTube blocking work;</li>
+<li>deactivation removes all output and keeps the settings.</li>
+</ul>
+</li>
+<li><strong>Consent log tests</strong>:
+<ul>
+<li>the purge job is scheduled;</li>
+<li>a record is stored with the truncated IP <code>127.0.0.0</code>, a UA hash and filtered categories;</li>
+<li>invalid records are rejected;</li>
+<li>the logs screen shows the record and the filter works;</li>
+<li>the CSV export works;</li>
+<li>the dashboard counts the record;</li>
+<li>hashed IP mode works;</li>
+<li>the retention purge and the cron handler work, retention 0 keeps everything, and logging can be
+switched off.</li>
+</ul>
+</li>
+<li><strong>Page cache test</strong>: an identical cached page with and without the consent cookie, the CSP header kept,
+the endpoint never cached, and a purge on theme change.</li>
+<li><strong>Scanner and geo test</strong>: Clarity cookies are found and added to the declaration; the geo endpoint
+answers DE→gdpr, TR→kvkk, US→ccpa, JP→none and no header→main regulation.</li>
+</ul>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/adminsecgo/" rel="prev"><small>← Previous</small>AdminSecGo</a>
+          <a class="next" href="../../../docs/built-in-plugins/maintenance-go/" rel="next"><small>Next →</small>Maintenance-Go</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#files">Files</a></li><li class="toc-h2"><a href="#1-banner-and-preferences">1. Banner and preferences</a></li><li class="toc-h2"><a href="#2-themes-14">2. Themes (14)</a></li><li class="toc-h2"><a href="#3-script-manager">3. Script manager</a></li><li class="toc-h2"><a href="#4-cookie-declaration-and-scanner">4. Cookie declaration and scanner</a></li><li class="toc-h2"><a href="#5-consent-log">5. Consent log</a></li><li class="toc-h2"><a href="#6-admin">6. Admin</a></li><li class="toc-h2"><a href="#7-native-plugin-rules-and-the-page-cache">7. Native plugin rules and the page cache</a></li><li class="toc-h2"><a href="#8-tests">8. Tests</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HeadlessGo — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Headless CMS: content types, content manager, REST and GraphQL delivery API, webhooks and preview.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/" aria-current="page">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">HeadlessGo</span>
+      </nav>
+      <header class="docs-head">
+        <h1>HeadlessGo</h1>
+        <p class="lead">Headless CMS: content types, content manager, REST and GraphQL delivery API, webhooks and preview.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>HeadlessGo is a native (compiled-in) Pursae plugin that turns the site into a <strong>headless CMS</strong>:
+a Content-Type Builder, a Content Manager and a delivery API for front-end apps (Next.js, Nuxt,
+Astro, mobile apps…). Its model and query language follow the conventions of the popular open-source
+headless CMSs (collection types, single types, components, dynamic zones, <code>filters[field][$op]</code>,
+<code>populate</code>, <code>documentId</code>), so front-end code written for them needs few changes. Like every native
+plugin it is <strong>off on a fresh install</strong> (<code>native_headlessgo</code>); while it is off its routes answer 404,
+its menu is gone and the front end renders as usual. Schemas, entries, tokens and webhooks stay in
+the database when it is deactivated.</p>
+<p>Legend: <strong>✓</strong> implemented · <strong>≈</strong> implemented differently (reason given) · <strong>✗</strong> left out (reason given).</p>
+<h2 id="1-storage">1. Storage</h2>
+<ul>
+<li><strong>Schemas</strong> (types and components) are JSON documents in <code>hg_schemas</code> (migration
+<code>0020_headlessgo.sql</code>). The registry is cached per server and dropped on every schema write.</li>
+<li><strong>Entries</strong> of every type live in one table, <code>hg_entries</code>: one row per document and locale, with
+<code>data</code> (the draft: the latest saved values) and <code>published_data</code> (the published snapshot, NULL
+while unpublished) as JSONB, plus typed columns <code>document_id</code>, <code>type_uid</code>, <code>locale</code>,
+<code>published_at</code>, <code>created_at</code>, <code>updated_at</code>, <code>created_by</code>, <code>updated_by</code>. GIN indexes on both JSONB
+columns serve the unique checks and <code>@&gt;</code> lookups.</li>
+<li><strong>No DDL per content type.</strong> Schema changes migrate the stored data instead (§3).</li>
+<li>Relations and media are stored as lists of ids whatever their cardinality (document ids of
+entries, numeric ids of posts, pages, users and attachments); components and dynamic zones as
+nested objects (dynamic zone items carry <code>__component</code>, component values an <code>id</code>).</li>
+<li>Settings: the option <code>headlessgo_settings</code> (headless mode, CORS, public permissions, preview
+secret, page sizes, GraphQL switch, webhook attempts). API tokens: <code>hg_api_tokens</code> (SHA-256 only,
+<code>can_upload</code>). Webhooks: <code>hg_webhooks</code>, the delivery queue <code>hg_webhook_queue</code>, the attempt log
+<code>hg_webhook_deliveries</code> (last 200 per webhook).</li>
+<li>Migration <code>0022_headlessgo_more.sql</code> adds the schedule columns of <code>hg_entries</code> (<code>publish_at</code>,
+<code>unpublish_at</code>, <code>schedule_error</code>), the content history <code>hg_entry_versions</code>, <code>hg_api_tokens.can_upload</code>
+and <code>hg_webhook_queue</code>.</li>
+<li>Migration <code>0024_headlessgo_review_lock.sql</code> adds the edit locks (<code>hg_entry_locks</code>), the review columns of
+<code>hg_entries</code> (<code>review_status</code>, <code>review_hash</code>, <code>review_by</code>, <code>review_note</code>, <code>review_at</code>) and the history note.</li>
+<li>Inverse relation fields (<code>mappedBy</code>) store nothing: their value is computed from the owning side.</li>
+</ul>
+<h2 id="2-headless-mode">2. Headless mode</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>While active the front end does not render: JSON 404 <code>{&quot;data&quot;:null,&quot;error&quot;:{&quot;status&quot;:404,&quot;name&quot;:&quot;NotFoundError&quot;,…}}</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Setting: plain-text 404, or a 302 to the front-end app's URL (optionally keeping path and query), or keep the site's front end</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>wp-admin, wp-login, <code>/wp-json</code> (core REST and <code>?rest_route=</code>), <code>/wp-content/</code> (uploads, assets), <code>/wp-includes/</code>, wp-cron, robots.txt and the favicon keep working</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Logged-in users who can edit posts still see the front end (setting, on by default) so previews and theme work go on</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Runs in <code>Server.Handler</code> before the page cache (<code>headlessServe</code>); answers are <code>no-store</code> and <code>noindex</code></td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-content-type-builder">3. Content-Type Builder</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Collection types (many entries), single types (one entry), components (category.name), dynamic zones</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Field types: text (short/long), rich text (blocks or Markdown), number (integer, big integer, decimal, float), boolean, date, date-time, time, email, password, enumeration, media (single/multiple, allowed types), relation, JSON, UID (derived from a text field), component (single/repeatable), dynamic zone</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Relations: one-to-one, one-to-many, many-to-one, many-to-many, to content types (self included) and to WordPress posts, pages and users</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Bidirectional relations: an owning field with <code>inversedBy</code> gets an inverse field (<code>mappedBy</code>) on the target type with the mirrored kind (one-to-one ↔ one-to-one, one-to-many ↔ many-to-one, many-to-many ↔ many-to-many); self relations too. The builder offers &quot;Inverse field (optional)&quot; on relations between content types. Both sides stay in step on every save: renaming either side renames the link, removing the inverse field clears <code>inversedBy</code>, removing (or retargeting) the owning field removes the inverse field, changing the kind changes the mirror. Export / import keeps them</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>The inverse side stores nothing: its value is the owning entries pointing at the document (in the matching locale and status), so it can never disagree. It is populated, filterable and sortable like any relation, shown and editable in the Content Manager, and writable through the API (id, list, <code>{connect, disconnect, set}</code>, <code>null</code> clears); a write changes the owning entries' draft and published version (a link belongs to both documents). Cardinality is enforced (a single-valued inverse side takes one entry)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Deleting a document (its last locale) removes it from every relation pointing at it: owning fields of every type, also inside components and dynamic zones, drafts and published versions</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>One-to-one / one-to-many exclusivity (a target belongs to one entry)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Options: required, unique, min/max (length, value or item count), default, private (never in the API), regex (text, UID, email)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Type options: draft &amp; publish, review before publishing, internationalization, preview URL template, description</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Builder page: type list, settings, field table with edit / delete / reorder, add-field panel with a type picker and per-type options</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Validation: kebab-case API ids, unique singular/plural ids, reserved names (<code>id</code>, <code>documentId</code>, <code>locale</code>, …), valid targets, no component cycles, no dynamic zone in components</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Schema changes migrate data: renamed fields (the builder sends <code>renamedFrom</code>) move their values; removed fields are dropped — in the type's entries, or inside every component value when a component changes (also nested and in dynamic zones); i18n on/off converts locales; draft &amp; publish off publishes every draft</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Delete: a type (with its entries) or a component; refused while another schema uses or relates to it</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Export all schemas as JSON; import (file or paste): components first in dependency order, then types in two passes so they may relate to each other</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Changing a field (type, number format, rich-text format, single ↔ multiple media or relation, relation target, enumeration values, component, repeatable, dynamic zone components) converts the stored values of drafts and published versions, also inside components: text ↔ number ↔ boolean (<code>yes/no</code>, <code>on/off</code>, <code>1/0</code>), dates ↔ date-times, text → UID (slugified), text → e-mail / enumeration (when valid, case-insensitive), blocks ↔ Markdown/text (plain text), anything → JSON, decimals → integers (rounded), multiple → single (first kept), repeatable → single component (first item). Values that cannot be converted are removed</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>The builder lets an existing field change type, renames enumeration values changed on their line (<code>enumRenames</code>), shows a warning under the field when the change loses data and asks for confirmation on Save with the list of lossy changes</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-content-manager">4. Content Manager</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home with a card per type (entry counts, API route); side navigation</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Entries list: search (text fields and document id), status filter (draft / published / modified), locale filter, sortable columns, pagination</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Edit form generated from the schema for every field type: block editor for rich text (paragraph, headings, quote, code, lists, image; untouched blocks keep their inline formatting), media picker (WordPress media library), relation picker with search, nested components and dynamic zones with add / remove / reorder / collapse, JSON editor with validation, UID regenerate</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Validation per field options; a rejected save shows the errors next to the fields and keeps the input (passwords are never echoed back)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Draft &amp; publish: Save draft, Publish (validates required fields), Unpublish, Discard changes (back to the published version), status badges</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>i18n: with Golylang active its languages are the locales; each document has one version per locale, linked by <code>documentId</code>; the edit screen lists the locales, opens a translation empty or filled from the current locale. With Golylang off there is one default locale (setting)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Delete one locale or every locale</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Bulk actions in the list: publish, unpublish, delete the selected documents in the listed locale, or &quot;in every locale&quot;; failures (a required field empty) are reported per document</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Content history: every save, publish, unpublish, discard, restore, review step and scheduled (un)publication records the draft (last 50 per document version); the edit screen lists the latest, the History screen shows a version next to the current draft with changed fields marked, and restores it as the draft. Inverse relation fields are not part of a version; a link made or removed from the other side of a two-way relation is recorded instead (see below)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Links across a two-way relation: saving an entry through its owning relation field adds a &quot;Relations changed&quot; version, with a note (<code>Linked by Book &quot;Dune&quot; via books</code>), to every entry that was linked or unlinked (their inverse field now lists something else); writing the inverse side adds one, with the new draft and a note (<code>Linked Writer &quot;Ada&quot; via writer</code>), to every owning entry whose data changed. Works from the admin, REST and GraphQL alike</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Restoring a version checks its values against the <strong>current</strong> schema first (types and formats, required, min / max, regex, enumerations, media and relation targets that still exist, unique fields). If something no longer fits, nothing is restored and the mismatches are listed; the History screen shows them before you click, and offers &quot;Restore the fields that still fit&quot;: the mismatching fields keep their current values and the message names them. Password hashes are carried over untouched</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Scheduled publishing: &quot;Publish on&quot; / &quot;Unpublish on&quot; per document version (site time zone) in the edit screen, <code>POST …/{documentId}/schedule</code> in the API. The <code>headlessgo_tick</code> job of the site's job runner (every minute, rows claimed with <code>FOR UPDATE SKIP LOCKED</code>, safe across restarts and instances) publishes the draft as it is then, or unpublishes; a publication that fails validation is cleared and its reason shown on the edit screen; the list shows pending schedules</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Edit lock (WordPress post-lock style): opening an existing entry takes its lock (one per document version); the page's script renews it every 15 s (<code>POST /wp-admin/headlessgo/lock</code>, nonce-checked) and releases it when the page closes; a lock nobody renewed for 90 s is free. While someone else holds it the entry opens read-only with &quot;X is currently editing this entry&quot; and a <strong>Take over editing</strong> button; the server refuses every change from another user (save, publish, unpublish, discard, schedule, restore, delete), and a taken-over editor's open page is told by its next heartbeat and switches to read-only. A form also carries the version it was loaded from: a save on top of a newer one is refused (&quot;changed by someone else&quot;), also without a lock. The REST and GraphQL APIs are not locked (tokens have no user)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Review flow: the type option <strong>Review before publishing</strong> (needs draft &amp; publish). A draft is <em>submitted for review</em>; a user who can edit others' posts (editor and above) <em>approves</em> or <em>rejects</em> it (optional note). Publishing needs an approved draft, whatever the route: the form's Publish button (it saves the draft and publishes when that draft is approved, otherwise it says the draft was saved but not published), the REST <code>publish</code> route and <code>?status=published</code> writes, GraphQL <code>publish…</code> / <code>status: PUBLISHED</code>, bulk publish, and scheduled publication (the schedule is cleared with the reason in the edit screen). Approval is bound to the exact draft: any later change (form, API, restore, relation link) makes it &quot;not reviewed&quot; again. Submit, approve and reject appear in the entry history with the reviewer's note. The APIs have no user, so they can neither submit nor approve; a type without the option is unchanged</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-delivery-rest-api--wp-jsonheadlessgov1">5. Delivery REST API — <code>/wp-json/headlessgo/v1</code></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET/POST /{pluralApiId}</code>, <code>GET/PUT/PATCH/DELETE /{pluralApiId}/{documentId}</code>, single types <code>GET/PUT/DELETE /{singularApiId}</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>POST …/{documentId}/publish</code> and <code>/unpublish</code> (needs <code>update</code>); <code>publish</code> is refused (400) for a type with the review flow until the draft is approved in the admin</td>
+<td>✓ (extension)</td>
+</tr>
+<tr>
+<td><code>POST …/{documentId}/schedule</code> with <code>{&quot;data&quot;: {&quot;publishAt&quot;, &quot;unpublishAt&quot;}}</code> (RFC 3339, <code>null</code> clears; needs <code>update</code>)</td>
+<td>✓ (extension)</td>
+</tr>
+<tr>
+<td>Media upload: <code>POST /upload</code> (multipart <code>files</code>, one or several; optional <code>fileInfo</code> JSON <code>{name, alternativeText, caption}</code> or a list) through the core media upload code (same file checks, image sizes, GoCDN); answer: the files in the API's media format. With <code>ref</code> (type uid or API id), <code>refId</code> (document id), <code>field</code> and optional <code>locale</code> the files are attached to the entry's draft (appended to a multiple field, replacing a single one; allowed types checked before anything is kept). <code>GET /upload/files/{id}</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Response <code>{data, meta}</code>; entries carry <code>id</code>, <code>documentId</code>, attributes, <code>createdAt</code>, <code>updatedAt</code>, <code>publishedAt</code>, <code>locale</code>; errors <code>{data:null, error:{status, name, message, details}}</code> with <code>ValidationError</code> details <code>{errors:[{path, message}]}</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>`filters[field][$eq</td>
+<td>$eqi</td>
+</tr>
+<tr>
+<td>Filtering through relations (<code>filters[author][name][$eq]</code>, nested), components (single and repeatable), media (<code>id</code>, <code>name</code>, <code>mime</code>), WordPress pages/posts (<code>id</code>, <code>slug</code>, <code>title</code>, <code>status</code>) and users (<code>id</code>, <code>username</code>, <code>slug</code>, <code>name</code>); <code>$null</code> on relations, media, components</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>sort=a:asc,b:desc</code>, <code>sort[0]=…</code>, <code>sort[a]=desc</code> on scalar attributes and system fields</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Sorting through relations and single components: <code>sort=author.name:asc</code>, <code>author.company.name</code>, <code>seo.metaTitle</code>, <code>page.title</code> (WordPress posts/pages: <code>id</code>, <code>slug</code>, <code>title</code>; users: <code>id</code>, <code>username</code>, <code>slug</code>, <code>name</code>), also through single-valued inverse relations. To-many relations and repeatable components are refused (400). Entries without the related value sort last</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Filtering through inverse relations (<code>filters[books][title][$eq]</code>, <code>filters[books][$null]=true</code>)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>pagination[page]&amp;pagination[pageSize]</code> or <code>pagination[start]&amp;pagination[limit]</code> (mixing is a 400), <code>pagination[withCount]=false</code>; default/max page size are settings (25/100)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>populate=*</code> (one level), <code>populate=a,b</code>, <code>populate=a.b</code>, <code>populate[a][populate]…</code>, <code>[fields]</code>, <code>[filters]</code>, <code>[sort]</code>, dynamic zones <code>populate[zone][on][comp.uid]…</code>, <code>populate=localizations</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>fields[0]=title</code> / <code>fields=title,slug</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>locale=</code> (default: the default locale), `status=draft</td>
+<td>published` (drafts need a token allowed to read them)</td>
+</tr>
+<tr>
+<td>Writes: <code>{&quot;data&quot;: {...}}</code>; <code>?status=published</code> publishes, <code>?locale=</code> writes that locale's version (a new translation of an existing document); partial updates; relations as id, list or <code>{connect, disconnect, set}</code>; media as id or list</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Password fields: hashed (argon2id), never returned; an empty value keeps the hash</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Private fields: never returned, not filterable or sortable, but writable</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>WordPress content: posts, pages and media are in the core REST API (<code>/wp-json/wp/v2/posts</code>, <code>/pages</code>, <code>/media</code>) and stay reachable in headless mode; HeadlessGo adds the missing menus: <code>GET /wp/menus</code> (menus and theme locations) and `GET /wp/menus/{id</td>
+<td>location</td>
+</tr>
+<tr>
+<td><code>GET /</code> lists the routes the caller may read</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>?rest_route=/headlessgo/v1/…</code></td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-permissions-and-api-tokens">6. Permissions and API tokens</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public role (no token): a matrix of type × find / findOne / create / update / delete under Settings. <strong>Default: nothing is public.</strong> Public callers never see drafts</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>API tokens: read-only (find/findOne on every type), full access (everything, drafts included), custom (the same matrix per token, plus &quot;may read drafts&quot;)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Duration 7 / 30 / 90 days or unlimited; expired tokens get 401; last-used time (recorded at most once a minute); regenerate; delete</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Upload permission: full-access tokens always, custom tokens with &quot;May upload media&quot;, read-only tokens and the public role never</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Only a SHA-256 of the token is stored; it is shown once (on the response page, never in a URL) with its last four characters in the list</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>Authorization: Bearer &lt;token&gt;</code>; a bad token is 401 <code>UnauthorizedError</code>, a missing permission 403 <code>ForbiddenError</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Populated relations to a type the caller may not read are left out (not an error)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Cookie / Application Password auth on this namespace</td>
+<td>✗ tokens only (the admin uses its own screens)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-cors">7. CORS</h2>
+<ul>
+<li>Allow-list of origins (one per line, <code>*</code> for any) under Settings. Allowed origins get
+<code>Access-Control-Allow-Origin</code> (the origin itself) and <code>Vary: Origin</code>; preflight <code>OPTIONS</code> requests
+are answered with 204, the methods and the <code>Authorization, Content-Type, Accept, X-Preview-Token</code>
+headers, and a one-day <code>Max-Age</code>. Other origins get no CORS headers. Applies to the HeadlessGo
+namespace only. ✓</li>
+</ul>
+<h2 id="8-webhooks">8. Webhooks</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Events <code>entry.create</code>, <code>entry.update</code>, <code>entry.publish</code>, <code>entry.unpublish</code>, <code>entry.delete</code>, and <code>schema.update</code> (setting)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Per webhook: name, URL, events, custom headers (reserved ones refused), signing secret, enabled</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Payload <code>{event, createdAt, model, uid, entry}</code> (public scalar attributes; private fields never sent)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>X-HeadlessGo-Signature: sha256=&lt;hex HMAC-SHA256 of the body&gt;</code>, <code>X-HeadlessGo-Event</code>, <code>X-HeadlessGo-Delivery</code></td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Durable delivery queue (<code>hg_webhook_queue</code>): the first attempt starts at once in the background; a network error or a non-2xx answer is retried with an exponential backoff (10 s, 40 s, 160 s, 640 s…, at most 6 h) up to the &quot;Attempts per delivery&quot; setting (5 by default, 1–10), then the delivery is failed. Short backoffs are retried in-process; the <code>headlessgo_tick</code> job delivers whatever is due, so retries survive restarts (rows claimed with <code>FOR UPDATE SKIP LOCKED</code>; rows left running by a crashed instance return after 5 minutes). Finished rows are removed after a day</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>The webhook screen lists waiting and failed deliveries (attempts, next attempt, last error) with &quot;Retry now&quot;</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Delivery log per webhook: date, event, attempt, status code, duration, the first 1 KB of the response or the error</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>&quot;Send test&quot; (<code>trigger-test</code>, synchronous, result shown as a notice)</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-preview">9. Preview</h2>
+<ul>
+<li>Per type a preview URL template with <code>{documentId}</code>, <code>{locale}</code>, <code>{status}</code>, <code>{secret}</code>,
+<code>{previewToken}</code>, <code>{uid}</code>, <code>{pluralApiId}</code>, <code>{singularApiId}</code> and any scalar field (<code>{slug}</code>); values
+are URL-encoded. The edit screen shows <strong>Open preview</strong>. ✓</li>
+<li>The preview secret (Settings, regenerable) is the <code>{secret}</code> front ends compare; it also keys the
+preview tokens. ✓</li>
+<li><code>{previewToken}</code>: a signed, short-lived token (lifetime setting, 60 min by default) that reads one
+document's draft: <code>findOne</code> of that document, or <code>find</code> restricted to it, with <code>status=draft</code>. Sent
+as <code>Authorization: Bearer</code>, <code>X-Preview-Token</code> or <code>?previewToken=</code>. Rotating the secret revokes every
+preview token. ✓</li>
+</ul>
+<h2 id="10-graphql">10. GraphQL</h2>
+<ul>
+<li><code>POST|GET /wp-json/headlessgo/v1/graphql</code> with <code>{query, variables, operationName}</code>. Root query fields:
+<code>articles</code> (camelCase plural id), <code>article(documentId:)</code>, single types (<code>homepage</code>), <code>articles_connection { nodes pageInfo { total page pageSize pageCount } }</code>. Arguments <code>filters</code> (operators without <code>$</code>), <code>sort</code>,
+<code>pagination</code>, <code>locale</code>, <code>status</code>. Selections drive populate; aliases and <code>__typename</code> work. ✓</li>
+<li>Mutations (POST only), with the REST permissions: <code>createArticle(data:, locale:, status:)</code>,
+<code>updateArticle(documentId:, data:, locale:, status:)</code>, <code>deleteArticle(documentId:, locale:)</code> →
+<code>{ documentId }</code>, <code>publishArticle</code> / <code>unpublishArticle(documentId:, locale:)</code>; single types
+<code>updateHomepage</code>, <code>deleteHomepage</code>, <code>publishHomepage</code>, <code>unpublishHomepage</code> (no documentId). Relations
+and media take ids, components and dynamic zones JSON. Validation errors come back as GraphQL errors. ✓</li>
+<li>Named fragments (<code>fragment Card on Article {…}</code>, nested, cycles refused), inline fragments with or
+without a type condition (<code>... on ComponentBlocksQuote</code>), <code>@include(if:)</code> / <code>@skip(if:)</code>, variables
+with default values, several operations selected by <code>operationName</code>. ✓</li>
+<li>Introspection: <code>__schema</code> (types, query and mutation types, the two directives) and <code>__type(name:)</code>
+over a schema generated from the content model (object types per type and component, a union per
+dynamic zone, <code>&lt;Type&gt;FiltersInput</code>, <code>&lt;Type&gt;Input</code>, scalar filter inputs, <code>PaginationArg</code>,
+<code>PublicationStatus</code>, <code>UploadFile</code>, <code>WpPost</code>, <code>WpUser</code>, scalars <code>JSON</code>, <code>Long</code>, <code>Date</code>, <code>DateTime</code>,
+<code>Time</code>), enough for GraphiQL-type clients. ✓</li>
+<li>Admin playground (HeadlessGo › GraphQL): a query and variables editor that runs as the logged-in
+administrator (<code>POST /wp-admin/headlessgo/graphql</code>, nonce-checked) or, with a pasted API token, against
+the public endpoint with that token's permissions; plus a reference of the root fields. ✓</li>
+<li><strong>Validation</strong>: a query is checked against the generated schema before it runs. An unknown field
+(also inside fragments and mutation results), an object field without a selection, a scalar with one
+(JSON scalars may have one), an unknown root argument or an unknown fragment type is a GraphQL
+validation error: HTTP 400, <code>{&quot;errors&quot;:[{&quot;message&quot;:&quot;Cannot query field \&quot;titel\&quot; on type \&quot;Article\&quot;. Did you mean \&quot;title\&quot;?&quot;,&quot;extensions&quot;:{&quot;code&quot;:&quot;GRAPHQL_VALIDATION_FAILED&quot;}}]}</code>, no <code>data</code>, nothing executed (a
+mutation in the same request does not run). Every problem found is listed.</li>
+<li><strong>Subscriptions</strong> over server-sent events (the &quot;distinct connections&quot; mode of the graphql-sse protocol)
+on the same endpoint: send the subscription as a <code>GET</code> (<code>?query=…</code>, works with <code>EventSource</code>) or a <code>POST</code>
+(JSON body, works with <code>fetch</code>) with the usual <code>Authorization: Bearer</code> header and read the stream
+(<code>Content-Type: text/event-stream</code>). Root fields per content type: <code>articleCreated</code>, <code>articleUpdated</code> and
+<code>articlePublished</code> (only with draft &amp; publish; the introspected <code>Subscription</code> type lists them), with
+arguments <code>documentId</code> (collection types) and <code>locale</code>; one root field per subscription. Each event runs
+the selection against the entry, so aliases, populate, fragments and variables work as in a query:
+<code>event: next</code> / <code>data: {&quot;data&quot;:{&quot;articleCreated&quot;:{…}}}</code>, <code>: ping</code> comments every 20 s, <code>event: complete</code>
+when the server ends the stream. Access follows REST: the type's <code>findOne</code> (single types: <code>find</code>)
+permission; a token that may read drafts gets Created and Updated with the <strong>draft</strong> values and
+Published with the published ones; every other caller gets Published only (for types without draft &amp;
+publish also Created and Updated, published values). Validation errors, 403 and a full server (500
+streams) answer as plain JSON before the stream starts. Limits: events are fanned out in the process
+that handled the write (a multi-instance setup needs the webhooks instead); unpublish and delete have
+no subscription (use the <code>entry.unpublish</code> / <code>entry.delete</code> webhooks); a stream is ended after 30 minutes
+(clients reconnect) and a subscriber that falls 256 events behind is dropped with an error event; no
+WebSocket transport (graphql-ws). The admin playground cannot show a stream and says so.</li>
+<li>Not supported: custom directives; component inputs are JSON. The endpoint can be switched off under Settings.</li>
+</ul>
+<h2 id="11-translations">11. Translations</h2>
+<ul>
+<li>The server-rendered screens go through the admin's i18n layer (<code>internal/i18n</code>, after rendering); the
+builder's field-type, relation and target labels are translated before they are sent as JSON; the
+strings the editor and builder scripts build in the browser are translated by <code>wpgo-l10n.js</code>
+(<code>admin/assets/headlessgo/*.js</code> is one of its sources). User content is marked <code>translate=&quot;no&quot;</code>.</li>
+<li>Turkish (<code>web/languages/wpgo-tr_TR.json</code>) covers HeadlessGo's admin screens. Other languages: the
+strings shared with WordPress core come from its language packs; HeadlessGo's own strings stay English.</li>
+</ul>
+<h2 id="12-not-built--limits">12. Not built / limits</h2>
+<ul>
+<li>Relation ordering beyond the stored order (the owning side's order; the inverse side lists owners by
+creation).</li>
+<li>History does not record link changes made by a schema conversion or by deleting a related document
+(the deleted document's links disappear from the owners' drafts without a version), and a link that
+moves from one inverse-side entry to another through the inverse field is recorded on the owning
+entry and the new target, not on the entry that lost it.</li>
+<li>Edit locks and the review flow belong to the admin: the REST and GraphQL APIs are not locked and
+cannot submit, approve or reject (they are refused when publishing an unapproved draft). The review
+capability is &quot;may edit others' posts&quot; and is not configurable per type; a reviewer may approve a draft
+they submitted themselves.</li>
+<li>GraphQL: custom directives; subscriptions are server-sent events from one process (see §10);
+component inputs are JSON.</li>
+<li>Translations of HeadlessGo's own admin strings exist only in Turkish.</li>
+</ul>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/goocommerce/" rel="prev"><small>← Previous</small>Goocommerce</a>
+          <a class="next" href="../../../docs/built-in-plugins/gocdn/" rel="next"><small>Next →</small>GoCDN</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-storage">1. Storage</a></li><li class="toc-h2"><a href="#2-headless-mode">2. Headless mode</a></li><li class="toc-h2"><a href="#3-content-type-builder">3. Content-Type Builder</a></li><li class="toc-h2"><a href="#4-content-manager">4. Content Manager</a></li><li class="toc-h2"><a href="#5-delivery-rest-api--wp-jsonheadlessgov1">5. Delivery REST API — /wp-json/headlessgo/v1</a></li><li class="toc-h2"><a href="#6-permissions-and-api-tokens">6. Permissions and API tokens</a></li><li class="toc-h2"><a href="#7-cors">7. CORS</a></li><li class="toc-h2"><a href="#8-webhooks">8. Webhooks</a></li><li class="toc-h2"><a href="#9-preview">9. Preview</a></li><li class="toc-h2"><a href="#10-graphql">10. GraphQL</a></li><li class="toc-h2"><a href="#11-translations">11. Translations</a></li><li class="toc-h2"><a href="#12-not-built--limits">12. Not built / limits</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

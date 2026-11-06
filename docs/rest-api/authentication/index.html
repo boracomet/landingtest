@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Authentication — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Cookie &#43; nonce for browser clients, Application Passwords for everything else, and what anonymous requests can do.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/" aria-current="page">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/rest-api/">REST API</a><span>/</span><span aria-current="page">Authentication</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Authentication</h1>
+        <p class="lead">Cookie &#43; nonce for browser clients, Application Passwords for everything else, and what anonymous requests can do.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Requests without credentials are <strong>anonymous</strong>: they can read public content (published posts,
+pages, media, terms, public user profiles, comments) and nothing else.</p>
+<h2 id="cookie-and-nonce-browser-clients">Cookie and nonce (browser clients)</h2>
+<p>A logged-in user's session cookie authenticates a request <strong>only together with a nonce</strong>, exactly
+as in WordPress, to stop cross-site requests from using the cookie:</p>
+<ul>
+<li>header <code>X-WP-Nonce: &lt;nonce&gt;</code>, or query <code>?_wpnonce=&lt;nonce&gt;</code>, with a nonce for the action
+<code>wp_rest</code>;</li>
+<li>a cookie without a nonce is treated as anonymous (<code>401</code> on writes);</li>
+<li>a wrong nonce returns <code>403 rest_cookie_invalid_nonce</code>.</li>
+</ul>
+<p>Admin pages expose the nonce in <code>wpApiSettings.nonce</code>, and every authenticated REST response
+returns a fresh one in the <code>X-WP-Nonce</code> response header. The editor's <code>wp.apiFetch</code> sends it
+automatically.</p>
+<h2 id="application-passwords-scripts-apps-ci">Application Passwords (scripts, apps, CI)</h2>
+<p>HTTP Basic authentication with the user's login and an Application Password — a 24-character
+password shown once, grouped in blocks of four; spaces are ignored:</p>
+<pre><code class="language-bash">curl -u 'editor:abcd efgh ijkl mnop qrst uvwx' \
+     -H 'Content-Type: application/json' \
+     -d '{&quot;title&quot;:&quot;From the API&quot;,&quot;status&quot;:&quot;draft&quot;}' \
+     https://blog.example.com/wp-json/wp/v2/posts
+</code></pre>
+<p>Each password is hashed like a login password, records its last use and address, and can be
+revoked on its own. Create and revoke them under Users › Profile › Application Passwords (the
+password is shown once), through the REST controller
+(<code>/wp/v2/users/me/application-passwords</code>, <code>POST</code> returns the plaintext password once), or let an
+app request one through the authorization flow at <code>/wp-admin/authorize-application</code> (the REST
+index advertises it). A wrong or missing password returns <code>401 incorrect_password</code>.</p>
+<p>Use Application Passwords only over TLS: Basic authentication sends the password with every
+request.</p>
+<h2 id="capabilities">Capabilities</h2>
+<p>Writes are checked against the user's capabilities the way WordPress does: <code>edit_posts</code> for
+posts and blocks, <code>edit_pages</code> for pages, <code>upload_files</code> for media, <code>manage_options</code> or
+<code>edit_theme_options</code> for settings and global styles, <code>manage_categories</code> for terms,
+<code>edit_theme_options</code> for sidebars and widgets, and the meta capabilities (<code>edit_post</code>,
+<code>delete_post</code>, …) for individual items. An authenticated user without the capability receives
+<code>403 rest_forbidden</code>; an anonymous one <code>401 rest_cannot_create</code>-style errors.</p>
+<h2 id="plugin-routes">Plugin routes</h2>
+<p>Plugin routes get the same authentication: the handler receives the user (or none) and decides
+(<a href="../../../docs/rest-api/plugin-routes/">plugin routes</a>).</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/rest-api/" rel="prev"><small>← Previous</small>REST API overview</a>
+          <a class="next" href="../../../docs/rest-api/endpoints/" rel="next"><small>Next →</small>Endpoints</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#cookie-and-nonce-browser-clients">Cookie and nonce (browser clients)</a></li><li class="toc-h2"><a href="#application-passwords-scripts-apps-ci">Application Passwords (scripts, apps, CI)</a></li><li class="toc-h2"><a href="#capabilities">Capabilities</a></li><li class="toc-h2"><a href="#plugin-routes">Plugin routes</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

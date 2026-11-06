@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your first theme — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Build a theme package from a directory, zip it, upload it and activate it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/" aria-current="page">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/themes/">Theme development</a><span>/</span><span aria-current="page">Your first theme</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Your first theme</h1>
+        <p class="lead">Build a theme package from a directory, zip it, upload it and activate it.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>A theme package is a directory with no code in it:</p>
+<pre><code class="language-text">starter/
+  theme.json          metadata, widget areas, menus, styles, customizer options
+  templates/          Go html/template files
+    index.html
+    single.html
+    page.html
+    header.html
+    footer.html
+  assets/
+    style.css
+    screenshot.png
+  readme.md           optional, shown on the marketplace page
+</code></pre>
+<h2 id="1-themejson">1. theme.json</h2>
+<p>The minimum:</p>
+<pre><code class="language-json">{
+  &quot;slug&quot;: &quot;starter&quot;,
+  &quot;name&quot;: &quot;Starter&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;A minimal starting point.&quot;,
+  &quot;author&quot;: &quot;Gopher Co.&quot;,
+  &quot;screenshot&quot;: &quot;screenshot.png&quot;,
+  &quot;menu_locations&quot;: [{&quot;id&quot;: &quot;primary&quot;, &quot;name&quot;: &quot;Primary Menu&quot;}],
+  &quot;widget_areas&quot;: [{&quot;id&quot;: &quot;sidebar-1&quot;, &quot;name&quot;: &quot;Sidebar&quot;, &quot;description&quot;: &quot;Appears on the right.&quot;}],
+  &quot;styles&quot;: [{&quot;handle&quot;: &quot;starter-style&quot;, &quot;src&quot;: &quot;assets/style.css&quot;}]
+}
+</code></pre>
+<p>Every field is described on the <a href="../../../docs/themes/theme-json/">theme.json</a> page.</p>
+<h2 id="2-templates">2. Templates</h2>
+<p><code>templates/index.html</code> is the only required template; the others fall back to it along the
+WordPress hierarchy (<a href="../../../docs/themes/templates/">templates</a>). A complete <code>index.html</code> for the blog:</p>
+<pre><code class="language-html">{{template &quot;header&quot; .}}
+&lt;main id=&quot;main&quot; class=&quot;site-main&quot;&gt;
+{{range .Posts}}
+  &lt;article id=&quot;post-{{.ID}}&quot; class=&quot;{{.Class}}&quot;&gt;
+    &lt;h2 class=&quot;entry-title&quot;&gt;&lt;a href=&quot;{{.Permalink}}&quot;&gt;{{.Title}}&lt;/a&gt;&lt;/h2&gt;
+    &lt;div class=&quot;entry-meta&quot;&gt;{{.EntryMeta}}&lt;/div&gt;
+    &lt;div class=&quot;entry-content&quot;&gt;{{if .ShowExcerpt}}{{.Excerpt}}{{else}}{{.Content}}{{end}}&lt;/div&gt;
+  &lt;/article&gt;
+{{else}}
+  &lt;p&gt;Nothing found.&lt;/p&gt;
+{{end}}
+{{.Pagination}}
+&lt;/main&gt;
+{{template &quot;footer&quot; .}}
+</code></pre>
+<p><code>header.html</code> and <code>footer.html</code> define the parts the pages include:</p>
+<pre><code class="language-html">{{define &quot;header&quot;}}&lt;!doctype html&gt;
+&lt;html lang=&quot;en-US&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;title&gt;{{.DocumentTitle}}&lt;/title&gt;
+{{.Head}}
+&lt;/head&gt;
+&lt;body class=&quot;{{.BodyClass}}&quot;&gt;
+{{.BodyOpen}}
+&lt;header class=&quot;site-header&quot;&gt;
+  {{.CustomLogo}}
+  &lt;p class=&quot;site-title&quot;&gt;&lt;a href=&quot;{{.HomeURL}}&quot; rel=&quot;home&quot;&gt;{{.SiteName}}&lt;/a&gt;&lt;/p&gt;
+  &lt;p class=&quot;site-description&quot;&gt;{{.Description}}&lt;/p&gt;
+  {{with index .Menus &quot;primary&quot;}}&lt;nav aria-label=&quot;Primary&quot;&gt;&lt;ul class=&quot;menu&quot;&gt;
+    {{range .}}&lt;li class=&quot;menu-item{{if .Current}} current-menu-item{{end}}&quot;&gt;&lt;a href=&quot;{{.URL}}&quot;&gt;{{.Label}}&lt;/a&gt;&lt;/li&gt;{{end}}
+  &lt;/ul&gt;&lt;/nav&gt;{{end}}
+&lt;/header&gt;
+{{end}}
+
+{{define &quot;footer&quot;}}
+{{with index .Areas &quot;sidebar-1&quot;}}&lt;aside class=&quot;widget-area&quot;&gt;{{.}}&lt;/aside&gt;{{end}}
+&lt;footer class=&quot;site-footer&quot;&gt;{{.PrivacyLink}}&lt;/footer&gt;
+{{.Footer}}{{.AdminBar}}
+&lt;/body&gt;
+&lt;/html&gt;
+{{end}}
+</code></pre>
+<p><code>{{.Head}}</code> prints <code>wp_head()</code> (feeds, block styles, your enqueued styles, the Customizer's CSS,
+plugin assets) and <code>{{.Footer}}</code> prints <code>wp_footer()</code>. Leave them in: without them scripts, the
+admin bar and plugins do not work.</p>
+<h2 id="3-assets">3. Assets</h2>
+<p>Put <code>style.css</code>, scripts, fonts and images under <code>assets/</code> and reference them from <code>theme.json</code>
+(<code>styles</code>, <code>scripts</code>, <code>preload_fonts</code>, <code>editor_styles</code>). <code>screenshot.png</code> (1200×900) is the
+Themes screen thumbnail.</p>
+<h2 id="4-zip-it">4. Zip it</h2>
+<pre><code class="language-bash">cd starter
+zip -r ../starter.zip theme.json templates assets readme.md
+</code></pre>
+<p>The files sit at the zip root (a single top-level folder is also accepted and stripped). Limits:
+32 MiB per package, 4 MiB per file, and only these extensions: <code>.json .html .css .js .map .svg .png .jpg .jpeg .gif .webp .avif .ico .woff .woff2 .ttf .otf .md .txt</code>.</p>
+<h2 id="5-upload-and-activate">5. Upload and activate</h2>
+<p>Appearance › Themes › <strong>Add Theme</strong> › <strong>Upload Theme</strong>, choose <code>starter.zip</code>. The package is
+validated (<code>theme.json</code>, template syntax, file types), unpacked to <code>&lt;data&gt;/themes/starter/</code> and
+listed on the Themes screen. <strong>Live Preview</strong> shows it without activating; <strong>Activate</strong> switches
+the site. A package whose slug matches a bundled theme is rejected.</p>
+<h2 id="6-iterate">6. Iterate</h2>
+<p>Either upload again, or edit in place with Appearance › Theme File Editor — the overlay directory
+is the same <code>&lt;data&gt;/themes/starter/</code> the installer wrote to (<a href="../../../docs/themes/file-editor/">file editor</a>).
+During development point <code>WPGO_THEMES_DIR</code> at your working copy: the server loads every
+<code>&lt;dir&gt;/&lt;slug&gt;/theme.json</code> at start-up.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/themes/" rel="prev"><small>← Previous</small>Themes overview</a>
+          <a class="next" href="../../../docs/themes/theme-json/" rel="next"><small>Next →</small>theme.json</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-themejson">1. theme.json</a></li><li class="toc-h2"><a href="#2-templates">2. Templates</a></li><li class="toc-h2"><a href="#3-assets">3. Assets</a></li><li class="toc-h2"><a href="#4-zip-it">4. Zip it</a></li><li class="toc-h2"><a href="#5-upload-and-activate">5. Upload and activate</a></li><li class="toc-h2"><a href="#6-iterate">6. Iterate</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maintenance-Go — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Maintenance and coming-soon mode (clone of the Maintenance plugin by WebFactory).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/" aria-current="page">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">Maintenance-Go</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Maintenance-Go</h1>
+        <p class="lead">Maintenance and coming-soon mode (clone of the Maintenance plugin by WebFactory).</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Maintenance-Go is a native (compiled-in) Pursae plugin that clones <strong>Maintenance</strong> by WebFactory
+(wordpress.org/plugins/maintenance, v4.32, 2026-07-13). It also includes the parts of <strong>Maintenance PRO</strong>
+that make sense for a single-site Go install. Like Classic Editor, WPGo Cache and Golementor, it is
+<strong>off on a fresh install</strong>, and while it is off nothing of it runs or shows anywhere.</p>
+<p>Sources: the plugin's wordpress.org page, readme and changelog, and the v4.32 source (<code>maintenance.php</code>
+with class <code>MTNC</code>, and <code>frontend/index.php</code>); the PRO feature list on wpmaintenancemode.com. SeedProd
+Coming Soon was consulted only where Maintenance lacks a basic piece: a separate Coming Soon / 200
+mode, and a countdown that auto-disables.</p>
+<p>Legend: <strong>✓</strong> implemented · <strong>≈</strong> implemented differently (reason given) · <strong>✗</strong> left out (reason given).</p>
+<h2 id="1-how-the-original-works-summary-of-the-research">1. How the original works (summary of the research)</h2>
+<ul>
+<li><strong>Storage.</strong> All options live in one option, <code>mtnc-options</code>. The admin page is a top-level
+<strong>Maintenance</strong> menu (<code>manage_options</code>) with these tabs: Themes · Design · SEO · Access · Advanced · PRO.</li>
+<li><strong>The gate.</strong> It is a <code>template_include</code> filter. It never touches cron, ajax, WP-CLI or <code>is_admin()</code>
+requests, nor URLs containing <code>/wp-login.php</code>, <code>/wp-admin/</code>, <code>/async-upload.php</code>, <code>/upgrade.php</code> or
+<code>/xmlrpc.php</code>.
+<ul>
+<li>REST, feeds, robots.txt and sitemaps exit before <code>template_include</code>, so the free plugin never
+gates them. PRO has an &quot;Enable WordPress Rest API&quot; switch.</li>
+</ul>
+</li>
+<li><strong>Who sees the site, checked in this order:</strong>
+<ol>
+<li>Search engine crawlers (PRO <code>excludese</code>, a list of 24 user agents).</li>
+<li>Any logged-in user (<code>show_logged_in</code>, on by default; there is no role filter).</li>
+<li>An exact <code>REMOTE_ADDR</code> match in the IP whitelist (PRO).</li>
+<li>URL rules (<code>whitelist</code> / <code>blacklist</code>). The path is lowercased, <code>slashit()</code>-normalized, and must
+match exactly.</li>
+<li>The secret link <code>home/?&lt;secret&gt;</code>, which sets a 24-hour cookie (PRO).</li>
+<li>The direct-access password, also stored in a cookie (PRO).</li>
+</ol>
+</li>
+<li><strong>Status code.</strong> 503 with <code>Retry-After: 3600</code> when <code>blockse</code> is on. In 4.32 that toggle is not in
+the save whitelist, so the free plugin really serves <strong>200</strong>. <code>nocache_headers()</code> is always sent.</li>
+<li><strong><code>?maintenance-preview</code></strong> shows the page to anyone, even while the mode is off.</li>
+<li><strong>Admin bar.</strong> A &quot;Maintenance&quot; node with a status dot, an ON/OFF toggle, Preview and Settings.</li>
+<li><strong>Default page.</strong> Full-screen background image with an overlay, a centered headline, text and footer.
+A padlock button in the lower right slides in a login form. There is no <code>wp_head()</code>.</li>
+<li><strong>PRO</strong> adds: 200+ themes and a drag-and-drop builder with these modules: countdown, form (e-mail
+collection), social icons, progress bar, map, video and custom HTML. It also adds SEO fields
+(meta description, favicon, og image, tracking code), IP whitelist, secret link, site password,
+no-cache headers, toolbar on/off, force SSL, REST toggle, customizing the core update page and
+white-label.</li>
+</ul>
+<h2 id="2-inventory-original-vs-maintenance-go">2. Inventory: original vs Maintenance-Go</h2>
+<h3 id="switches-and-status">Switches and status</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Original</th>
+<th>Maintenance-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plugin on/off</td>
+<td>Plugins screen</td>
+<td>✓ Plugins screen, native row &quot;Maintenance-Go&quot; (also on Add Plugins › Built-in). Off by default.</td>
+</tr>
+<tr>
+<td>Maintenance mode on/off</td>
+<td>Header switch <code>status</code></td>
+<td>✓ General › Status. The state badge appears on every tab and a red &quot;On&quot; bubble on the menu.</td>
+</tr>
+<tr>
+<td>Admin bar indicator</td>
+<td>Status dot plus ON/OFF toggle, Preview, Settings (admins only)</td>
+<td>✓ The same, in wp-admin and on the front end. Nonce-checked <strong>and</strong> capability-checked (the original checks only the nonce).</td>
+</tr>
+<tr>
+<td>Hide the toolbar menu</td>
+<td>PRO <code>disable_toolbar_menu</code></td>
+<td>✓ Advanced › Toolbar Menu</td>
+</tr>
+<tr>
+<td>Deactivating opens the site</td>
+<td>yes</td>
+<td>✓ The settings are kept for the next activation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-and-search-engines">Response and search engines</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Original</th>
+<th>Maintenance-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP 503 + <code>Retry-After</code></td>
+<td>Toggle (broken in 4.32), 3600 s</td>
+<td>✓ &quot;Maintenance&quot; mode (default). <code>Retry-After</code> is the configured hours (SEO tab, default 1), or the countdown's remaining seconds while one runs.</td>
+</tr>
+<tr>
+<td>200 &quot;Coming Soon&quot; mode</td>
+<td>— (SeedProd)</td>
+<td>✓ &quot;Coming Soon&quot; mode</td>
+</tr>
+<tr>
+<td>No-cache headers</td>
+<td>PRO, default on</td>
+<td>✓ Always sent: <code>Cache-Control: no-store…</code>, <code>Expires</code>, <code>X-LiteSpeed-Cache-Control: no-cache</code></td>
+</tr>
+<tr>
+<td>noindex</td>
+<td>none</td>
+<td>✓ <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;</code> plus an <code>X-Robots-Tag</code> header (SEO tab, default on)</td>
+</tr>
+<tr>
+<td>Show the normal site to crawlers</td>
+<td>PRO <code>excludese</code></td>
+<td>✓ The original's UA list plus DuckDuckBot, YandexBot, Baiduspider and Applebot</td>
+</tr>
+<tr>
+<td>SEO title with <code>%sitetitle%</code> / <code>%sitetagline%</code></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Meta description, favicon, og:image</td>
+<td>PRO</td>
+<td>✓ The images are picked from the Media Library modal</td>
+</tr>
+<tr>
+<td>Target keyword / SEO analyzer</td>
+<td>PRO</td>
+<td>✗ Editorial tooling, not part of a maintenance page</td>
+</tr>
+<tr>
+<td>Google Analytics</td>
+<td>Tracking ID (old analytics.js)</td>
+<td>≈ GA4 measurement ID (<code>G-…</code>) with gtag.js. The page's CSP allows googletagmanager and google-analytics only while an ID is set.</td>
+</tr>
+<tr>
+<td>Tracking pixel / third-party code</td>
+<td>PRO</td>
+<td>≈ The Custom HTML module. External scripts stay blocked by the page's CSP.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="access-who-sees-the-normal-site">Access (who sees the normal site)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Original</th>
+<th>Maintenance-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wp-admin and wp-login always reachable</td>
+<td>✓</td>
+<td>✓ <code>/wp-admin*</code>, <code>/wp-login*</code> (including <code>.php</code>), <code>/wp-content/</code>, <code>/wp-includes/</code>, <code>/wp-cron</code>, <code>/xmlrpc</code>, <code>robots.txt</code> and <code>favicon.ico</code> are never gated</td>
+</tr>
+<tr>
+<td>Logged-in users</td>
+<td><code>show_logged_in</code>, all roles</td>
+<td>✓ Same default (every role), plus a role filter (PRO's role denial). Administrators always pass.</td>
+</tr>
+<tr>
+<td>IP whitelist</td>
+<td>PRO, exact match</td>
+<td>✓ IPs <strong>and CIDR ranges</strong>, <code>#</code> comments. Uses the connection's address, like the rest of Pursae (no <code>X-Forwarded-For</code> trust).</td>
+</tr>
+<tr>
+<td>URL Based Rules</td>
+<td>whitelist / blacklist, exact path</td>
+<td>✓ Same matching (lowercased, <code>slashit()</code>, full URLs reduced to their path), plus a trailing <code>*</code> for prefixes</td>
+</tr>
+<tr>
+<td>Secret access link <code>home/?&lt;key&gt;</code></td>
+<td>PRO, 24 h cookie</td>
+<td>✓ The lifetime is configurable. The cookie is an HMAC bound to the key, so changing the key revokes old links.</td>
+</tr>
+<tr>
+<td>Direct-access password</td>
+<td>PRO</td>
+<td>✓ A password button and popup with the original's texts; the cookie is an HMAC</td>
+</tr>
+<tr>
+<td>Login form on the page</td>
+<td>✓ Slide-in panel, posts to <code>wp_signon</code></td>
+<td>✓ A padlock button opens a panel that posts to <code>/wp-login</code> with <code>redirect_to</code> set to the current URL. The tooltip is configurable.</td>
+</tr>
+<tr>
+<td>Custom login URL</td>
+<td>PRO</td>
+<td>✗ Pursae has no login-URL hiding</td>
+</tr>
+<tr>
+<td>Password-protect the maintenance page itself</td>
+<td>PRO</td>
+<td>✗ Rarely useful; the site password covers the need</td>
+</tr>
+<tr>
+<td>REST API</td>
+<td>Free: never gated; PRO: toggle</td>
+<td>✓ Anonymous REST requests get a JSON 503 (Advanced, default on). Logged-in users keep REST, which the editor needs.</td>
+</tr>
+<tr>
+<td>Feeds and sitemaps</td>
+<td>never gated</td>
+<td>✓ Gated by default (Advanced › Feeds &amp; Sitemaps) so content doesn't leak while the site is closed</td>
+</tr>
+<tr>
+<td><code>?maintenance-preview</code></td>
+<td>Anyone, even while off</td>
+<td>✓ Same. <code>&amp;theme=</code> previews a theme without activating it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page-content-and-design">Page content and design</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Original</th>
+<th>Maintenance-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headline, text (HTML), footer</td>
+<td>Header, Content and Footer modules</td>
+<td>✓ The original's default texts; <code>%sitetitle%</code>, <code>%sitetagline%</code> and <code>%year%</code> are replaced</td>
+</tr>
+<tr>
+<td>Logo with width</td>
+<td>Logo module</td>
+<td>✓ Picked from the Media Library modal (<code>enqueueMedia</code>)</td>
+</tr>
+<tr>
+<td>Themes</td>
+<td>1 free, 200+ PRO</td>
+<td>≈ <strong>7 built-in themes</strong> (Default, Minimal, Card, Split, Neon, Sunrise, Editorial), each with Activate and Preview. As in the original, activating one copies its design values into Design.</td>
+</tr>
+<tr>
+<td>Background: image, color</td>
+<td>✓ (also YouTube video)</td>
+<td>✓ Image (from Media, with size and position), solid color, or a two-color gradient. ✗ No video, because YouTube needs third-party frames, which the strict CSP forbids.</td>
+</tr>
+<tr>
+<td>Background blur</td>
+<td>✓</td>
+<td>✓ 0–40 px</td>
+</tr>
+<tr>
+<td>Overlay</td>
+<td><code>content_overlay_color</code></td>
+<td>✓ A dark overlay (0–90 %), plus an optional frosted &quot;content box&quot;</td>
+</tr>
+<tr>
+<td>Content position and width</td>
+<td>left / right / center / middle / bottom; width</td>
+<td>✓ middle / left / right / top / bottom; width</td>
+</tr>
+<tr>
+<td>Font family and size, colors</td>
+<td>Google fonts through Bunny Fonts</td>
+<td>≈ 7 system font stacks. The page loads nothing from other servers, which is also the GDPR-friendly choice. Headline, text, link and accent colors.</td>
+</tr>
+<tr>
+<td>Custom CSS</td>
+<td>✓</td>
+<td>✓ Cannot close the <code>&lt;style&gt;</code> element</td>
+</tr>
+<tr>
+<td>Preloader</td>
+<td>✓</td>
+<td>✗ The page is a small self-contained document, so a preloader would only slow it down</td>
+</tr>
+<tr>
+<td>Multilingual (Weglot upsell)</td>
+<td>upsell</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modules-pro-in-the-original">Modules (PRO in the original)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Maintenance-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Countdown to a date</td>
+<td>✓ Uses the site time zone. Days, hours, minutes and seconds tick in the browser; the label is configurable.</td>
+</tr>
+<tr>
+<td>Auto-disable when the countdown ends</td>
+<td>✓ (SeedProd-style). The first request after the end switches the mode off and purges the cache; open pages reload. Without auto-disable, a warning notice explains that the mode stays on.</td>
+</tr>
+<tr>
+<td>Progress bar</td>
+<td>✓ Percent and label</td>
+</tr>
+<tr>
+<td>Subscribe form</td>
+<td>✓ E-mails go to the plugin's own <code>maintenance_subscribers</code> table, created on activation (no core migration). Nonce, honeypot, address validation, de-duplication. Optional e-mail to the admin for each new subscriber, through the core mail queue.</td>
+</tr>
+<tr>
+<td>GDPR / privacy note</td>
+<td>✓ Optional required-consent checkbox with your text and a link to the published Privacy Policy page. Only the e-mail, the time and the consent are stored, with no IP or user agent.</td>
+</tr>
+<tr>
+<td>Subscribers list</td>
+<td>✓ Subscribers tab: list, bulk delete, CSV export (protected against formula injection)</td>
+</tr>
+<tr>
+<td>Mailing-list integrations (Mailchimp, Zapier…)</td>
+<td>✗ Needs third-party accounts and API keys; the CSV export covers the handover</td>
+</tr>
+<tr>
+<td>Social icons</td>
+<td>✓ Facebook, X, Instagram, LinkedIn, YouTube, Pinterest, WhatsApp, Reddit, Twitch, Spotify and e-mail. They use dashicons served from <code>/wp-includes</code>; <code>javascript:</code> and other non-http(s) URLs are dropped.</td>
+</tr>
+<tr>
+<td>Custom HTML</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Map, video, 2- and 3-column content, divider</td>
+<td>✗ Map and video need third-party frames; columns and divider are page-builder layout. Golementor exists for that.</td>
+</tr>
+<tr>
+<td>Drag-and-drop module ordering</td>
+<td>✗ The modules have a fixed order (logo, headline, text, countdown, progress, subscribe, social, custom HTML)</td>
+</tr>
+<tr>
+<td>reCAPTCHA</td>
+<td>✗ Third party; a honeypot and a nonce are used instead</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced">Advanced</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Original</th>
+<th>Maintenance-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Export / Import settings</td>
+<td>✓ Free</td>
+<td>✓ A JSON file. The site password is never exported. Importing keeps the current on/off state and password, and every value is re-sanitized.</td>
+</tr>
+<tr>
+<td>Reset settings</td>
+<td>✓</td>
+<td>✓ Keeps the on/off state</td>
+</tr>
+<tr>
+<td>Force SSL on the page</td>
+<td>PRO</td>
+<td>✗ TLS is the job of the server or proxy in front of Pursae</td>
+</tr>
+<tr>
+<td>Customize the built-in WP update page</td>
+<td>PRO</td>
+<td>✗ Pursae has no <code>.maintenance</code> update page</td>
+</tr>
+<tr>
+<td>White-label, license dashboard</td>
+<td>PRO</td>
+<td>✗ No licenses in Pursae</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-how-it-is-built">3. How it is built</h2>
+<ul>
+<li><strong>Files:</strong>
+<ul>
+<li><code>internal/server/maintenance.go</code>: settings, gate, bypass rules, headers</li>
+<li><code>maintenance_page.go</code>: themes, fonts and render</li>
+<li><code>maintenance/page.html</code>: the embedded public page</li>
+<li><code>maintenance_admin.go</code>: screen, actions, menu, toolbar, import/export</li>
+<li><code>maintenance_subscribers.go</code></li>
+<li><code>web/admin/templates/pages/maintenance.html</code></li>
+<li>Tests: <code>maintenance_test.go</code></li>
+</ul>
+</li>
+<li><strong>Settings.</strong> All settings sit in one option, <code>maintenance_settings</code>, read over the defaults in code,
+so <code>settings.Defaults</code> is untouched. The plugin switch is <code>native_maintenance</code>.</li>
+<li><strong>Where the gate runs.</strong> <code>Server.Handler</code> calls <code>maintenanceServe</code> <strong>before the page cache</strong>. So:
+<ul>
+<li>a closed site never serves a cached page to a visitor;</li>
+<li>the maintenance page is written by the gate with no-store headers and never enters the cache;</li>
+<li>bypassing users go on to the normal cache and app as usual.</li>
+</ul>
+</li>
+<li><strong>Cache purges.</strong> These all call <code>purgeAll</code>: saving any tab, the toolbar toggle, activating or
+deactivating the plugin, import, reset, and the countdown's auto-disable.</li>
+<li><strong>The gate runs before the router</strong>, so it resolves the login cookie itself (<code>maintUser</code>). Its
+security headers are the front end's, with Google Analytics added only while an ID is set.</li>
+<li><strong>Hooks into shared files</strong>, one or two lines each:
+<ul>
+<li><code>server.go</code> (Handler)</li>
+<li><code>plugins.go</code> (row, activate/deactivate case, reserved slug, icon)</li>
+<li><code>admin.go</code> (menu, toolbar node)</li>
+<li><code>site_head.go</code> (front-end toolbar node)</li>
+<li><code>wpgocache.go</code> (<code>admin?page=maintenance</code> dispatch)</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/gooike/" rel="prev"><small>← Previous</small>Gooike</a>
+          <a class="next" href="../../../docs/built-in-plugins/wpgo-mail-smtp/" rel="next"><small>Next →</small>WPGO Mail SMTP</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-how-the-original-works-summary-of-the-research">1. How the original works (summary of the research)</a></li><li class="toc-h2"><a href="#2-inventory-original-vs-maintenance-go">2. Inventory: original vs Maintenance-Go</a></li><li class="toc-h3"><a href="#switches-and-status">Switches and status</a></li><li class="toc-h3"><a href="#response-and-search-engines">Response and search engines</a></li><li class="toc-h3"><a href="#access-who-sees-the-normal-site">Access (who sees the normal site)</a></li><li class="toc-h3"><a href="#page-content-and-design">Page content and design</a></li><li class="toc-h3"><a href="#modules-pro-in-the-original">Modules (PRO in the original)</a></li><li class="toc-h3"><a href="#advanced">Advanced</a></li><li class="toc-h2"><a href="#3-how-it-is-built">3. How it is built</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

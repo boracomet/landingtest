@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WPGO Mail SMTP — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Outgoing mail: mailers, smart routing, email log, reports and alerts (WP Mail SMTP).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/" aria-current="page">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">WPGO Mail SMTP</span>
+      </nav>
+      <header class="docs-head">
+        <h1>WPGO Mail SMTP</h1>
+        <p class="lead">Outgoing mail: mailers, smart routing, email log, reports and alerts (WP Mail SMTP).</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>WPGO Mail SMTP is Pursae's native (compiled-in) clone of <strong>WP Mail SMTP</strong> by WPForms /
+Awesome Motive (Lite and Pro), the most installed mail plugin for WordPress. Sources: the
+wordpress.org listing (<code>wordpress.org/plugins/wp-mail-smtp</code>), the wpmailsmtp.com documentation,
+and the plugin source (<code>awesomemotive/wp-mail-smtp</code>, <code>src/Options.php</code> for option keys and the
+<code>WPMS_*</code> constants).</p>
+<p>Like Classic Editor, WPGo Cache and Golementor it ships inside the binary, is listed on
+<strong>Plugins › Installed Plugins</strong> and <strong>Add Plugin</strong>, starts <strong>inactive</strong> and adds nothing (menu,
+routes, notices, dashboard widget, mail behaviour) while inactive. While it is inactive,
+<code>wp_mail()</code> keeps working exactly as before: the <code>WPGO_SMTP_*</code> environment variables, or <code>.eml</code>
+files in <code>WPGO_MAIL_DIR</code> on development sites.</p>
+<p>Legend: ✅ implemented · ◐ implemented with a Pursae specific difference · — left out (reason given).</p>
+<h2 id="1-how-it-plugs-into-wordpress-go">1. How it plugs into Pursae</h2>
+<table>
+<thead>
+<tr>
+<th>WP Mail SMTP</th>
+<th>Pursae</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Replaces <code>wp_mail()</code>'s PHPMailer instance (<code>phpmailer_init</code>)</td>
+<td><code>Server.mailer()</code> attaches a <code>mail.Transport</code> to the <code>mail.Mailer</code> while the plugin is active. Every sender goes through it: the queued <code>wp_mail</code> job (core notifications) and direct <code>Send</code> calls (Golementor form e-mails).</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Plugin data in options <code>wp_mail_smtp</code>, <code>wp_mail_smtp_*</code></td>
+<td>One JSON option <code>wp_mail_smtp</code> (same group/key names: <code>mail.from_email</code>, <code>smtp.host</code>, <code>mailgun.api_key</code>, …), activation switch <code>native_wp_mail_smtp</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Email log in <code>{prefix}wpmailsmtp_emails_log</code>, debug events in <code>{prefix}wpmailsmtp_debug_events</code></td>
+<td>Tables <code>wpmailsmtp_emails_log</code>, <code>wpmailsmtp_debug_events</code> (migration <code>0011_wp_mail_smtp.sql</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Secrets stored in plain text in <code>wp_options</code> (or a constant)</td>
+<td>Secrets (SMTP password, API keys, client secrets, OAuth tokens, Twilio token) are AES-256-GCM encrypted with a key derived from the server secret (<code>WPGO_SECRET</code> / <code>auth_secret</code>), stored as <code>enc:v1:…</code>, never printed back into a form (the field shows a &quot;saved&quot; placeholder and a <em>Remove</em> checkbox; leaving it blank keeps the saved value)</td>
+<td>◐ stronger than upstream</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-setup-wizard-adminpagewp-mail-smtp-setup-wizard">2. Setup Wizard (<code>admin?page=wp-mail-smtp-setup-wizard</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Welcome (&quot;Let's get started&quot;)</td>
+<td>Opens automatically on first activation; &quot;Go back to the Dashboard&quot; exits</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Import from other SMTP plugins (Easy WP SMTP, FluentSMTP, Post SMTP, …)</td>
+<td>— no such plugins exist on Pursae</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Choose your SMTP mailer (logo grid, recommended mailers first)</td>
+<td>Same grid, every mailer of §4</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Configure mailer settings (+ From Email / From Name)</td>
+<td>Same fields as the settings screen, saved through the same code</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Plugin features to enable (Email Log, Email Reports/weekly summary, Alerts, Improved deliverability, Smart routing…)</td>
+<td>Checkboxes for Email Log, Complete Email Reports (log content), Weekly Email Summary, Instant Email Alert (to the admin e-mail), Detailed Error Reports (debug events)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Help improve (usage tracking), license key</td>
+<td>— no telemetry, no licensing (everything is included)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Check configuration: sends a test e-mail, shows success or the error with fix steps</td>
+<td>Sends the test through the chosen mailer, shows the result and the debug output</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Domain checker (SPF/DKIM/DMARC)</td>
+<td>DNS lookups of the From domain after a successful test: SPF (<code>TXT v=spf1</code>), DMARC (<code>_dmarc</code> TXT), MX; DKIM is shown as &quot;check with your mailer&quot; (it needs the mailer's selector)</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>Recommended settings from a hosted service</td>
+<td>— no phone-home</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-settings--general-adminpagewp-mail-smtp">3. Settings › General (<code>admin?page=wp-mail-smtp</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Behaviour</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>From Email + <strong>Force From Email</strong></td>
+<td>Address used for every message. Without <em>Force</em>, a message that sets its own From (e.g. a Golementor form's &quot;From Email&quot;) keeps it; with <em>Force</em> it is always replaced</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>From Name + <strong>Force From Name</strong></td>
+<td>Same for the display name (default: site title)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Return Path (&quot;Set the return-path to match the From Email&quot;)</td>
+<td>The SMTP envelope sender (bounces) is the From Email; when a message keeps its own From (not forced) the envelope follows it only with Return Path on</td>
+<td>◐ (no PHP <code>mail()</code>)</td>
+</tr>
+<tr>
+<td>Mailer</td>
+<td>Default (none), Other SMTP and every mailer below. Pro-only mailers are included (no license)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Other SMTP: SMTP Host, Encryption (None / SSL / TLS), SMTP Port (25 / 465 / 587 suggested per encryption), Auto TLS, Authentication, SMTP Username, SMTP Password</td>
+<td>Native <code>net/smtp</code> client; SSL = implicit TLS, TLS = STARTTLS required, None + Auto TLS = STARTTLS when the server offers it; AUTH PLAIN (LOGIN fallback when the server only advertises LOGIN)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Default (none) = PHP <code>mail()</code></td>
+<td>Pursae's built-in transport: <code>WPGO_SMTP_*</code> env SMTP, or <code>.eml</code> files</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>Backup Connection (Pro)</td>
+<td>Pick one Additional Connection; when the primary connection fails the message is retried once through it; the log records which connection delivered it</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Rate limiting (Pro, per minute/hour/day/week/month)</td>
+<td>Under Misc. Sends are counted in <code>wpmailsmtp_rate</code>; over a limit the message is re-queued as a <code>wp_mail</code> job for when the window allows it (a form's own From is not kept on the re-queued copy)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Optimized email sending (Pro, background queue)</td>
+<td>Always on in Pursae: core e-mail is already sent by the job runner</td>
+<td>◐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-mailers">4. Mailers</h2>
+<table>
+<thead>
+<tr>
+<th>Mailer (slug)</th>
+<th>Fields</th>
+<th>Transport</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default (<code>mail</code>)</td>
+<td>—</td>
+<td>built-in</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Other SMTP (<code>smtp</code>)</td>
+<td>host, encryption, port, autotls, auth, user, pass</td>
+<td>SMTP</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SendLayer (<code>sendlayer</code>)</td>
+<td>API Key</td>
+<td><code>POST console.sendlayer.com/api/v1/email</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SMTP.com (<code>smtpcom</code>)</td>
+<td>API Key, Sender Name (channel)</td>
+<td><code>POST api.smtp.com/v4/messages</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Brevo (<code>sendinblue</code>)</td>
+<td>API Key, Sending Domain</td>
+<td><code>POST api.brevo.com/v3/smtp/email</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Mailgun (<code>mailgun</code>)</td>
+<td>Private API Key, Domain Name, Region US/EU</td>
+<td><code>POST api[.eu].mailgun.net/v3/{domain}/messages</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SendGrid (<code>sendgrid</code>)</td>
+<td>API Key, Sending Domain</td>
+<td><code>POST api.sendgrid.com/v3/mail/send</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Postmark (<code>postmark</code>)</td>
+<td>Server API Token, Message Stream ID</td>
+<td><code>POST api.postmarkapp.com/email</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SparkPost (<code>sparkpost</code>)</td>
+<td>API Key, Region US/EU</td>
+<td><code>POST api[.eu].sparkpost.com/api/v1/transmissions</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Amazon SES (<code>amazonses</code>, Pro)</td>
+<td>Access Key ID, Secret Access Key, Region</td>
+<td>SES v2 <code>outbound-emails</code> (raw MIME), AWS Signature V4</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Microsoft 365 / Outlook (<code>outlook</code>, Pro)</td>
+<td>Application ID, Client Secret, Redirect URI</td>
+<td>OAuth 2 authorization code flow (own Azure app), Microsoft Graph <code>sendMail</code> (MIME)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Google / Gmail (<code>gmail</code>)</td>
+<td>Client ID, Client Secret, Authorized redirect URI</td>
+<td>OAuth 2 (own Google Cloud app), Gmail API <code>users.messages.send</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Zoho Mail (<code>zoho</code>, Pro)</td>
+<td>Region (com/eu/in/com.au/jp/com.cn), Client ID, Client Secret, Redirect URI</td>
+<td>OAuth 2, Zoho Mail <code>accounts/{id}/messages</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Elastic Email (<code>elasticemail</code>)</td>
+<td>API Key</td>
+<td><code>POST api.elasticemail.com/v4/emails/transactional</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Mailjet (<code>mailjet</code>)</td>
+<td>API Key, Secret Key</td>
+<td><code>POST api.mailjet.com/v3.1/send</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>MailerSend (<code>mailersend</code>)</td>
+<td>API Key, Professional plan</td>
+<td><code>POST api.mailersend.com/v1/email</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Resend (<code>resend</code>)</td>
+<td>API Key</td>
+<td><code>POST api.resend.com/emails</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SMTP2GO (<code>smtp2go</code>)</td>
+<td>API Key</td>
+<td><code>POST api.smtp2go.com/v3/email/send</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Mandrill (<code>mandrill</code>)</td>
+<td>API Key</td>
+<td><code>POST mandrillapp.com/api/1.0/messages/send.json</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Gmail / Microsoft <strong>One-Click Setup</strong> (Pro)</td>
+<td>— needs WPForms' hosted OAuth relay and a license; the &quot;own app&quot; flow above is supported instead</td>
+<td>—</td>
+<td></td>
+</tr>
+<tr>
+<td>Pepipost (deprecated upstream)</td>
+<td>— removed upstream</td>
+<td>—</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>OAuth: the settings screen shows the redirect URI to register
+(<code>{site}/wp-admin/admin?page=wp-mail-smtp&amp;tab=auth</code>), a <em>Connect</em> button after the client
+credentials are saved, the connected account and <em>Remove OAuth Connection</em>. Refresh tokens and
+access tokens are stored encrypted; access tokens are refreshed automatically.</p>
+<h2 id="5-additional-connections--smart-routing-pro">5. Additional Connections &amp; Smart Routing (Pro)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Additional Connections: any number of extra mailer configurations, each with a name, From Email/Name and mailer settings; <em>Send test</em> per connection</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Smart Routing: ordered routes &quot;Send with connection X if&quot; condition groups (AND inside a group, OR between groups); properties Subject, Message, From Email, From Name, To, Reply-To, Initiator; operators is / is not / contains / does not contain / starts with / ends with / regex / does not match regex. First matching route wins, else the primary connection</td>
+<td>✅</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-email-log-pro-adminpagewp-mail-smtp-logs">6. Email Log (Pro) (<code>admin?page=wp-mail-smtp-logs</code>)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settings › Email Log: Enable Log, Log Email Content, Save Attachments, Open/Click Email Tracking, Log Retention Period (forever, 1 day … 1 year)</td>
+<td>Enable, content, retention ✅; attachments — (Pursae messages carry none); open/click tracking — (needs a public tracking endpoint and HTML rewriting; not done)</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>List table: Subject, From, To, Status (Sent/Failed/Waiting), Source, Date; status views (All/Sent/Failed), search (subject, recipient, content), date filter, pagination, bulk delete, &quot;Delete All Logs&quot;</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Single email view: headers, recipients, mailer, connection, attempts, error, plain/HTML content (HTML in a sandboxed iframe), <em>Resend</em>, <em>Delete</em>, Print</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Resend (single + bulk), optionally to different recipients (&quot;forward&quot;)</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Export (Tools › Export): CSV / EML (zip) / XLSX, date range, field selection</td>
+<td>CSV and EML (zip) ✅; XLSX —</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>Retention: old entries removed by the daily job</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Repeated attempts of a queued message update the same entry (attempt counter) instead of adding new ones; the job runner still retries failed core e-mail (1, 4, 9, 16 minutes)</td>
+<td>◐ Pursae specific</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-email-reports-pro-adminpagewp-mail-smtp-reports">7. Email Reports (Pro) (<code>admin?page=wp-mail-smtp-reports</code>)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chart of sent/failed per day (7/14/30 days, custom range)</td>
+<td>Server-rendered SVG chart ✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Totals: total, sent, failed (+ open/click rates)</td>
+<td>Totals ✅, opens/clicks — (no tracking)</td>
+<td></td>
+</tr>
+<tr>
+<td>Table grouped by subject with counts</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Weekly Email Summary</strong>: e-mail to the admin every Monday with last week's stats; can be disabled (Misc / constant)</td>
+<td>Daily job sends it when 7 days passed ✅</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-alerts-pro-adminpagewp-mail-smtptabalerts">8. Alerts (Pro) (<code>admin?page=wp-mail-smtp&amp;tab=alerts</code>)</h2>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email (up to 3 addresses)</td>
+<td>Sent through Pursae's built-in transport (the plugin's mailer just failed)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Slack webhook, Discord webhook, Microsoft Teams webhook</td>
+<td>JSON POST (<code>text</code> / <code>content</code> / MessageCard)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Twilio SMS (Account SID, Auth Token, From, To)</td>
+<td><code>POST api.twilio.com/2010-04-01/Accounts/{sid}/Messages.json</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Custom webhook (JSON POST of the failure)</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Push notifications (browser), WhatsApp</td>
+<td>— need hosted services / Meta business templates</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Failed-email threshold (&quot;alert only after N failures in 30 minutes&quot;)</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Hard-bounce events (needs mailer webhooks)</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-email-controls-pro-tabcontrol">9. Email Controls (Pro) (<code>tab=control</code>)</h2>
+<p>Toggles for the notification e-mails Pursae core sends (identified by their subject):
+comment moderation / new comment to author; admin e-mail change confirmation; user e-mail change
+request; password reset request, password changed (to admin), new user registration (admin + user);
+personal data confirm request / action confirmed / export ready / erasure fulfilled. Disabled
+types are dropped silently. Automatic core/plugin/theme update e-mails don't exist in Pursae. ✅</p>
+<h2 id="10-misc-tab-tabmisc">10. Misc tab (<code>tab=misc</code>)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Do Not Send (+ confirmation)</td>
+<td>Blocks all e-mail; a red notice reminds the admin; blocked messages become debug events</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hide Announcements</td>
+<td>Stored for parity; Pursae shows no product announcements</td>
+<td>◐</td>
+</tr>
+<tr>
+<td>Hide Email Delivery Errors</td>
+<td>Hides the admin-wide &quot;last e-mail failed&quot; notice</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hide Dashboard Widget</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Disable Email Summaries</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Debug Events retention period and &quot;Debug Email Sending&quot;</td>
+<td>On Tools › Debug Events, as upstream</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Allow Usage Tracking</td>
+<td>— no telemetry</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Uninstall WP Mail SMTP (&quot;remove ALL data on deletion&quot;)</td>
+<td>Native plugins can't be deleted; when ticked, <em>deactivating</em> removes the plugin's options, logs and debug events</td>
+<td>◐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-tools-adminpagewp-mail-smtp-tools">11. Tools (<code>admin?page=wp-mail-smtp-tools</code>)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Email Test: Send To, HTML/plain toggle, connection picker; result notice; on failure the debug output (SMTP conversation with credentials masked, HTTP status/body for API mailers) and suggested fixes</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Export (email log)</td>
+<td>✅ (§6)</td>
+<td></td>
+</tr>
+<tr>
+<td>Debug Events: list of errors/debug messages with type, source, date; view, delete, &quot;Debug Email Sending&quot; option to also record debug info for successful sends</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Email Detective (deliverability report via hosted service), Code Snippets (WPCode), Action Scheduler</td>
+<td>— hosted / PHP-specific</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-dashboard-widget--notices">12. Dashboard widget &amp; notices</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboard widget &quot;WP Mail SMTP&quot;: sent/failed totals and a 7-day chart, link to the log; can be hidden (Misc)</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Admin notice when the last e-mail failed (with the error and links to the log / settings)</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>Admin bar &quot;WP Mail SMTP&quot; error menu</td>
+<td>— notice is used instead</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Site Health tests</td>
+<td>— (core Site Health shows the transport)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-constants--environment-variables">13. Constants → environment variables</h2>
+<p><code>WPMS_ON=true</code> enables the overrides (as in <code>wp-config.php</code>). Every constant of upstream's
+<code>Options::get_const_value()</code> is read from the environment with the same name; overridden fields
+are shown read-only with &quot;The value of this field was set using a constant.&quot; Supported:
+<code>WPMS_MAILER, WPMS_MAIL_FROM, WPMS_MAIL_FROM_FORCE, WPMS_MAIL_FROM_NAME, WPMS_MAIL_FROM_NAME_FORCE, WPMS_SET_RETURN_PATH, WPMS_DO_NOT_SEND, WPMS_SMTP_HOST, WPMS_SMTP_PORT, WPMS_SSL, WPMS_SMTP_AUTH, WPMS_SMTP_AUTOTLS, WPMS_SMTP_USER, WPMS_SMTP_PASS</code>, every mailer key
+(<code>WPMS_SENDLAYER_API_KEY, WPMS_SMTPCOM_API_KEY, WPMS_SMTPCOM_CHANNEL, WPMS_SENDINBLUE_API_KEY, WPMS_SENDINBLUE_DOMAIN, WPMS_MAILGUN_API_KEY, WPMS_MAILGUN_DOMAIN, WPMS_MAILGUN_REGION, WPMS_SENDGRID_API_KEY, WPMS_SENDGRID_DOMAIN, WPMS_POSTMARK_SERVER_API_TOKEN, WPMS_POSTMARK_MESSAGE_STREAM, WPMS_SPARKPOST_API_KEY, WPMS_SPARKPOST_REGION, WPMS_AMAZONSES_CLIENT_ID, WPMS_AMAZONSES_CLIENT_SECRET, WPMS_AMAZONSES_REGION, WPMS_GMAIL_CLIENT_ID, WPMS_GMAIL_CLIENT_SECRET, WPMS_OUTLOOK_CLIENT_ID, WPMS_OUTLOOK_CLIENT_SECRET, WPMS_ZOHO_DOMAIN, WPMS_ZOHO_CLIENT_ID, WPMS_ZOHO_CLIENT_SECRET, WPMS_ELASTICEMAIL_API_KEY, WPMS_MAILJET_API_KEY, WPMS_MAILJET_SECRET_KEY, WPMS_MAILERSEND_API_KEY, WPMS_MAILERSEND_HAS_PRO_PLAN, WPMS_RESEND_API_KEY, WPMS_SMTP2GO_API_KEY, WPMS_MANDRILL_API_KEY</code>), logs
+(<code>WPMS_LOGS_ENABLED, WPMS_LOGS_LOG_EMAIL_CONTENT, WPMS_LOGS_LOG_RETENTION_PERIOD</code>), alerts
+(<code>WPMS_ALERT_EMAIL_SEND_TO, WPMS_ALERT_SLACK_WEBHOOK_URL, WPMS_ALERT_DISCORD_WEBHOOK_URL, WPMS_ALERT_TEAMS_WEBHOOK_URL, WPMS_ALERT_CUSTOM_WEBHOOK_URL, WPMS_ALERT_TWILIO_SMS_ACCOUNT_SID, WPMS_ALERT_TWILIO_SMS_AUTH_TOKEN, WPMS_ALERT_TWILIO_SMS_FROM_PHONE_NUMBER, WPMS_ALERT_TWILIO_SMS_TO_PHONE_NUMBER</code>), <code>WPMS_SUMMARY_REPORT_EMAIL_DISABLED</code>,
+<code>WPMS_DEBUG_EVENTS_RETENTION_PERIOD</code>. License, WhatsApp, multisite and one-click constants are not
+applicable.</p>
+<h2 id="14-left-out-not-applicable-to-single-site-wordpress-go">14. Left out (not applicable to single-site Pursae)</h2>
+<p>Multisite network settings, license/upgrade screens and &quot;About Us&quot;/product upsells, usage
+tracking, WP-CLI commands, the WordPress Abilities API, importing other SMTP plugins' settings,
+conflicting-plugin detection, attachment storage, open/click tracking, XLSX export, push/WhatsApp
+alerts, one-click Gmail/Microsoft setup through WPForms' relay.</p>
+<h2 id="15-where-it-lives">15. Where it lives</h2>
+<p><code>internal/mail/{smtp,api,oauth}.go</code> (transports, AWS SigV4, OAuth 2), <code>internal/mail/smtptest</code>
+(fake SMTP server for tests), <code>internal/server/mailsmtp*.go</code> (options, delivery, log, alerts,
+reports, admin screens), <code>web/admin/templates/pages/mailsmtp.html</code>,
+<code>internal/db/migrations/0011_wp_mail_smtp.sql</code>. Hooks into shared code: <code>mail.Mailer.Transport</code>,
+<code>Server.mailer()</code> (<code>mailSMTPAttach</code>), the <code>wp_mail_smtp_daily</code> job, the Plugins screen row,
+<code>pluginAdmin</code> (<code>admin?page=wp-mail-smtp*</code>), <code>adminPage</code> (menu + notices) and the dashboard widget.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/maintenance-go/" rel="prev"><small>← Previous</small>Maintenance-Go</a>
+          <a class="next" href="../../../docs/rest-api/" rel="next"><small>Next →</small>REST API overview</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-how-it-plugs-into-wordpress-go">1. How it plugs into Pursae</a></li><li class="toc-h2"><a href="#2-setup-wizard-adminpagewp-mail-smtp-setup-wizard">2. Setup Wizard (admin?page=wp-mail-smtp-setup-wizard)</a></li><li class="toc-h2"><a href="#3-settings--general-adminpagewp-mail-smtp">3. Settings › General (admin?page=wp-mail-smtp)</a></li><li class="toc-h2"><a href="#4-mailers">4. Mailers</a></li><li class="toc-h2"><a href="#5-additional-connections--smart-routing-pro">5. Additional Connections &amp; Smart Routing (Pro)</a></li><li class="toc-h2"><a href="#6-email-log-pro-adminpagewp-mail-smtp-logs">6. Email Log (Pro) (admin?page=wp-mail-smtp-logs)</a></li><li class="toc-h2"><a href="#7-email-reports-pro-adminpagewp-mail-smtp-reports">7. Email Reports (Pro) (admin?page=wp-mail-smtp-reports)</a></li><li class="toc-h2"><a href="#8-alerts-pro-adminpagewp-mail-smtptabalerts">8. Alerts (Pro) (admin?page=wp-mail-smtp&amp;tab=alerts)</a></li><li class="toc-h2"><a href="#9-email-controls-pro-tabcontrol">9. Email Controls (Pro) (tab=control)</a></li><li class="toc-h2"><a href="#10-misc-tab-tabmisc">10. Misc tab (tab=misc)</a></li><li class="toc-h2"><a href="#11-tools-adminpagewp-mail-smtp-tools">11. Tools (admin?page=wp-mail-smtp-tools)</a></li><li class="toc-h2"><a href="#12-dashboard-widget--notices">12. Dashboard widget &amp; notices</a></li><li class="toc-h2"><a href="#13-constants--environment-variables">13. Constants → environment variables</a></li><li class="toc-h2"><a href="#14-left-out-not-applicable-to-single-site-wordpress-go">14. Left out (not applicable to single-site Pursae)</a></li><li class="toc-h2"><a href="#15-where-it-lives">15. Where it lives</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

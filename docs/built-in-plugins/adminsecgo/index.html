@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminSecGo — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Login security: two-factor, hidden login URL, throttling, audit log, password rules.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/" aria-current="page">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">AdminSecGo</span>
+      </nav>
+      <header class="docs-head">
+        <h1>AdminSecGo</h1>
+        <p class="lead">Login security: two-factor, hidden login URL, throttling, audit log, password rules.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>AdminSecGo is Pursae's native (compiled-in) login-security plugin. It covers the feature
+level of <strong>Wordfence Login Security</strong>, <strong>Two Factor</strong>, <strong>WPS Hide Login</strong> and the login, user and
+hardening parts of <strong>Solid Security</strong> — without a firewall service or malware scanner.</p>
+<p>Like the other native plugins it is listed on <strong>Plugins › Installed Plugins</strong>, starts <strong>inactive</strong>
+and adds nothing while inactive: no menu, no route, no header, no login step, no log row. Every
+hook in the core starts with <code>adminsecOn()</code> (one cached option read). <strong>Deactivating keeps
+users' factors</strong> (they are simply not asked for), keeps the settings and the log, and brings
+<code>/wp-login</code> back.</p>
+<p>Legend: ✅ implemented · ◐ implemented with a Pursae specific difference · — left out (reason given).</p>
+<h2 id="1-how-it-plugs-into-wordpress-go">1. How it plugs into Pursae</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pursae</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activation switch</td>
+<td>Option <code>native_adminsecgo</code>; settings in one JSON option <code>adminsecgo_settings</code> (parsed once per stored version)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Migration <code>0014_adminsecgo.sql</code>: <code>adminsec_factors</code>, <code>adminsec_challenges</code>, <code>adminsec_devices</code>, <code>adminsec_lockouts</code>, <code>adminsec_known_ips</code>, <code>adminsec_log</code> (+ an index on <code>login_attempts(lower(login))</code>). Failed and successful logins keep going to the core <code>login_attempts</code> table</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Code</td>
+<td><code>internal/server/adminsec*.go</code>: <code>adminsec.go</code> (settings, switch, front gate, custom login URL, headers, menu, CLI), <code>adminsec_login.go</code> (login hooks, challenges, lockouts, devices), <code>adminsec_account.go</code> (Users › Security, profile block, Users column), <code>adminsec_admin.go</code> (admin screens), <code>adminsec_audit.go</code> (log, alerts, purge), <code>adminsec_password.go</code> (policy, strength), <code>adminsec_totp.go</code> (TOTP, sealing), <code>adminsec_qr.go</code> (QR encoder). Templates <code>web/admin/templates/pages/adminsecgo*.html</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Menu</td>
+<td>Top-level <strong>AdminSecGo</strong> (Dashboard, Settings, Lockouts, Activity Log) for <code>manage_options</code>, right after Users; <strong>Users › Security</strong> (or <strong>Profile › Security</strong>) for every user — only while active</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Daily job</td>
+<td><code>adminsecgo_daily</code> (scheduled on activation): purges log rows older than the retention, expired challenges and devices, lockouts older than 30 days</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-the-two-second-factors-owners-rules">2. The two second factors (owner's rules)</h2>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Implementation</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MFA = e-mailed one-time code</strong>, usable on its own</td>
+<td>Users › Security › <em>E-mailed codes (MFA)</em></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>MFA needs working e-mail</td>
+<td><code>asMailReady()</code>: WPGO Mail SMTP active with a non-default mailer whose required field (SMTP host / API key / client ID …) is set and <em>Do Not Send</em> off, <strong>or</strong> the core <code>WPGO_SMTP_HOST</code>. Otherwise the card is greyed out with the reason and a link to WPGO Mail SMTP (or to the Plugins screen when it is not active); the server refuses the setup too</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Setup verifies the address</td>
+<td>A 6-digit code is mailed to the address entered (default: the account e-mail); only after it is entered are codes switched on</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>2FA = authenticator app (TOTP)</strong></td>
+<td>RFC 6238 / RFC 4226: HMAC-SHA1, 6 digits, 30-second steps, 160-bit random secret, ±1 step drift, <strong>replay protection</strong> (the last accepted step is stored; an equal or older step is refused, updated atomically)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>QR code generated server-side in pure Go</td>
+<td><code>adminsec_qr.go</code>: ISO 18004 byte mode, level M, versions 1–40, Reed–Solomon, all 8 masks with penalty scoring; rendered as inline SVG. Checked with the browser's <code>BarcodeDetector</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Manual key</td>
+<td>Shown in groups of four next to the QR code (<code>otpauth://totp/Issuer:login?secret=…&amp;issuer=…</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>2FA requires MFA</td>
+<td><em>Set up the app</em> is disabled until e-mailed codes are on; the server refuses <code>totp_start</code> without MFA; MFA cannot be switched off while the app is on; a 2FA role requirement is only met with both</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Secrets at rest</td>
+<td>TOTP secret AES-256-GCM sealed with a key derived from the server secret (<code>asg:v1:</code>); e-mailed codes and backup codes stored only as HMAC-SHA256 hashes</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-login">3. Login</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2FA user: authenticator code first</td>
+<td><em>Verify it's you</em> step after the password, with <strong>“Can't use your app? Email me a code”</strong> (MFA fallback) and <strong>“Use a backup code”</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>MFA-only user</td>
+<td>The code is mailed right away: 6 digits, <strong>10-minute expiry, single use</strong>, <strong>resend with a 60-second cooldown</strong> (countdown on the button), at most 5 sends and <strong>5 wrong attempts</strong> per login, then the login starts over</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Backup codes</td>
+<td>10 codes (<code>xxxxx-xxxxx</code>, no look-alike characters), generated with the first factor, <strong>shown once</strong> (copy / print), hashed, each usable once (conditional update), regenerate with the current password; remaining count on the profile and the Security screen</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Remember this device</td>
+<td>Checkbox on the challenge for N days (setting, default 30, 0 = off). Cookie <code>wpgo_adminsec_device</code> = row id + random token + HMAC signature bound to the user; the token is stored hashed with an expiry; one cookie can remember up to 5 accounts. Revocable: forget one or all devices (Security screen), an admin reset, or turning off MFA</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Challenge state</td>
+<td><code>adminsec_challenges</code> row (15 minutes), token in the form, hashed in the database; carries Remember Me and <code>redirect_to</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Wrong codes count as failed logins</td>
+<td>They feed the IP/username lockouts and the log</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Application Passwords</td>
+<td>REST Basic authentication with an Application Password <strong>skips the second factor</strong> (like the Two Factor plugin); the account password never works on the API. Lockouts and the block list apply to the API (429 <code>too_many_retries</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>XML-RPC</td>
+<td>— Pursae has no XML-RPC endpoint</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-enforcement-per-role">4. Enforcement per role</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Require MFA or 2FA per role</td>
+<td>Settings › Two-Factor: per role <em>Not required / MFA / 2FA</em> (strictest of a user's roles wins). Can only be saved while e-mail can be delivered; while e-mail is broken requirements are not enforced (nobody could meet them)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Grace period with a nag</td>
+<td>Starts the first time a user is seen without the factor (user meta <code>adminsec_grace_start</code>, default 7 days); a warning notice on every admin screen with the days left</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>After the grace period</td>
+<td>Login succeeds but every admin screen redirects to Users › Security until the factor is set up (profile and heartbeat stay reachable); required factors cannot be removed</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Users list</td>
+<td><strong>Two-Step</strong> column: <code>2FA app + e-mail</code>, <code>MFA e-mail</code> or —, plus “2FA required” / “MFA required” when unmet</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Reset a user's factors</td>
+<td>User-edit › <em>Reset two-step login</em>: removes factors, backup codes, remembered devices, pending challenges and restarts the grace period; logged</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Recovery from the command line</td>
+<td><code>wpgo adminsec reset-user &lt;login&gt;</code></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-custom-login-url-wps-hide-login">5. Custom login URL (WPS Hide Login)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slug</td>
+<td>Settings › Login: e.g. <code>my-login</code> → <code>https://site/my-login</code>. Validated: 3–64 of <code>a-z0-9-_</code>, not reserved (<code>wp-*</code>, <code>login</code>, <code>admin</code>, <code>feed</code>, …) and not an existing page slug</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hidden URLs</td>
+<td>For visitors who are not logged in, <code>/wp-login</code>, <code>/wp-login.php</code> and every <code>/wp-admin…</code> path (also <code>.php</code> spellings) answer the theme's <strong>404 page</strong>, or redirect to a configurable path/URL</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Still reachable</td>
+<td><code>/wp-admin/admin-ajax</code>, <code>/wp-admin/admin-post</code>, <code>/wp-admin/install</code>, admin assets, and <code>wp-login?action=postpass</code> (password-protected posts)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>How it is served</td>
+<td><code>adminsecFront</code> runs first in <code>Server.Handler()</code> — before Maintenance-Go and the page cache — and serves the slug as <code>/wp-login</code> internally, so the cache never stores it and maintenance mode never closes it</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Every core link uses it</td>
+<td><code>loginPath()</code> / template func <code>loginURL</code>: the login, lost-password, register and reset forms and their links, logout links (admin bar in wp-admin and on the front end, comment form, Login/out block, Maintenance-Go login form, Golementor login widget), <code>auth_redirect</code>, redirects after logout/reset/registration, the password-reset, new-user and privacy-confirmation e-mails, generic error links. A response wrapper also rewrites any <code>Location: /wp-login…</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>authorize-application</code></td>
+<td>A visitor opening <code>/wp-admin/authorize-application</code> is sent to the new login with <code>redirect_to</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Escape hatch</td>
+<td><code>WPGO_ADMINSEC_DISABLE_HIDE_LOGIN=1</code> in the environment brings <code>/wp-login</code> back immediately (the settings screen says so); <code>wpgo adminsec disable-hide-login</code> switches the setting off in the database</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Deactivation</td>
+<td>Restores <code>/wp-login</code> at once</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-login-protection">6. Login protection</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Limit login attempts per IP</td>
+<td>Default 5 failures in 15 minutes → 20-minute lockout</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Per username</td>
+<td>Default 5 failures (counted against the account's login whether the username or the e-mail was typed) — stops attacks spread over many IPs</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Progressive lockouts</td>
+<td>After N lockouts (default 4) within 24 hours the next one lasts the long duration (default 24 h)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Replaces the core throttle</td>
+<td>While active, the core's fixed 5-per-15-minutes IP throttle is replaced by these rules; while inactive it is unchanged</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>IP allow list / block list</td>
+<td>One IP or CIDR (IPv4/IPv6) per line, <code>#</code> comments. Allow list: never locked out. Block list: login, API, and optionally the whole site (403). The form refuses to block your own IP</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Lockouts screen</td>
+<td>Active lockouts with release / release all, manual IP lockout, lockout history</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Generic error messages</td>
+<td>“The username or password you entered is incorrect.” for unknown users and wrong passwords (default on)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>User enumeration</td>
+<td><code>/?author=N</code> → 404, REST <code>wp/v2/users</code> → 401 and an empty users sitemap for visitors. <strong>The core does this by default</strong> (and the login form gives one message for an unknown account and a wrong password); <code>WPGO_EXPOSE_USERS=1</code> opts out. While AdminSecGo is active its &quot;block enumeration&quot; and &quot;generic errors&quot; settings decide instead, so an administrator can relax them on purpose</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>CAPTCHA on the login</td>
+<td>— not included (Gontact Form has reCAPTCHA/Turnstile for forms; lockouts cover brute force)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-password-policy">7. Password policy</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Minimum length and strength per role</td>
+<td>Defaults: administrator 12 / Strong, editor and author 10 / Medium, contributor 8 / Weak, subscriber 8 / any. A zxcvbn-like 0–4 score: character-pool entropy, cut for repeats, sequences, keyboard walks (<code>qwerty</code>, <code>asdf</code>, <code>7890</code>), a common password with a few characters around it, and the user's own name</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Common passwords</td>
+<td>The 10,000 most common passwords (the list WordPress' bundled <code>zxcvbn.min.js</code> carries, de-obfuscated) in <code>adminsec_passwords.txt</code>, embedded</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Where it applies</td>
+<td>Profile and user-edit, Add User, password reset, REST <code>wp/v2/users</code> create/update</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Force password change</td>
+<td>Admin action on user-edit (<em>Require a password change at next login</em>), and automatically at login when the current password breaks the policy (setting). The user lands on the profile with a notice; every other admin screen redirects there until a compliant password is saved</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Password expiry</td>
+<td>— not included (current NIST guidance advises against periodic changes)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-sessions">8. Sessions</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Active sessions on the profile</td>
+<td>Device (browser on OS), IP, last activity, start; <em>This session</em> marked; <em>Log out</em> per session</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Log out other sessions</td>
+<td>The core <em>Log Out Everywhere Else</em> plus per-session buttons; administrators get <em>Log out all sessions</em> on user-edit</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Idle timeout</td>
+<td>Settings › Sessions (minutes, 0 = off): <code>auth.Manager.Idle</code> ends a session unused for longer</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-hardening">9. Hardening</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security headers</td>
+<td>X-Frame-Options (SAMEORIGIN/DENY), Referrer-Policy, Permissions-Policy, X-Content-Type-Options, HSTS (max-age, includeSubDomains, preload; HTTPS requests only). Set by a response wrapper, so cached pages get them too. <strong>The core Content-Security-Policy (and its per-response allow-list) is left untouched</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Disable the file editors</td>
+<td>Theme File Editor and Plugin File Editor: menu entries removed, screens 403, <code>edit-theme-plugin-file</code> ajax refused (default on)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hide the version</td>
+<td>No generator meta tag, feeds without the version, front-end <code>?ver=0.1.0</code> replaced by a site-specific hash (default on)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>REST only for logged-in users</td>
+<td>Opt-in; visitors keep oEmbed and the contact-form routes plus configurable prefixes</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Alerts</td>
+<td>E-mail to the admin (or a configured address) on an administrator's login from a new IP (not the very first login) and on every lockout</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Firewall, malware scan, file-change detection</td>
+<td>— out of scope by design</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-activity-log">10. Activity log</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Events</td>
+<td>Logins (with the method: password, + app, + e-mailed code, + backup code, + remembered device), failed logins, lockouts and releases, blocked IPs, logouts, factor changes (MFA/2FA on/off, backup codes generated/used, devices remembered/forgotten, admin resets), sessions logged out, password changes and forced changes, role changes (user-edit, Users bulk, REST), users created/deleted, plugin activation/deactivation (including AdminSecGo itself), theme switches, Settings screens saved, AdminSecGo settings saved</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Screen</td>
+<td>Filters: event, severity, user, IP, date range; 50 per page; user agent per row</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>CSV export</td>
+<td>The filtered rows, formula-safe cells</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Retention</td>
+<td>Days (default 90, 0 = forever), purged by the daily job; option to skip logging failed logins on busy sites</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-dashboard">11. Dashboard</h2>
+<p>Security score (weighted checklist, 0–100 %) with a <em>fix</em> link per item: e-mail delivery, your
+own 2FA, 2FA required for administrators, every administrator enrolled, lockouts on, custom
+login URL, generic errors, enumeration blocked, no <code>admin</code> username, administrator password
+policy, common passwords refused, file editors disabled, security headers, HTTPS site address,
+version hidden, idle timeout, alerts. Plus 2FA/MFA adoption, failed logins in 24 hours, active
+lockouts, the login URL and recent activity.</p>
+<h2 id="12-command-line">12. Command line</h2>
+<pre><code>wpgo adminsec disable-hide-login   # custom login URL off (restart a running server, or use the env var)
+wpgo adminsec reset-user &lt;login&gt;   # remove a user's second factors and remembered devices
+wpgo adminsec unlock-all           # release every lockout and forget failed attempts
+wpgo adminsec deactivate           # switch the plugin off
+</code></pre>
+<h2 id="13-tests">13. Tests</h2>
+<p><code>internal/server/adminsec_test.go</code> (httptest + PostgreSQL): RFC 6238 vectors, drift and replay;
+QR structure and capacities; password strength; plugin off = unchanged behaviour (menus, headers,
+detailed errors, core throttle, stored factors ignored) and deactivation; MFA disabled without
+mail, MFA setup and login with the e-mailed code read from the queued <code>wp_mail</code> job, cooldown,
+single use, attempt limit, backup codes; 2FA requires MFA, TOTP login with drift and replay,
+e-mail fallback, remembered device, forget devices; role enforcement with grace period, gate and
+reset; Application Passwords bypass 2FA on REST and lockouts apply to the API; custom login URL
+(404s, open paths, every link, reset e-mail, logout, redirect mode, escape hatch, CLI); IP,
+username, progressive lockouts, allow and block lists, alert e-mail; enumeration and REST
+restriction; sessions list, revoke, log out others, idle timeout, new-IP alert; password policy
+and forced change; activity log entries, filters, CSV and retention; all screens render.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/golylang/" rel="prev"><small>← Previous</small>Golylang</a>
+          <a class="next" href="../../../docs/built-in-plugins/gooike/" rel="next"><small>Next →</small>Gooike</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-how-it-plugs-into-wordpress-go">1. How it plugs into Pursae</a></li><li class="toc-h2"><a href="#2-the-two-second-factors-owners-rules">2. The two second factors (owner&#39;s rules)</a></li><li class="toc-h2"><a href="#3-login">3. Login</a></li><li class="toc-h2"><a href="#4-enforcement-per-role">4. Enforcement per role</a></li><li class="toc-h2"><a href="#5-custom-login-url-wps-hide-login">5. Custom login URL (WPS Hide Login)</a></li><li class="toc-h2"><a href="#6-login-protection">6. Login protection</a></li><li class="toc-h2"><a href="#7-password-policy">7. Password policy</a></li><li class="toc-h2"><a href="#8-sessions">8. Sessions</a></li><li class="toc-h2"><a href="#9-hardening">9. Hardening</a></li><li class="toc-h2"><a href="#10-activity-log">10. Activity log</a></li><li class="toc-h2"><a href="#11-dashboard">11. Dashboard</a></li><li class="toc-h2"><a href="#12-command-line">12. Command line</a></li><li class="toc-h2"><a href="#13-tests">13. Tests</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

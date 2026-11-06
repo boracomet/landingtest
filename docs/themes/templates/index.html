@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Templates — Dokümantasyon · Pursae</title>
+  <meta name="description" content="The template hierarchy, the data every template receives and the functions it can call.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/" aria-current="page">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/themes/">Theme development</a><span>/</span><span aria-current="page">Templates</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Templates</h1>
+        <p class="lead">The template hierarchy, the data every template receives and the functions it can call.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Templates are Go <a href="https://pkg.go.dev/html/template"><code>html/template</code></a> files. Output is escaped
+according to context automatically; values the core has already rendered as HTML (<code>.Content</code>,
+<code>.Head</code>, menus, widget areas) are <code>template.HTML</code> and print as-is.</p>
+<h2 id="hierarchy">Hierarchy</h2>
+<p>The core picks a page kind from the request and resolves it along the WordPress hierarchy to the
+first template the package has. Only <code>index.html</code> is required.</p>
+<table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Templates tried, in order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>front page (static page or latest posts)</td>
+<td><code>front-page.html</code>, then <code>home.html</code> (latest posts) or <code>page.html</code> (a static page), <code>index.html</code></td>
+</tr>
+<tr>
+<td>blog index (posts page)</td>
+<td><code>home.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>a post</td>
+<td><code>single.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>a page</td>
+<td><code>page.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>category archive</td>
+<td><code>category.html</code>, <code>archive.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>tag archive</td>
+<td><code>tag.html</code>, <code>archive.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>author archive</td>
+<td><code>author.html</code>, <code>archive.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>date archive</td>
+<td><code>date.html</code>, <code>archive.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>search results</td>
+<td><code>search.html</code>, <code>index.html</code></td>
+</tr>
+<tr>
+<td>not found</td>
+<td><code>404.html</code>, <code>index.html</code></td>
+</tr>
+</tbody>
+</table>
+<p>Parts — <code>header.html</code>, <code>footer.html</code>, <code>sidebar.html</code>, <code>comments.html</code>, <code>content*.html</code> — are
+included with <code>{{template &quot;header&quot; .}}</code>. Every file is parsed into one template set, so a
+<code>{{define &quot;name&quot;}}</code> in any file is callable from any other. The bundled themes use the same
+mechanism with the names <code>theme/index</code>, <code>theme/single</code>, <code>theme/page</code>, <code>theme/archive</code>,
+<code>theme/search</code> and <code>theme/404</code>.</p>
+<h2 id="the-view">The view</h2>
+<p>Every template receives the same <strong>site view</strong> (<code>.</code>):</p>
+<h3 id="page">Page</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.Template</code></td>
+<td>string</td>
+<td><code>index</code>, <code>single</code>, <code>page</code>, <code>archive</code>, <code>search</code>, <code>404</code></td>
+</tr>
+<tr>
+<td><code>.Q</code></td>
+<td>query</td>
+<td>the main query: <code>.Q.Kind</code> (<code>home</code>, <code>front-page</code>, <code>single</code>, <code>page</code>, <code>category</code>, <code>tag</code>, <code>author</code>, <code>date</code>, <code>search</code>, <code>404</code>), <code>.Q.Post</code>, <code>.Q.Term</code>, <code>.Q.Author</code>, <code>.Q.Year/.Month/.Day</code>, <code>.Q.Search</code>, <code>.Q.Paged</code>, <code>.Q.Preview</code></td>
+</tr>
+<tr>
+<td><code>.DocumentTitle</code></td>
+<td>HTML</td>
+<td><code>wp_get_document_title()</code> with separator and site name</td>
+</tr>
+<tr>
+<td><code>.Head</code></td>
+<td>HTML</td>
+<td><code>wp_head()</code>: feeds, styles, scripts, Customizer CSS, plugin assets. Print it before <code>&lt;/head&gt;</code></td>
+</tr>
+<tr>
+<td><code>.Footer</code></td>
+<td>HTML</td>
+<td><code>wp_footer()</code>: scripts. Print it before <code>&lt;/body&gt;</code></td>
+</tr>
+<tr>
+<td><code>.BodyOpen</code></td>
+<td>HTML</td>
+<td><code>wp_body_open()</code></td>
+</tr>
+<tr>
+<td><code>.BodyClass</code></td>
+<td>string</td>
+<td><code>body_class()</code>: <code>home</code>, <code>blog</code>, <code>single</code>, <code>single-post</code>, <code>postid-12</code>, <code>page-template-default</code>, <code>logged-in</code>, <code>admin-bar</code>, your Customizer <code>body_class</code> values, …</td>
+</tr>
+<tr>
+<td><code>.AdminBar</code></td>
+<td>HTML</td>
+<td>the toolbar for logged-in users (print it last in <code>&lt;body&gt;</code>)</td>
+</tr>
+<tr>
+<td><code>.SiteName</code>, <code>.Description</code>, <code>.HomeURL</code></td>
+<td>string</td>
+<td><code>bloginfo()</code></td>
+</tr>
+<tr>
+<td><code>.IsFront</code>, <code>.TitleIsH1</code>, <code>.IsHomeHeader</code>, <code>.PostsPageTitle</code></td>
+<td></td>
+<td>front-page checks for the header markup</td>
+</tr>
+<tr>
+<td><code>.CustomLogo</code>, <code>.SiteIcon</code></td>
+<td>HTML</td>
+<td>from Site Identity</td>
+</tr>
+<tr>
+<td><code>.ThemeMods</code></td>
+<td>map</td>
+<td>the theme's Customizer values (<code>{{index .ThemeMods &quot;accent&quot;}}</code>)</td>
+</tr>
+<tr>
+<td><code>.CustomCSS</code></td>
+<td>string</td>
+<td>Additional CSS (already printed in <code>.Head</code>)</td>
+</tr>
+<tr>
+<td><code>.Theme</code>, <code>.ThemeURI</code></td>
+<td></td>
+<td>the theme (<code>.Theme.Name</code>, <code>.Theme.Version</code>) and <code>/wp-content/themes/&lt;slug&gt;</code></td>
+</tr>
+<tr>
+<td><code>.Data</code></td>
+<td>map</td>
+<td>free-form data a bundled theme's Go code adds (<code>.Data.Classic</code>); empty for packages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content">Content</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.Posts</code></td>
+<td>[]post</td>
+<td>the loop: posts of the current page of the query</td>
+</tr>
+<tr>
+<td><code>.Post</code></td>
+<td>post</td>
+<td>the single post or page (nil elsewhere)</td>
+</tr>
+<tr>
+<td><code>.TotalPosts</code>, <code>.TotalPages</code></td>
+<td>int</td>
+<td><code>found_posts</code> / <code>max_num_pages</code></td>
+</tr>
+<tr>
+<td><code>.Pagination</code></td>
+<td>HTML</td>
+<td><code>the_posts_pagination()</code></td>
+</tr>
+<tr>
+<td><code>.PostNav</code></td>
+<td>HTML</td>
+<td>previous/next links on singular views</td>
+</tr>
+<tr>
+<td><code>.ArchiveTitle</code>, <code>.ArchiveDesc</code></td>
+<td>HTML</td>
+<td><code>get_the_archive_title()</code> / description</td>
+</tr>
+<tr>
+<td><code>.SearchQuery</code></td>
+<td>string</td>
+<td><code>get_search_query()</code></td>
+</tr>
+<tr>
+<td><code>.Comments</code></td>
+<td>comments</td>
+<td>nil when comments are not shown; else <code>.Title</code>, <code>.List</code> (HTML), <code>.Count</code>, <code>.Open</code>, <code>.ClosedNotice</code>, <code>.Form</code> (HTML)</td>
+</tr>
+<tr>
+<td><code>.PrivacyLink</code></td>
+<td>HTML</td>
+<td><code>the_privacy_policy_link()</code></td>
+</tr>
+<tr>
+<td><code>.CanPublish</code></td>
+<td>bool</td>
+<td>the viewer may publish posts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="navigation-and-widgets">Navigation and widgets</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.Menus</code></td>
+<td>map[location][]item</td>
+<td>menu items per <code>menu_locations</code> id, nested. Item: <code>.ID</code>, <code>.Label</code>, <code>.URL</code>, <code>.Target</code>, <code>.Classes</code>, <code>.Children</code>, <code>.Current</code>, <code>.CurrentAncestor</code>, <code>.Kind</code>/<code>.Object</code>/<code>.TargetID</code> (what it links to)</td>
+</tr>
+<tr>
+<td><code>.HasMenus</code></td>
+<td>bool</td>
+<td>any location has a menu</td>
+</tr>
+<tr>
+<td><code>.PrimaryMenu</code> (= <code>.FooterPrimary</code>), <code>.SocialMenu</code> (= <code>.FooterSocial</code>)</td>
+<td>HTML</td>
+<td>the core's rendering of the <code>primary</code> and <code>social</code> locations as <code>&lt;ul class=&quot;menu&quot;&gt;</code> lists (<code>wp_nav_menu()</code>), when the theme declares those ids; other locations are rendered from <code>.Menus</code></td>
+</tr>
+<tr>
+<td><code>.Areas</code></td>
+<td>map[id]HTML</td>
+<td>rendered widget areas (<code>dynamic_sidebar()</code>), keyed by <code>widget_areas</code> id</td>
+</tr>
+<tr>
+<td><code>.Sidebar1</code>, <code>.ContentBottom</code></td>
+<td>HTML</td>
+<td>shortcuts for the <code>sidebar-1</code> and <code>content-bottom</code> areas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a-post-post-and-each-of-posts">A post (<code>.Post</code> and each of <code>.Posts</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.ID</code>, <code>.Type</code>, <code>.Format</code>, <code>.Sticky</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>.Title</code></td>
+<td>HTML</td>
+<td><code>the_title()</code> with &quot;Protected:&quot; / &quot;Private:&quot; prefixes</td>
+</tr>
+<tr>
+<td><code>.Permalink</code>, <code>.CommentsURL</code></td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td><code>.Content</code></td>
+<td>HTML</td>
+<td><code>the_content()</code>: blocks rendered, autop, shortcodes, <code>the_content</code> filters; the more-link in archives</td>
+</tr>
+<tr>
+<td><code>.Excerpt</code>, <code>.ShowExcerpt</code></td>
+<td>HTML, bool</td>
+<td><code>the_excerpt()</code>, and whether the theme should show it instead of the content (search, or a manual excerpt)</td>
+</tr>
+<tr>
+<td><code>.Class</code></td>
+<td>string</td>
+<td><code>post_class()</code>: <code>post-12 post type-post status-publish format-standard hentry category-news tag-go …</code></td>
+</tr>
+<tr>
+<td><code>.EntryMeta</code></td>
+<td>HTML</td>
+<td>the theme's default byline (date and author links)</td>
+</tr>
+<tr>
+<td><code>.EditLink</code></td>
+<td>HTML</td>
+<td><code>edit_post_link()</code> for users who may edit</td>
+</tr>
+<tr>
+<td><code>.Date</code>, <code>.Modified</code></td>
+<td>time</td>
+<td>use <code>{{date .Date &quot;&quot;}}</code></td>
+</tr>
+<tr>
+<td><code>.DateText</code>, <code>.ModifiedText</code>, <code>.DateISO</code>, <code>.ModifiedISO</code></td>
+<td>string</td>
+<td>formatted with the site's date format / ISO 8601</td>
+</tr>
+<tr>
+<td><code>.AuthorName</code>, <code>.AuthorURL</code>, <code>.AuthorBio</code>, <code>.Biography</code></td>
+<td></td>
+<td>the author and the author box</td>
+</tr>
+<tr>
+<td><code>.Categories</code>, <code>.Tags</code></td>
+<td>[]term</td>
+<td><code>.ID</code>, <code>.Name</code>, <code>.Slug</code>, <code>.URL</code></td>
+</tr>
+<tr>
+<td><code>.CommentCount</code>, <code>.CommentsOpen</code>, <code>.ShowComments</code>, <code>.HasPassword</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>.Thumbnail</code>, <code>.ThumbnailURL</code>, <code>.ShowFeatured</code></td>
+<td>HTML, string, bool</td>
+<td>the featured image (<code>post-thumbnails</code> support)</td>
+</tr>
+<tr>
+<td><code>.Post</code></td>
+<td>store post</td>
+<td>the raw record: <code>.Post.Slug</code>, <code>.Post.Status</code>, <code>.Post.Meta</code>, <code>.Post.PublishedAt</code>, …</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions">Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>safe s</code>, <code>safeURL s</code>, <code>safeAttr s</code></td>
+<td>mark a string as trusted HTML / URL / attribute</td>
+</tr>
+<tr>
+<td><code>date t format</code></td>
+<td>format a <code>time.Time</code> in the site's time zone with a WordPress format string (<code>&quot;F j, Y&quot;</code>); <code>&quot;&quot;</code> uses the site's date format</td>
+</tr>
+<tr>
+<td><code>dateFormat</code>, <code>timeFormat</code></td>
+<td>the site's formats</td>
+</tr>
+<tr>
+<td><code>setting key</code>, <code>settingStr key</code>, <code>settingBool key</code>, <code>settingInt key</code>, <code>settingID key</code></td>
+<td>read an option (<code>settingStr &quot;blogname&quot;</code>, <code>settingBool &quot;show_avatars&quot;</code>)</td>
+</tr>
+<tr>
+<td><code>plural n one many</code></td>
+<td><code>&quot;%s post&quot;</code> / <code>&quot;%s posts&quot;</code> with the number inserted</td>
+</tr>
+<tr>
+<td><code>num n</code></td>
+<td>number with thousands separators</td>
+</tr>
+<tr>
+<td><code>add a b</code>, <code>sub a b</code>, <code>seq from to</code></td>
+<td>arithmetic and ranges (<code>{{range seq 1 .TotalPages}}</code>)</td>
+</tr>
+<tr>
+<td><code>dict k v …</code></td>
+<td>build a map to pass several values to a part</td>
+</tr>
+<tr>
+<td><code>list s …</code>, <code>split s sep</code>, <code>contains s sub</code>, <code>lower s</code>, <code>ucfirst s</code>, <code>repeat s n</code>, <code>trimSlash s</code></td>
+<td>string helpers</td>
+</tr>
+<tr>
+<td><code>texturize s</code></td>
+<td>escape and apply <code>wptexturize()</code> to a plain string</td>
+</tr>
+<tr>
+<td><code>query s</code></td>
+<td>URL-encode a query value</td>
+</tr>
+<tr>
+<td><code>json v</code></td>
+<td>encode as JSON inside a <code>&lt;script&gt;</code></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>the Pursae version</td>
+</tr>
+</tbody>
+</table>
+<p>The theme package spec also lists WordPress-named helpers (<code>wp_head</code>, <code>wp_footer</code>, <code>body_class</code>,
+<code>post_class</code>, <code>the_content</code>, <code>wp_nav_menu</code>, <code>dynamic_sidebar</code>, <code>get_template_part</code>) as aliases of
+the fields and templates above; prefer the fields, which work in every theme.</p>
+<h2 id="patterns">Patterns</h2>
+<p>A loop with a part per post:</p>
+<pre><code class="language-html">{{define &quot;content&quot;}}
+&lt;article id=&quot;post-{{.ID}}&quot; class=&quot;{{.Class}}&quot;&gt;
+  &lt;h2 class=&quot;entry-title&quot;&gt;&lt;a href=&quot;{{.Permalink}}&quot; rel=&quot;bookmark&quot;&gt;{{.Title}}&lt;/a&gt;&lt;/h2&gt;
+  {{with .Thumbnail}}&lt;figure class=&quot;post-thumbnail&quot;&gt;{{.}}&lt;/figure&gt;{{end}}
+  &lt;div class=&quot;entry-meta&quot;&gt;&lt;time datetime=&quot;{{.DateISO}}&quot;&gt;{{.DateText}}&lt;/time&gt; by &lt;a href=&quot;{{.AuthorURL}}&quot;&gt;{{.AuthorName}}&lt;/a&gt;&lt;/div&gt;
+  &lt;div class=&quot;entry-content&quot;&gt;{{.Content}}&lt;/div&gt;
+  &lt;footer class=&quot;entry-footer&quot;&gt;{{range .Categories}}&lt;a href=&quot;{{.URL}}&quot; rel=&quot;category tag&quot;&gt;{{.Name}}&lt;/a&gt; {{end}}&lt;/footer&gt;
+&lt;/article&gt;
+{{end}}
+</code></pre>
+<pre><code class="language-html">{{template &quot;header&quot; .}}
+{{if .Posts}}{{range .Posts}}{{template &quot;content&quot; .}}{{end}}{{.Pagination}}{{else}}&lt;p&gt;Nothing found.&lt;/p&gt;{{end}}
+{{template &quot;footer&quot; .}}
+</code></pre>
+<p>A nested menu:</p>
+<pre><code class="language-html">{{define &quot;menu&quot;}}&lt;ul class=&quot;menu&quot;&gt;{{range .}}&lt;li class=&quot;menu-item {{.Classes}}{{if .Current}} current-menu-item{{end}}{{if .Children}} menu-item-has-children{{end}}&quot;&gt;
+  &lt;a href=&quot;{{.URL}}&quot;{{with .Target}} target=&quot;{{.}}&quot;{{end}}&gt;{{.Label}}&lt;/a&gt;{{with .Children}}&lt;ul class=&quot;sub-menu&quot;&gt;{{range .}}{{template &quot;menu-item&quot; .}}{{end}}&lt;/ul&gt;{{end}}
+&lt;/li&gt;{{end}}&lt;/ul&gt;{{end}}
+</code></pre>
+<p>Comments on a single post:</p>
+<pre><code class="language-html">{{with .Comments}}&lt;section id=&quot;comments&quot; class=&quot;comments-area&quot;&gt;
+  &lt;h2 class=&quot;comments-title&quot;&gt;{{.Title}}&lt;/h2&gt;
+  {{.List}}
+  {{if .Open}}{{.Form}}{{else if .ClosedNotice}}&lt;p class=&quot;no-comments&quot;&gt;Comments are closed.&lt;/p&gt;{{end}}
+&lt;/section&gt;{{end}}
+</code></pre>
+<p>The <code>.Form</code> and <code>.List</code> markup is the WordPress markup (<code>comment_form()</code>, <code>wp_list_comments()</code>),
+so the core's comment styles and <code>comment-reply.js</code> apply.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/themes/theme-json/" rel="prev"><small>← Previous</small>theme.json</a>
+          <a class="next" href="../../../docs/themes/customizer/" rel="next"><small>Next →</small>Customizer</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#hierarchy">Hierarchy</a></li><li class="toc-h2"><a href="#the-view">The view</a></li><li class="toc-h3"><a href="#page">Page</a></li><li class="toc-h3"><a href="#content">Content</a></li><li class="toc-h3"><a href="#navigation-and-widgets">Navigation and widgets</a></li><li class="toc-h3"><a href="#a-post-post-and-each-of-posts">A post (.Post and each of .Posts)</a></li><li class="toc-h2"><a href="#functions">Functions</a></li><li class="toc-h2"><a href="#patterns">Patterns</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

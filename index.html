@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pursae — WordPress, Go ile yeniden yazıldı</title>
+  <meta name="description" content="Pursae, WordPress çekirdeğini Go ile yeniden yazar: tek binary, tek PostgreSQL veritabanı, WebAssembly sandbox içinde çalışan eklentiler ve yerleşik sayfa oluşturucu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Üst menü -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="#ozellikler">Özellikler</a>
+      <a href="#mimari">Mimari</a>
+      <a href="#eklentiler">Eklentiler</a>
+      <a href="#golementor">Golementor</a>
+      <a href="docs/">Dokümantasyon</a>
+      <a href="#yol-haritasi">Yol haritası</a>
+      <a href="#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero (wordpress.com tarzı mavi) -->
+  <section class="hero">
+    <svg class="hero-globe" viewBox="0 0 600 600" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="1">
+        <circle cx="300" cy="300" r="280"/>
+        <ellipse cx="300" cy="300" rx="280" ry="90"/>
+        <ellipse cx="300" cy="300" rx="280" ry="190"/>
+        <ellipse cx="300" cy="300" rx="90" ry="280"/>
+        <ellipse cx="300" cy="300" rx="190" ry="280"/>
+        <line x1="20" y1="300" x2="580" y2="300"/>
+        <line x1="300" y1="20" x2="300" y2="580"/>
+      </g>
+    </svg>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="badge"><span class="dot"></span> Erken sürüm · 0.1</p>
+        <h1>WordPress,<br><em>Go'nun hızıyla.</em></h1>
+        <p class="lead">Pursae, WordPress çekirdeğini Go ile yeniden yazar: tek binary, tek PostgreSQL veritabanı, WebAssembly sandbox'ında çalışan eklentiler ve yerleşik sayfa oluşturucu. Yönetim paneli ve blok editörü alıştığınız gibi çalışır.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#kurulum">Hemen başlayın</a>
+          <a class="btn btn-outline-light" href="#mimari">Mimariyi inceleyin</a>
+        </div>
+        <ul class="hero-tags">
+          <li>Tek binary</li><li>PostgreSQL + JSONB</li><li>Wasm eklentiler</li><li>GPL-2.0</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="terminal">
+          <div class="terminal-bar"><i></i><i></i><i></i><span>~/sitem</span></div>
+<pre><span class="c-mute">$</span> docker compose up -d
+<span class="c-ok">✔</span> db       <span class="c-mute">postgres:17 · sağlıklı</span>
+<span class="c-ok">✔</span> pursae   <span class="c-mute">tek binary · başladı</span>
+
+<span class="c-mute">$</span> pursae serve
+<span class="c-acc">›</span> şema geçişleri     <span class="c-mute">güncel</span>
+<span class="c-acc">›</span> görev çalıştırıcı  <span class="c-mute">çalışıyor</span>
+<span class="c-acc">›</span> wasm eklentiler    <span class="c-mute">3 yüklendi, imzalar ok</span>
+<span class="c-acc">›</span> sayfa önbelleği    <span class="c-mute">açık</span>
+<span class="c-ok">→</span> http://localhost:8080 <span class="c-ok">hazır</span></pre>
+        </div>
+        <div class="float-card fc-top">
+          <small>Sayfa önbelleği</small>
+          <strong>Açık</strong>
+          <span class="muted">etiket tabanlı temizleme</span>
+        </div>
+        <div class="float-card fc-bottom">
+          <small>Eklenti sandbox'ı</small>
+          <strong class="ok">✓ İmza doğrulandı</strong>
+          <div class="bar"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wordpress.org tarzı dil şeridi -->
+  <div class="notice-strip">
+    Pursae 0.1 erken sürüm olarak yayında. <a href="#kurulum">Üretim kontrol listesini</a> okumadan gerçek trafiğe açmayın.
+  </div>
+
+  <!-- Yaklaşım -->
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Yaklaşımımız</p>
+        <h2 class="display">Tanıdık olanı koru,<br>motoru değiştir.</h2>
+      </div>
+      <div>
+        <p class="body-lg">WordPress'i basit ve tanıdık kılan her şeyi koruyoruz; altındaki motoru değiştiriyoruz. Derlenmiş bir binary, modern bir PostgreSQL şeması ve sandbox içindeki eklentiler bir siteyi daha hızlı, daha güvenli ve yönetmesi daha kolay hale getirir. Yazarlar bildikleri editörü, geliştiriciler tanıdıkları tema yapısını kullanmaya devam eder.</p>
+        <div class="link-row">
+          <a class="text-link" href="#mimari">Mimariye göz atın →</a>
+          <a class="text-link" href="#golementor">Golementor ile tanışın →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Özellikler (wordpress.com kart stili) -->
+  <section class="section section-tint" id="ozellikler">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Neden Pursae</p>
+        <h2 class="display">Farklı olan dört şey</h2>
+      </div>
+      <div class="cards-4">
+        <article class="card">
+          <span class="icon-circle"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
+          <h3>Varsayılan olarak hızlı</h3>
+          <p>Her istekte yorumlanan PHP yerine goroutine'lerle çalışan tek bir derlenmiş süreç; site bellekte sıcak kalır. Etiket tabanlı tam sayfa önbelleği çekirdekte gelir.</p>
+        </article>
+        <article class="card">
+          <span class="icon-circle"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8z M3 8l9 5 9-5 M12 13v8"/></svg></span>
+          <h3>Tek binary, sade operasyon</h3>
+          <p>PHP yok, web sunucusu ayarı yok, dağınık dosya yok. Bir binary ve bir PostgreSQL veritabanı; güncelleme bir dosyayı değiştirmekten ibaret. Geçişler açılışta çalışır.</p>
+        </article>
+        <article class="card">
+          <span class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z M9 12l2 2 4-4"/></svg></span>
+          <h3>Sandbox'lı eklentiler</h3>
+          <p>Eklentiler imzalı WebAssembly paketleridir. Dosyalara, ağa ve veritabanına yalnızca etkinleştirirken verdiğiniz izinlerle erişir; bir çökme sandbox içinde kalır.</p>
+        </article>
+        <article class="card">
+          <span class="icon-circle"><svg viewBox="0 0 24 24"><path d="M8 7 3 12l5 5 M16 7l5 5-5 5 M14 4l-4 16"/></svg></span>
+          <h3>Headless'a hazır</h3>
+          <p>wp/v2 REST API ilk günden çekirdekte; cookie, nonce ve Uygulama Parolası kimlik doğrulamasıyla. Aynı kurulumu klasik site ya da modern bir ön yüzün arka ucu olarak kullanın.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tanıdık (wordpress.org split) -->
+  <section class="section">
+    <div class="container split split-media">
+      <div>
+        <p class="eyebrow">Tanıdık</p>
+        <h2 class="display">WordPress'i biliyorsanız, Pursae'yi de biliyorsunuz</h2>
+        <p class="body-lg">Öğrenilecek yeni bir sistem yok. Yönetim paneli WordPress 7.1 işaretlemesini ve CSS'ini kullanır; yazılar Gotenberg ile yazılır: WordPress'in kendi blok editörü, Pursae'nin REST API'si üzerinde.</p>
+        <ul class="checklist">
+          <li>Yazılar, sayfalar, revizyonlar, kategoriler, etiketler, ortam kütüphanesi</li>
+          <li>Menüler, bileşenler, canlı önizlemeli Özelleştirici, tema dosyası düzenleyici</li>
+          <li>Roller ve yetkiler; kullanıcı başına izin ver / reddet</li>
+          <li>Twenty Sixteen'den Twenty Twenty-One'a, artı Go için yazılmış Classic tema</li>
+        </ul>
+      </div>
+      <div class="admin-mock" aria-hidden="true">
+        <div class="admin-top"><span class="admin-logo"></span><span>Pursae Sitem</span><span class="admin-new">+ Yeni</span></div>
+        <div class="admin-body">
+          <aside>
+            <b class="active">Başlangıç</b><b>Yazılar</b><b>Ortam</b><b>Sayfalar</b><b>Yorumlar</b><b>Görünüm</b><b>Eklentiler</b><b>Kullanıcılar</b><b>Ayarlar</b>
+          </aside>
+          <div class="admin-content">
+            <h4>Başlangıç</h4>
+            <div class="admin-grid">
+              <div class="widget"><em>Bir bakışta</em><p>12 Yazı · 4 Sayfa<br>38 Yorum</p></div>
+              <div class="widget"><em>Hızlı taslak</em><span class="field"></span><span class="field tall"></span><span class="mini-btn">Taslağı kaydet</span></div>
+              <div class="widget"><em>Site sağlığı</em><div class="health"><span></span></div><p>İyi</p></div>
+              <div class="widget"><em>Etkinlik</em><p>Yayımlandı: Merhaba dünya<br>Zamanlandı: Go ile hız</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mimari (wordpress.org koyu bölüm) -->
+  <section class="section section-dark" id="mimari">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Mimari</p>
+        <h2 class="display">Tek süreç, net katmanlar</h2>
+        <p class="body-lg narrow">Bir istek tek bir süreçte işlenir: HTTP katmanı yetkileri denetler, çekirdek servisler PostgreSQL ile konuşur, tema motoru çıktıyı üretir. Eklentiler yalnızca hook sistemi üzerinden, sandbox içinde çalışır.</p>
+      </div>
+
+      <div class="arch">
+        <div class="arch-col">
+          <p class="arch-label">İstemciler</p>
+          <div class="arch-box">Tarayıcı</div>
+          <div class="arch-box">Yönetim paneli</div>
+          <div class="arch-box">Headless ön yüz</div>
+        </div>
+        <div class="arch-arrow" aria-hidden="true"></div>
+        <div class="arch-core">
+          <p class="arch-label">pursae <span>· tek Go binary</span></p>
+          <div class="arch-box wide">HTTP · Gin</div>
+          <div class="arch-row">
+            <div class="arch-box">Çekirdek servisler</div>
+            <div class="arch-box">Tema motoru</div>
+          </div>
+          <div class="arch-row">
+            <div class="arch-box">Hook'lar</div>
+            <div class="arch-box">Görev çalıştırıcı</div>
+          </div>
+          <div class="arch-box wide sandbox">Wasm sandbox</div>
+        </div>
+        <div class="arch-arrow" aria-hidden="true"></div>
+        <div class="arch-col">
+          <p class="arch-label">PostgreSQL</p>
+          <div class="arch-box">Tipli sütunlar</div>
+          <div class="arch-box">JSONB meta</div>
+          <div class="arch-box">Tam metin arama</div>
+        </div>
+      </div>
+
+      <div class="cards-3 dark-cards">
+        <article>
+          <h3>Modern bir şema</h3>
+          <p>postmeta ve options yığınları yerine her kavram için tipli tablolar. Esnek, eklentiye ait veriler GIN indeksli JSONB sütunlarında yaşar.</p>
+        </article>
+        <article>
+          <h3>Gerçek bir zamanlayıcı</h3>
+          <p>Ziyaretçiyle tetiklenen sahte cron yok. Gömülü görev çalıştırıcı zamanlanmış olayları vaktinde yürütür; advisory lock çok örnekli kurulumlarda bir görevin iki kez çalışmasını engeller.</p>
+        </article>
+        <article>
+          <h3>Neyin değiştiğini bilen önbellek</h3>
+          <p>Pursae Cache, etiket tabanlı temizlemeli süreç içi tam sayfa önbelleğidir: bir yazıyı güncelleyin, yalnızca etkilenen sayfalar düşer. Gzip, ETag ve CDN temizleme başlıkları dahil.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eklenti güvenliği -->
+  <section class="section" id="eklentiler">
+    <div class="container split split-media reverse">
+      <div>
+        <p class="eyebrow">Eklenti güvenliği</p>
+        <h2 class="display">İhlallerin çoğu eklentilerden gelir. O kapıyı sandbox ile kapatıyoruz.</h2>
+        <p class="body-lg">Bir PHP eklentisi sunucunun tüm gücüyle çalışır. Pursae'de her eklenti wazero tarafından yürütülen bir WebAssembly modülüdür ve yalnızca çekirdeğin açtığı host fonksiyonlarını çağırabilir.</p>
+        <dl class="feature-list">
+          <div><dt>Beyan edilen izinler</dt><dd>Eklentinin istedikleri etkinleştirmede gösterilir, onayı siz verirsiniz.</dd></div>
+          <div><dt>İmzalı paketler</dt><dd>Mağazadaki her paket Ed25519 imzası taşır; eşleşmeyen kurulmaz.</dd></div>
+          <div><dt>Sınırlı hatalar</dt><dd>Bir eklentideki çökme ya da sonsuz döngü siteyi düşürmez.</dd></div>
+          <div><dt>Dilden bağımsız</dt><dd>Bugün Go SDK; yarın Wasm hedefleyen her dil.</dd></div>
+        </dl>
+      </div>
+      <div class="dialog-mock" aria-hidden="true">
+        <div class="dialog-head">
+          <span class="plugin-icon">SEO</span>
+          <div><strong>Simple SEO</strong><small>v1.2.0</small></div>
+          <span class="verified">✓ İmza doğrulandı</span>
+        </div>
+        <p class="dialog-title">Bu eklenti şunları istiyor:</p>
+        <ul class="perm">
+          <li class="yes">Yazı ve sayfa içeriğini okuma</li>
+          <li class="yes">Kendi ayarlarını saklama</li>
+          <li class="yes">Sayfa başlığına meta etiketleri ekleme</li>
+          <li class="no">Ağ erişimi <span>İstenmedi</span></li>
+          <li class="no">Kullanıcı verisi <span>İstenmedi</span></li>
+        </ul>
+        <div class="chips"><code>posts:read</code><code>admin:notices</code></div>
+        <div class="dialog-actions"><span class="btn btn-ghost btn-sm">Vazgeç</span><span class="btn btn-primary btn-sm">İzin ver ve etkinleştir</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Golementor -->
+  <section class="section section-tint" id="golementor">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Golementor</p>
+        <h2 class="display">Görsel sayfa oluşturucu, kutudan çıktığı gibi</h2>
+        <p class="body-lg narrow center-text">Ekstra kurulum yok. Golementor yerleşik bir eklenti olarak gelir: gördüğünüzün yayımlandığı canlı bir tuval. Yazılar için blok editörünü, tasarlanmış sayfalar, header, footer ve popup'lar için Golementor'u kullanın.</p>
+      </div>
+
+      <div class="builder" aria-hidden="true">
+        <aside class="builder-panel">
+          <div class="search">Bileşen ara…</div>
+          <p class="group">Temel</p>
+          <div class="widgets"><span>Başlık</span><span>Metin</span><span>Görsel</span><span>Buton</span><span>Video</span><span>İkon kutusu</span></div>
+          <p class="group">Etkileşimli</p>
+          <div class="widgets"><span>Sekmeler</span><span>Akordeon</span><span>Sayaç</span><span>Galeri</span></div>
+        </aside>
+        <div class="builder-canvas">
+          <div class="builder-bar">
+            <div class="devices"><b class="on">Masaüstü</b><b>Tablet</b><b>Mobil</b></div>
+            <span class="btn btn-primary btn-sm">Yayımla</span>
+          </div>
+          <div class="canvas">
+            <div class="canvas-hero">
+              <span class="ph-title"></span>
+              <span class="ph-line"></span>
+              <span class="ph-line short"></span>
+              <span class="ph-btn"></span>
+            </div>
+            <div class="canvas-grid"><span></span><span class="selected"></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="pill-grid">
+        <li>Bölümler, flex ve grid konteynerler</li>
+        <li>Klasik ve atomik (V4) öğeler</li>
+        <li>Tema oluşturucu: header, footer, arşiv, tekil</li>
+        <li>Popup, form, döngü, dinamik etiketler</li>
+        <li>Masaüstü, tablet ve mobil ayarları</li>
+        <li>Global renkler ve yazı tipleri</li>
+        <li>Kayıtlı temalar ve tema parçaları</li>
+        <li>Varsayılan kapalı; tek tıkla açılır</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Çekirdek -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Çekirdek</p>
+        <h2 class="display">Bir WordPress kurulumunda olan her şey</h2>
+      </div>
+      <ul class="core-grid">
+        <li>Yazılar, sayfalar, revizyonlar</li><li>Blok editörü ve desenler</li><li>Klasik Editör (TinyMCE)</li><li>Kategoriler ve etiketler</li>
+        <li>Görsel boyutlarıyla ortam kütüphanesi</li><li>Kullanıcılar, roller, yetkiler</li><li>Yorumlar ve moderasyon</li><li>Menüler ve bileşenler</li>
+        <li>Kalıcı bağlantılar</li><li>Tam metin arama</li><li>RSS, Atom, site haritası</li><li>Temalar ve Özelleştirici</li>
+        <li>Hook'lar: action ve filter</li><li>REST API wp/v2</li><li>Zamanlanmış yayın</li><li>E-posta (SMTP veya .eml)</li>
+        <li>WXR içe / dışa aktarma</li><li>Site Sağlığı</li><li>Kurulum sihirbazı</li><li>Uygulama Parolaları</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Karşılaştırma -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Dürüst bir karşılaştırma</p>
+        <h2 class="display">Nerede öndeyiz, nerede değiliz</h2>
+        <p class="body-lg narrow">WordPress'in gerçek gücü ekosistemidir; aksini iddia etmiyoruz. Tablo hem avantajları hem de henüz kazanmamız gerekenleri gösteriyor.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead><tr><th>Alan</th><th>WordPress (PHP)</th><th>Pursae</th><th>Avantaj</th></tr></thead>
+          <tbody>
+            <tr><td>İstek işleme</td><td>Her istekte yorumlanan PHP</td><td>Tek derlenmiş süreç, goroutine'ler</td><td><span class="tag tag-go">Pursae</span></td></tr>
+            <tr><td>Dağıtım</td><td>PHP, web sunucusu, MySQL, dosyalar</td><td>Tek binary + PostgreSQL</td><td><span class="tag tag-go">Pursae</span></td></tr>
+            <tr><td>Veritabanı</td><td>Anahtar-değer yığınları, çok JOIN</td><td>Tipli sütunlar ve JSONB</td><td><span class="tag tag-go">Pursae</span></td></tr>
+            <tr><td>Zamanlanmış görevler</td><td>Ziyaretçiyle tetiklenen cron</td><td>Gömülü görev çalıştırıcı</td><td><span class="tag tag-go">Pursae</span></td></tr>
+            <tr><td>Eklenti güvenliği</td><td>Tam sunucu erişimi</td><td>Wasm sandbox, izinler, imzalar</td><td><span class="tag tag-go">Pursae</span></td></tr>
+            <tr><td>Sayfa önbelleği</td><td>Eklenti gerekir</td><td>Çekirdekte, etiket tabanlı temizleme</td><td><span class="tag tag-go">Pursae</span></td></tr>
+            <tr><td>Çekirdek olgunluğu</td><td>Üretimde yirmi yıl</td><td>Yeni kod</td><td><span class="tag tag-wp">WordPress, şimdilik</span></td></tr>
+            <tr><td>Eklenti ve tema ekosistemi</td><td>On binlerce</td><td>Sıfırdan başlıyor</td><td><span class="tag tag-wp">WordPress</span></td></tr>
+            <tr><td>Barındırma</td><td>Her yerde paylaşımlı hosting</td><td>VPS veya konteyner</td><td><span class="tag tag-wp">WordPress</span></td></tr>
+            <tr><td>Multisite</td><td>Var</td><td>Yok, kurulum başına bir site</td><td><span class="tag tag-wp">WordPress</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Geliştirici dokümantasyonu -->
+  <section class="section" id="gelistiriciler">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Geliştiriciler</p>
+        <h2 class="display">Teknik dokümantasyon</h2>
+        <p class="body-lg narrow">Eklenti, tema, REST API ve üretim işletimi için eksiksiz başvuru. Her sayfa gerçek kodla ve çalışan örneklerle yazılmıştır.</p>
+      </div>
+
+      <div class="docs-grid">
+        <a class="doc-card" href="docs/getting-started/">
+          <small>5 sayfa</small><h3>Başlarken</h3>
+          <p>Docker ile ya da binary'yi kaynaktan derleyerek kurun, ilk sitenizi açın, sürüm yükseltin.</p>
+        </a>
+        <a class="doc-card" href="docs/plugins/">
+          <small>15 sayfa</small><h3>Eklenti geliştirme</h3>
+          <p>Go SDK, <code>plugin.json</code>, izinler, hook'lar, host API, Wasm sınırları, paketleme ve imzalama.</p>
+        </a>
+        <a class="doc-card" href="docs/themes/">
+          <small>9 sayfa</small><h3>Tema geliştirme</h3>
+          <p>Şablonlar, <code>theme.json</code>, Özelleştirici, blok editörü desteği, stiller ve betikler.</p>
+        </a>
+        <a class="doc-card" href="docs/rest-api/">
+          <small>4 sayfa</small><h3>REST API</h3>
+          <p>wp/v2 uç noktaları, cookie + nonce ve Uygulama Parolası kimlik doğrulaması, eklenti rotaları.</p>
+        </a>
+        <a class="doc-card" href="docs/built-in-plugins/">
+          <small>12 sayfa</small><h3>Yerleşik eklentiler</h3>
+          <p>Commerce, Multi Language, Contact Form, Custom Fields, SEO, CDN, Headless, SMTP ve daha fazlası.</p>
+        </a>
+        <a class="doc-card" href="docs/operations/">
+          <small>9 sayfa</small><h3>Üretimde çalıştırma</h3>
+          <p>Yapılandırma, önbellek, cron, yedekleme, ters proxy ve TLS, güvenlik, sorun giderme.</p>
+        </a>
+      </div>
+
+      <div class="dev-snippets">
+        <div class="code-card">
+          <div class="code-head"><span>plugin.json</span><a class="snip-link" href="docs/plugins/manifest/">Belge →</a></div>
+<pre>{
+  "slug": "gopher-facts",
+  "version": "1.2.0",
+  "requires": "0.1.0",
+  "permissions": [
+    "content:filter",
+    "rest:routes",
+    "admin:settings"
+  ],
+  "hooks": ["the_content"],
+  "shortcodes": ["gopher-facts"]
+}</pre>
+          <p class="code-foot">Bilinmeyen alanlar reddedilir; yazım hatası sessizce izin düşürmez.</p>
+        </div>
+        <div class="code-card">
+          <div class="code-head"><span>REST · Uygulama Parolası</span><a class="snip-link" href="docs/rest-api/authentication/">Belge →</a></div>
+<pre>curl -u 'editor:abcd efgh ijkl mnop qrst uvwx' \
+  -H 'Content-Type: application/json' \
+  -d '{"title":"From the API","status":"draft"}' \
+  https://blog.example.com/wp-json/wp/v2/posts</pre>
+          <p class="code-foot">Çerezle kimlik doğrulama yalnızca nonce ile çalışır; Basic için TLS kullanın.</p>
+        </div>
+        <div class="code-card">
+          <div class="code-head"><span>bash · binary</span><a class="snip-link" href="docs/getting-started/install-binary/">Belge →</a></div>
+<pre>make build   # statik binary: bin/wpgo
+export DATABASE_URL='postgres://wpgo:wpgo@localhost:5432/wpgo?sslmode=disable'
+export WPGO_SITE_URL='https://blog.example.com'
+export WPGO_UPLOADS_DIR=/var/lib/wpgo/uploads
+./bin/wpgo serve</pre>
+          <p class="code-foot">Açılışta geçişler advisory lock altında çalışır; varsayılan adres <code>:8080</code>.</p>
+        </div>
+      </div>
+
+      <div class="link-row">
+        <a class="btn btn-primary" href="docs/">Tüm dokümantasyonu açın</a>
+        <a class="text-link" href="docs/plugins/your-first-plugin/">İlk eklentinizi yazın →</a>
+        <a class="text-link" href="docs/operations/configuration/">WPGO_* değişkenleri →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kurulum -->
+  <section class="section" id="kurulum">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Kurulum</p>
+        <h2 class="display">İki komutla ayakta</h2>
+        <p class="body-lg">Docker Compose, PostgreSQL ile Pursae'yi birlikte başlatır. Siteyi açın, kurulum sihirbazı gerisini halleder: bildiğiniz o beş dakikalık kurulum.</p>
+        <p class="warn">Pursae erken aşamada bir yazılımdır. Gerçek trafiğe açmadan önce üretim kontrol listesini okuyun.</p>
+      </div>
+      <div class="code-card">
+        <div class="code-head"><span>bash</span><button class="copy-btn" type="button" data-copy="install-cmd">Kopyala</button></div>
+<pre id="install-cmd">git clone https://github.com/boracomet/wordpress-go.git
+cd wordpress-go
+docker compose -f docker/compose.yaml up -d --build</pre>
+        <p class="code-foot">Ardından <code>http://localhost:8088</code> adresini açın</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yol haritası -->
+  <section class="section section-tint" id="yol-haritasi">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Yol haritası</p>
+        <h2 class="display">Dört aşama</h2>
+      </div>
+      <ol class="roadmap">
+        <li class="done">
+          <span class="step">1</span>
+          <h3>Temel</h3>
+          <p>PostgreSQL şeması, geçişler, kimlik doğrulama, roller ve yetkiler, WordPress yönetim paneli, güvenlik başlıkları.</p>
+          <span class="status">0.1'de yayında</span>
+        </li>
+        <li class="done">
+          <span class="step">2</span>
+          <h3>İçerik</h3>
+          <p>Yazılar, sayfalar, Gotenberg ve Klasik Editör, ortam, taksonomiler, yorumlar, temalar, REST API, sayfa önbelleği.</p>
+          <span class="status">0.1'de yayında</span>
+        </li>
+        <li class="progress">
+          <span class="step">3</span>
+          <h3>Genişlet</h3>
+          <p>Golementor, Wasm eklenti çalışma zamanı ve Go SDK, daha fazla hook ve host fonksiyonu, güncellemeler için Hub.</p>
+          <span class="status">Devam ediyor</span>
+        </li>
+        <li>
+          <span class="step">4</span>
+          <h3>Ekosistem</h3>
+          <p>İmzalı eklenti ve tema mağazası, daha fazla Wasm dili için SDK'lar, PHP WordPress'ten taşıma araçları.</p>
+          <span class="status">Planlandı</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SSS -->
+  <section class="section" id="sss">
+    <div class="container faq-wrap">
+      <div>
+        <p class="eyebrow">SSS</p>
+        <h2 class="display">Sıkça sorulanlar</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Mevcut WordPress eklentilerim çalışır mı?</summary>
+          <p>Hayır. PHP eklentileri çalıştırılmaz. Eklentiler Pursae SDK'sına göre yazılmış WebAssembly paketleridir; popüler eklentilerin karşılıkları zamanla yerel olarak geliştirilecek, mağaza bugün mevcut olanları listeler.</p>
+        </details>
+        <details>
+          <summary>WordPress sitemi içe aktarabilir miyim?</summary>
+          <p>İçerik için evet: Araçlar › İçe Aktar, WXR dışa aktarımlarını okur (yazılar, sayfalar, ortam, terimler, yorumlar, kullanıcılar). Temalar ve eklentiler taşınmaz. Gelen temalar arasında Twenty Sixteen'den Twenty Twenty-One'a kadar olanlar var.</p>
+        </details>
+        <details>
+          <summary>Multisite var mı?</summary>
+          <p>Hayır. Multisite kapsam dışı; her site kendi veritabanıyla ayrı bir kurulumdur.</p>
+        </details>
+        <details>
+          <summary>Paylaşımlı hostingde çalışır mı?</summary>
+          <p>Bir binary çalıştırıp PostgreSQL veritabanına erişebildiğiniz her yerde çalışır: VPS, konteyner platformu, kendi sunucunuz. Klasik PHP paylaşımlı hosting hedef değildir.</p>
+        </details>
+        <details>
+          <summary>Dışarıya veri gönderiyor mu?</summary>
+          <p>Kendiliğinden asla. Gravatar yok, üçüncü taraf yazı tipi yok, telemetri yok. Bir site güncellemeleri öğrenmek için günde bir kez Hub'a ping atabilir; bu yalnızca site adresini ve çekirdek sürümünü gönderir ve kapatılabilir.</p>
+        </details>
+        <details>
+          <summary>Lisansı nedir?</summary>
+          <p>WordPress gibi GPL-2.0-or-later. Golementor editör arayüzünü içeren derlemeler GPL-3.0 altında dağıtılır.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (wordpress.org fırça darbesi + wordpress.com mavisi) -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <svg class="brush" viewBox="0 0 400 90" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M8 46c30-22 80-30 140-28 70 2 120-10 190-6 30 2 52 10 54 22 2 14-30 22-70 26-80 8-150 6-220 10-50 3-90 2-94-8-3-7 0-12 0-16z" fill="currentColor"/>
+      </svg>
+      <h2 class="display">Bugün deneyin</h2>
+      <p class="body-lg">Son sürümü indirin, Docker ile çalıştırın ya da binary'yi kaynaktan derleyin. Gelişmeleri takip etmek için depoya yıldız verin.</p>
+      <div class="hero-actions center">
+        <a class="btn btn-primary" href="#kurulum">Pursae'yi indirin</a>
+        <a class="btn btn-ghost" href="https://github.com/boracomet/wordpress-go">GitHub'da görüntüleyin</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="#ozellikler">Özellikler</a><a href="#mimari">Mimari</a><a href="#eklentiler">Eklentiler</a><a href="#golementor">Golementor</a><a href="#gelistiriciler">Geliştiriciler</a><a href="#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="#kurulum">Kurulum</a><a href="#sss">SSS</a><a href="docs/">Belgeler</a><a href="docs/plugins/">Eklenti geliştirme</a><a href="docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

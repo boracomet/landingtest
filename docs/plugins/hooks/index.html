@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hooks — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Every action and filter the core fires, with their arguments, and how plugin callbacks receive them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/" aria-current="page">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/plugins/">Plugin development</a><span>/</span><span aria-current="page">Hooks</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Hooks</h1>
+        <p class="lead">Every action and filter the core fires, with their arguments, and how plugin callbacks receive them.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Hooks work as in WordPress: <strong>filters</strong> receive a value and return it (changed or not),
+<strong>actions</strong> receive arguments and return nothing. Callbacks run in ascending priority order
+(default 10); the core's own callbacks and every plugin's share one registry, so a plugin can run
+before or after core behaviour by choosing its priority.</p>
+<pre><code class="language-go">wpgo.AddFilter(&quot;the_content&quot;, 20, func(ctx wpgo.Context, content string, args []any) string { … })
+wpgo.AddAction(&quot;admin_notices&quot;, wpgo.DefaultPriority, func(ctx wpgo.Context, args []any) { … })
+</code></pre>
+<p><code>AddFilter</code> is generic: the value is decoded from JSON into the type you declare (<code>string</code>,
+<code>map[string]any</code>, a struct). If decoding fails, the host keeps the original value and logs it.
+<code>ctx</code> carries the plugin slug, the hook name and the callback id. Every hook must be listed in
+the manifest's <code>hooks</code> array.</p>
+<h2 id="hooks-the-core-fires">Hooks the core fires</h2>
+<h3 id="content">Content</h3>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>Type</th>
+<th>Value</th>
+<th>Arguments</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>the_content</code></td>
+<td>filter</td>
+<td>the rendered post HTML (after blocks, autop and <a href="../../../docs/plugins/shortcodes/">shortcodes</a>)</td>
+<td><code>post</code>: <code>{&quot;id&quot;: 12, &quot;type&quot;: &quot;post&quot;, &quot;is_single&quot;: true}</code> — <code>is_single</code> is false in archives and the Twenty Twenty-One excerpt loop</td>
+<td><code>content:filter</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="admin">Admin</h3>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>Type</th>
+<th>Value</th>
+<th>Arguments</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>admin_notices</code></td>
+<td>action</td>
+<td>—</td>
+<td>none. Queue a notice with <code>wpgo.AdminNotice</code>; it is escaped and shown on the current admin screen</td>
+<td><code>admin:notices</code></td>
+</tr>
+<tr>
+<td><code>wpgo_post_stats</code></td>
+<td>filter</td>
+<td><code>map[string]any</code> of statistics shown in the classic editor's publish box (key → value; underscores become spaces)</td>
+<td><code>post</code>: <code>{&quot;id&quot;, &quot;title&quot;, &quot;content&quot;}</code></td>
+<td><code>posts:read</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="lifecycle">Lifecycle</h3>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>Type</th>
+<th>Arguments</th>
+<th>Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>init</code></td>
+<td>action</td>
+<td>none. Fired after all active plugins are loaded at start-up and after a plugin is activated</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>cron_&lt;name&gt;</code></td>
+<td>action</td>
+<td>the event payload: <code>{&quot;plugin&quot;: &quot;&lt;slug&gt;&quot;, &quot;args&quot;: {…}}</code> as the single argument. Fired by the scheduler for events the plugin created with <code>ScheduleEvent</code> (<a href="../../../docs/plugins/scheduled-events/">scheduled events</a>)</td>
+<td><code>cron</code></td>
+</tr>
+</tbody>
+</table>
+<p>Hooks fire with the request's user attached, so <code>wpgo.CurrentUser()</code> works inside <code>the_content</code>
+and <code>admin_notices</code> callbacks; cron callbacks see no user.</p>
+<h2 id="reserved-names">Reserved names</h2>
+<p>The permission rules already classify the WordPress hook names the core will fire in later
+versions, so a manifest written today stays valid:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Hook names</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content:filter</code></td>
+<td>everything starting with <code>the_</code> (<code>the_title</code>, <code>the_excerpt</code>, …), <code>comment_text</code>, <code>widget_text</code>, <code>widget_title</code>, <code>get_the_excerpt</code>, <code>wp_title</code>, <code>document_title_parts</code>, <code>body_class</code>, <code>post_class</code></td>
+</tr>
+<tr>
+<td><code>posts:read</code></td>
+<td><code>save_post</code>, <code>save_post_&lt;type&gt;</code>, <code>wp_insert_post</code>, <code>publish_post</code>, <code>transition_post_status</code>, <code>before_delete_post</code>, <code>deleted_post</code>, <code>trashed_post</code>, <code>untrashed_post</code>, <code>post_updated</code>, <code>wpgo_post_stats</code></td>
+</tr>
+<tr>
+<td><code>posts:write</code></td>
+<td><code>wp_insert_post_data</code>, <code>wp_insert_attachment_data</code>, <code>pre_post_update</code>, <code>content_save_pre</code>, <code>title_save_pre</code>, <code>excerpt_save_pre</code></td>
+</tr>
+<tr>
+<td><code>admin:notices</code></td>
+<td><code>admin_notices</code>, <code>all_admin_notices</code>, <code>network_admin_notices</code>, <code>user_admin_notices</code></td>
+</tr>
+<tr>
+<td><code>cron</code></td>
+<td>everything starting with <code>cron_</code> or <code>wpgo_cron</code></td>
+</tr>
+</tbody>
+</table>
+<p>Subscribing to a hook the core does not fire yet is allowed; the callback simply never runs.</p>
+<h2 id="behaviour-to-know">Behaviour to know</h2>
+<ul>
+<li><strong>Timeouts.</strong> A callback has 2 seconds. A callback that overruns is killed, the filter keeps
+its value, and the plugin is re-instantiated on the next call.</li>
+<li><strong>Failures count.</strong> Five consecutive failures (panic, timeout, malformed response) disable the
+plugin until it is activated again. Permission errors do not count.</li>
+<li><strong>Re-entrancy.</strong> If a host function you call fires a hook that would call back into your
+plugin on the same call chain, that callback is skipped (and logged) instead of deadlocking.</li>
+<li><strong>Types survive.</strong> The host decodes your return value into the Go type of the original value,
+so a <code>string</code> filter must return a string, and <code>wpgo_post_stats</code> a JSON object.</li>
+</ul>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/plugins/manifest/" rel="prev"><small>← Previous</small>plugin.json</a>
+          <a class="next" href="../../../docs/plugins/host-api/" rel="next"><small>Next →</small>Host API reference</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#hooks-the-core-fires">Hooks the core fires</a></li><li class="toc-h3"><a href="#content">Content</a></li><li class="toc-h3"><a href="#admin">Admin</a></li><li class="toc-h3"><a href="#lifecycle">Lifecycle</a></li><li class="toc-h2"><a href="#reserved-names">Reserved names</a></li><li class="toc-h2"><a href="#behaviour-to-know">Behaviour to know</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

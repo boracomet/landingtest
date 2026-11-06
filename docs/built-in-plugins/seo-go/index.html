@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEO-Go — Dokümantasyon · Pursae</title>
+  <meta name="description" content="SEO in one plugin: the union of Yoast SEO Premium and Rank Math Pro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/" aria-current="page">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">SEO-Go</span>
+      </nav>
+      <header class="docs-head">
+        <h1>SEO-Go</h1>
+        <p class="lead">SEO in one plugin: the union of Yoast SEO Premium and Rank Math Pro.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>SEO-Go is the native SEO plugin of Pursae. It takes the union of what Yoast SEO (Premium)
+and Rank Math (Pro) do and presents it as one plugin with a WordPress-style admin UI. It is
+compiled in like Classic Editor, WPGo Cache and Golementor. It is <strong>off on a fresh install</strong>, and
+while it is off the site, the editors and the admin menu are exactly as without it: its routes
+answer 404, nothing is added to <code>&lt;head&gt;</code>, and core's <code>wp-sitemap.xml</code> and <code>robots.txt</code> are served.</p>
+<p>Verified reference facts (thresholds, meta keys, URL schemes, with source links) are in
+<code>seo-go-research.md</code> (docs/seo-go-research.md in the repository). This document maps every feature to both plugins and
+says what SEO-Go does with it.</p>
+<p>Legend: <strong>✓</strong> implemented · <strong>◐</strong> partly (see note) · <strong>✗</strong> left out (see &quot;Left out&quot; below).</p>
+<h2 id="design-decisions">Design decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plugin switch</td>
+<td>Option <code>native_seogo</code> (Plugins screen, slug <code>seo-go</code>). All settings live in one JSON option, <code>seogo_options</code> (<code>seogo.go</code>). Turning the plugin off keeps settings, meta, redirects and the 404 log.</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>SEO-Go writes Rank Math's <code>%var%</code> syntax and also accepts Yoast's <code>%%var%%</code>. Both plugins' names work (<code>%term%</code> and <code>%term_title%</code>, <code>%search_query%</code> and <code>%searchphrase%</code>, <code>%tagline%</code> and <code>%sitedesc%</code>). After replacement, doubled spaces and dangling separators are removed, as both plugins do.</td>
+</tr>
+<tr>
+<td>Post and term meta</td>
+<td>SEO-Go stores its own <code>_seogo_*</code> keys. Every read falls back to Yoast's <code>_yoast_wpseo_*</code> keys and then to Rank Math's <code>rank_math_*</code> keys, including Yoast's 0/1/2 noindex flag and Rank Math's serialized PHP robots arrays. A site imported from WordPress keeps its SEO data with no conversion step. <em>Tools › Import</em> and the WXR importer also copy that data into SEO-Go's keys, and the originals stay.</td>
+</tr>
+<tr>
+<td>Scores</td>
+<td>The traffic light uses Yoast's assessments and scores: SEO = Σscore / (n×9) × 100, and readability uses penalty points, giving 30, 60 or 90. Rank Math's tests that Yoast has no counterpart for are listed as unscored &quot;Additional checks&quot;. Rank Math's 100-point score is shown next to the SEO heading.</td>
+</tr>
+<tr>
+<td>Analysis engine</td>
+<td>One Go implementation (<code>seogo_analysis.go</code>) behind <code>POST /wp-json/seogo/v1/analyze</code>, used by both editors, the bulk editor and the stored scores.</td>
+</tr>
+<tr>
+<td>Editors</td>
+<td>One box markup (<code>seogo/metabox</code>) and one script (<code>seogo-editor.js</code>). In the classic editor it is a meta box at the top of the main column. In Gotenberg it is a <code>PluginSidebar</code> with a toolbar icon and a More-menu item, plus a &quot;SEO-Go&quot; document settings panel with both scores.</td>
+</tr>
+<tr>
+<td>Redirect storage</td>
+<td>The core <code>redirects</code> table, extended by migration <code>0010_seogo.sql</code> (match type, status, category, origin, last hit). A new <code>seogo_404</code> table holds the 404 log.</td>
+</tr>
+<tr>
+<td>Sitemaps</td>
+<td>Yoast's URL scheme (<code>/sitemap_index.xml</code>, <code>/{type}-sitemap{N}.xml</code>, <code>/main-sitemap.xsl</code>), 1000 URLs per file (configurable), with image entries. <code>/sitemap.xml</code> and every <code>/wp-sitemap*.xml</code> redirect (301) to the index, as Yoast does.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="feature-map">Feature map</h2>
+<h3 id="setup-and-dashboard">Setup and dashboard</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup wizard</td>
+<td>First-time configuration (site representation, social profiles, personal preferences)</td>
+<td>Setup Wizard (site type, logo, Search Console, sitemaps, optimization, role manager)</td>
+<td>✓ Five steps: site representation (organization or person, logo, separator), social profiles, search engines (sitemaps, redirections, 404 monitor, breadcrumbs, IndexNow, single-author site, empty terms), import from Yoast/Rank Math, done. It opens on the first activation.</td>
+</tr>
+<tr>
+<td>Dashboard</td>
+<td>SEO and readability score overview, problems and notifications</td>
+<td>Modules grid, Analytics</td>
+<td>✓ SEO and readability distribution of published content, cornerstone count, orphaned content, redirections, logged 404s, SEO problems (search engines discouraged, plain permalinks, default tagline), sitemap link.</td>
+</tr>
+<tr>
+<td>Modules on/off</td>
+<td>(feature toggles)</td>
+<td>Modules screen</td>
+<td>✓ Content Analysis, Schema, XML Sitemaps, Breadcrumbs, Redirections, 404 Monitor, Link Counter, Image SEO, Local SEO, News Sitemap, Video Sitemap, Instant Indexing, Role Manager. A module that is off adds nothing.</td>
+</tr>
+<tr>
+<td>Role manager</td>
+<td>—</td>
+<td>Role Manager (<code>rank_math_*</code> capabilities)</td>
+<td>✓ <code>seogo_*</code> capabilities per role (Search Appearance, General, Sitemaps, 404 Monitor, Redirections, Link Builder, Role Manager, and On-Page Analysis/General/Advanced/Schema/Social). Administrators always have all of them. The menu, screens, REST routes and editor tabs check them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="per-post-seo-box-classic-editor-meta-box--gotenberg-sidebar">Per-post SEO box (classic editor meta box + Gotenberg sidebar)</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Focus keyphrase</td>
+<td>Focus keyphrase (+ Premium related keyphrases)</td>
+<td>Focus keyword (+ secondary keywords)</td>
+<td>✓ A comma list; the first entry is the focus keyphrase, the others are related keyphrases (checked in the text, unscored).</td>
+</tr>
+<tr>
+<td>Snippet preview</td>
+<td>Google preview, mobile and desktop</td>
+<td>Google preview, desktop and mobile</td>
+<td>✓ Mobile and desktop, server-resolved title and description, breadcrumb-style URL, keyphrase highlighted, length/width bars.</td>
+</tr>
+<tr>
+<td>SEO title and meta description with variables</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ An &quot;Insert variable&quot; menu; empty fields fall back to the Search Appearance template.</td>
+</tr>
+<tr>
+<td>SEO analysis</td>
+<td>17 assessments</td>
+<td>Basic SEO, Additional, Title Readability tests</td>
+<td>✓ All of Yoast's (keyphrase in introduction, length, density with the keyphrase-length factor, in meta description, in subheading, in SEO title, in slug, meta description length, SEO title width, text length for post/cornerstone/taxonomy, outbound and internal links, images, image keyphrase, single H1, competing links, previously used keyphrase) plus Rank Math's keyword in first 10%, URL length, number in title, power words, short paragraphs, table of contents.</td>
+</tr>
+<tr>
+<td>Readability analysis</td>
+<td>Subheading distribution, paragraph length, sentence length, transition words, passive voice, consecutive sentences, text presence; Flesch as an insight</td>
+<td>Content readability tests, legacy Flesch</td>
+<td>✓ Yoast's 7 assessments with Yoast's thresholds, including the cornerstone variants. Flesch reading ease and reading time are shown as insights, as Yoast does since 19.3. English only.</td>
+</tr>
+<tr>
+<td>Traffic lights</td>
+<td>Bullets in box, posts list, admin bar</td>
+<td>Score badge</td>
+<td>✓ Bullets in the box header, in the Gotenberg document panel, in the bulk editor and on the dashboard. Scores are stored in <code>_seogo_seo_score</code>, <code>_seogo_read_score</code> and <code>_seogo_rm_score</code>.</td>
+</tr>
+<tr>
+<td>Cornerstone / pillar content</td>
+<td>Cornerstone (stricter analysis)</td>
+<td>Pillar content</td>
+<td>✓ Stricter thresholds; shown first in internal linking suggestions; starred in the Link Counter.</td>
+</tr>
+<tr>
+<td>Canonical URL</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Robots meta</td>
+<td>noindex, nofollow, advanced (noarchive, nosnippet, noimageindex)</td>
+<td>index/noindex, nofollow, noarchive, noimageindex, nosnippet, max-snippet, max-video-preview, max-image-preview</td>
+<td>✓ All of them; site-wide limits default to <code>max-snippet:-1, max-image-preview:large, max-video-preview:-1</code>.</td>
+</tr>
+<tr>
+<td>Breadcrumbs title</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Primary category</td>
+<td>✓</td>
+<td>✓ (Pro)</td>
+<td>✓ Used in breadcrumbs and <code>%primary_category%</code>.</td>
+</tr>
+<tr>
+<td>Social previews</td>
+<td>Facebook and X previews with image, title, description</td>
+<td>Same</td>
+<td>✓ Open Graph preview card; OG and X title, description and image (Media Library picker).</td>
+</tr>
+<tr>
+<td>Schema tab</td>
+<td>Page type, article type</td>
+<td>Schema generator, templates</td>
+<td>◐ Page type (WebPage, AboutPage, FAQPage…), article type (Article, BlogPosting, NewsArticle…, None), <strong>Product</strong> (price, currency, SKU, brand, availability, rating) and <strong>custom JSON-LD</strong>. No visual schema builder or templates.</td>
+</tr>
+<tr>
+<td>Internal linking suggestions</td>
+<td>Premium</td>
+<td>Link suggestions (Pro)</td>
+<td>✓ Full-text related content (cornerstone first); &quot;Copy link&quot;; already linked items marked.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="site-wide-settings">Site-wide settings</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search appearance per type</td>
+<td>Content types, taxonomies, archives, special pages</td>
+<td>Titles &amp; Meta</td>
+<td>✓ Home, posts, pages, categories, tags, author archives, date archives, search, 404: title and description templates, noindex, sitemap inclusion, schema defaults (posts/pages), disable author/date archives (301 to home).</td>
+</tr>
+<tr>
+<td>Separator</td>
+<td>14 choices</td>
+<td>✓</td>
+<td>✓ The same 14 characters.</td>
+</tr>
+<tr>
+<td>Knowledge Graph / site representation</td>
+<td>Organization or person, logo, other profiles</td>
+<td>Local SEO &amp; Knowledge Graph</td>
+<td>✓ Organization (name, alternate name, logo) or person (a user), social profiles as <code>sameAs</code>.</td>
+</tr>
+<tr>
+<td>Social settings</td>
+<td>Facebook (default image, front page), X card type, other profiles</td>
+<td>Same</td>
+<td>✓ Open Graph on/off, X cards on/off, card type, default image, home image, Facebook page URL and app ID, X username.</td>
+</tr>
+<tr>
+<td>Webmaster verification</td>
+<td>Google, Bing, Baidu, Yandex</td>
+<td>Google, Bing, Baidu, Yandex, Pinterest, Norton</td>
+<td>✓ Google, Bing, Baidu, Yandex, Pinterest, Naver. Accepts the bare code or the whole <code>&lt;meta&gt;</code> tag. Output only on the home page.</td>
+</tr>
+<tr>
+<td>RSS before/after content</td>
+<td>✓ (<code>%%POSTLINK%%</code>, <code>%%BLOGLINK%%</code>…)</td>
+<td>✓</td>
+<td>✓ <code>%postlink%</code>, <code>%bloglink%</code>, <code>%blogdesclink%</code>, <code>%authorlink%</code> plus all variables.</td>
+</tr>
+<tr>
+<td>robots.txt editor</td>
+<td>File editor</td>
+<td>Edit robots.txt</td>
+<td>✓ Tools › robots.txt editor, served virtually; the default adds the sitemap index.</td>
+</tr>
+<tr>
+<td>.htaccess editor</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗ Not applicable: Pursae serves every request itself.</td>
+</tr>
+<tr>
+<td>Noindex empty terms / paginated pages</td>
+<td>—</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Import/export settings</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ JSON file.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="head-output-and-schema">Head output and schema</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title tag</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ Replaces <code>wp_get_document_title()</code>.</td>
+</tr>
+<tr>
+<td>Meta description, robots, canonical, rel prev</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ Core's robots meta and canonical link are replaced (one canonical); no canonical on noindexed pages.</td>
+</tr>
+<tr>
+<td>Open Graph, article times, image size/type</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>X cards, &quot;Written by&quot; and &quot;Est. reading time&quot; labels</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Schema graph</td>
+<td>WebSite, Organization/Person, WebPage, ImageObject, BreadcrumbList, Article, Person, with Yoast's @id scheme</td>
+<td>Similar</td>
+<td>✓ Yoast's @ids (<code>#website</code>, <code>#organization</code>, <code>#/schema/person/&lt;hash&gt;</code>, the permalink for WebPage, <code>#article</code>, <code>#breadcrumb</code>, <code>#primaryimage</code>). CollectionPage, ProfilePage and SearchResultsPage on archives. The person hash is stable (md5 of login + &quot;user&quot;), not Yoast's salted <code>wp_hash</code>.</td>
+</tr>
+<tr>
+<td>FAQ block</td>
+<td>FAQ block</td>
+<td>FAQ block</td>
+<td>✓ <code>seogo/faq</code> block, which adds FAQPage and Question nodes. Yoast's <code>yoast/faq-block</code> and Rank Math's <code>rank-math/faq-block</code> in imported content are read too.</td>
+</tr>
+<tr>
+<td>How-to block</td>
+<td>How-to block</td>
+<td>HowTo block</td>
+<td>✓ <code>seogo/howto</code> block and the imported <code>yoast/how-to-block</code> and <code>rank-math/howto-block</code>.</td>
+</tr>
+<tr>
+<td>Product schema</td>
+<td>(WooCommerce SEO)</td>
+<td>✓</td>
+<td>✓ Per post (article type Product).</td>
+</tr>
+<tr>
+<td>LocalBusiness</td>
+<td>Local SEO add-on</td>
+<td>Local SEO</td>
+<td>✓ Local SEO module: business type, address, phone, email, price range, coordinates, opening hours. The organization node becomes a LocalBusiness.</td>
+</tr>
+<tr>
+<td>Custom JSON-LD</td>
+<td>—</td>
+<td>Custom schema (Pro)</td>
+<td>✓ Per post: a node, a list or <code>@graph</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="breadcrumbs">Breadcrumbs</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settings</td>
+<td>Separator, home anchor, prefixes, 404 text, bold last, blog page</td>
+<td>Same, plus hide title</td>
+<td>✓ All of them.</td>
+</tr>
+<tr>
+<td>Output</td>
+<td><code>yoast_breadcrumb()</code>, shortcode, block</td>
+<td><code>rank_math_the_breadcrumbs()</code>, shortcode, block</td>
+<td>✓ The <code>seogo/breadcrumbs</code> block (and <code>yoast-seo/breadcrumbs</code>). The <code>[seogo_breadcrumb]</code>, <code>[wpseo_breadcrumb]</code> and <code>[rank_math_breadcrumb]</code> shortcodes. BreadcrumbList schema. ◐ No PHP-style template function: Pursae themes are compiled, so the block and shortcode take its place.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sitemaps-robots-and-indexing">Sitemaps, robots and indexing</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XML sitemap index and per-type sitemaps</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ post, page, category, post_tag and author sitemaps; paged at the configured size; lastmod; image entries (featured image and content images). The XSL stylesheet shows them in a browser.</td>
+</tr>
+<tr>
+<td>Exclusions</td>
+<td>noindex, per type</td>
+<td>Per post/term IDs, per type</td>
+<td>✓ Noindexed, password-protected and canonicalized-elsewhere content, excluded post and term IDs, types switched off in Search Appearance, empty terms.</td>
+</tr>
+<tr>
+<td>Replace core sitemaps</td>
+<td>Disables <code>wp-sitemap.xml</code> and redirects</td>
+<td>—</td>
+<td>✓ 301 from <code>/wp-sitemap*.xml</code> and <code>/sitemap.xml</code> to <code>/sitemap_index.xml</code>.</td>
+</tr>
+<tr>
+<td>News sitemap</td>
+<td>News SEO add-on</td>
+<td>Pro</td>
+<td>✓ <code>news-sitemap.xml</code>: posts of the last 48 hours, publication name and language.</td>
+</tr>
+<tr>
+<td>Video sitemap</td>
+<td>Video SEO add-on</td>
+<td>Pro</td>
+<td>◐ <code>video-sitemap.xml</code> for YouTube/Vimeo embeds, with title, description, thumbnail and player URL. No duration or video metadata lookup.</td>
+</tr>
+<tr>
+<td>IndexNow</td>
+<td>Yoast IndexNow (Premium)</td>
+<td>Instant Indexing</td>
+<td>✓ Key file at <code>/&lt;key&gt;.txt</code>, automatic submission on publish/update, manual submission, last 20 responses, key regeneration.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="redirections-and-404-monitor">Redirections and 404 monitor</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redirect types</td>
+<td>301, 302, 307, 410, 451</td>
+<td>301, 302, 307, 410, 451</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Matching</td>
+<td>Plain, regex</td>
+<td>Exact, contains, starts with, ends with, regex</td>
+<td>✓ All five; regex targets may use <code>$1</code>, <code>$2</code>…</td>
+</tr>
+<tr>
+<td>Manager</td>
+<td>List, add, edit, delete, filter</td>
+<td>Same, plus categories, active/inactive, hit counter</td>
+<td>✓ Status filter, bulk activate/deactivate/delete, category, hits, last accessed, origin (manual, auto, import).</td>
+</tr>
+<tr>
+<td>Import/export</td>
+<td>CSV</td>
+<td>CSV / Redirection plugin</td>
+<td>✓ CSV import (file or pasted) and CSV export.</td>
+</tr>
+<tr>
+<td>Automatic redirect on slug change</td>
+<td>Premium</td>
+<td>Auto post redirect</td>
+<td>✓ For published posts and pages. A redirect away from the post's current address is removed.</td>
+</tr>
+<tr>
+<td>404 monitor</td>
+<td>—</td>
+<td>Simple and advanced mode</td>
+<td>✓ URI, hits, last referer and user agent, last seen. Search, delete, clear, &quot;Redirect&quot; button that prefills the form, size limit, ignore list.</td>
+</tr>
+<tr>
+<td>Fallback for 404s</td>
+<td>—</td>
+<td>Redirect all 404s</td>
+<td>✓ An optional URL that every 404 is sent to.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="links-and-bulk-editing">Links and bulk editing</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link counter</td>
+<td>Text link counter (internal/received)</td>
+<td>Link counter</td>
+<td>✓ Internal, outbound and received links per post and page.</td>
+</tr>
+<tr>
+<td>Orphaned content</td>
+<td>Premium</td>
+<td>—</td>
+<td>✓ Filter of the Link Counter, count on the dashboard.</td>
+</tr>
+<tr>
+<td>Bulk editor</td>
+<td>Tools › Bulk editor (titles, descriptions)</td>
+<td>Bulk edit in posts list</td>
+<td>✓ SEO title, meta description and focus keyphrase for all posts or pages on one screen, with SEO and readability scores.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="images-import-rest">Images, import, REST</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Yoast</th>
+<th>Rank Math</th>
+<th>SEO-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Image SEO (missing alt/title)</td>
+<td>—</td>
+<td>Image SEO (Pro)</td>
+<td>✓ Module: fills empty alt and missing title attributes in rendered content from templates (<code>%filename%</code>, <code>%title%</code>…). Tools: writes alt texts into the Media Library.</td>
+</tr>
+<tr>
+<td>Import from Yoast / Rank Math</td>
+<td>Import from other plugins</td>
+<td>Import from Yoast and others</td>
+<td>✓ Data is read in place, copied during WXR import, and copied for all content in Tools. Redirects come in through CSV.</td>
+</tr>
+<tr>
+<td>REST head endpoint</td>
+<td><code>GET /wp-json/yoast/v1/get_head?url=</code> → <code>{html, json, status}</code></td>
+<td><code>GET /wp-json/rankmath/v1/getHead?url=</code> → <code>{success, head}</code></td>
+<td>✓ Both, with the same shapes, plus <code>/wp-json/seogo/v1/get_head</code>. Only for URLs of this site; unpublished or protected content answers like a 404.</td>
+</tr>
+<tr>
+<td>Term SEO fields</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ Edit Category / Edit Tag: focus keyphrase, title, description, noindex, canonical, breadcrumbs title, social fields.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="left-out-and-why">Left out (and why)</h2>
+<ul>
+<li><strong>Rank Math Analytics, Search Console, keyword rank tracking, Content AI, Yoast AI features, SEMrush/Wincher integrations.</strong> These need external accounts and services; out of scope for a self-contained single site.</li>
+<li><strong>Yoast Insights, word complexity, inclusive language, text alignment, keyphrase distribution, Premium word forms and synonyms.</strong> The analysis uses simple English stemming. Separate synonym fields and non-English language rules are not implemented.</li>
+<li><strong>Visual schema generator and schema templates (Rank Math Pro).</strong> Covered by page/article type, Product, the FAQ and How-to blocks and custom JSON-LD.</li>
+<li><strong><code>yoast_head</code> / <code>yoast_head_json</code> fields on <code>wp/v2</code> responses.</strong> Adding them would change core REST output; headless clients use the get_head endpoints instead.</li>
+<li><strong>SEO columns and filters in the posts list, the admin bar SEO menu, the per-post redirect field, author-profile SEO fields, crawl optimization (removing feeds, shortlinks…), social image overlays, <code>llms.txt</code>, multiple local locations / KML.</strong> The bulk editor and dashboard cover the list use; the rest is small and can follow.</li>
+<li><strong>SEO analysis on the term edit screen.</strong> Terms get the fields and head output, not the live traffic lights.</li>
+<li><strong>.htaccess editor.</strong> Not applicable to Pursae.</li>
+</ul>
+<h2 id="where-the-code-is">Where the code is</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>internal/server/seogo.go</code></td>
+<td>Switch, options and defaults, modules, capabilities, Plugins row, admin menu</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_meta.go</code></td>
+<td>Field keys with Yoast/Rank Math fallbacks, import</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_vars.go</code></td>
+<td>Context and replacement variables</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_head.go</code></td>
+<td>Title, description, robots, canonical, Open Graph, X, verification</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_schema.go</code></td>
+<td>JSON-LD graph, FAQ/How-to blocks, Product, LocalBusiness, custom</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_breadcrumbs.go</code></td>
+<td>Trail, HTML, shortcodes, blocks</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_front.go</code></td>
+<td>Redirections, robots.txt, sitemaps, 404 monitor, RSS, IndexNow</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_analysis.go</code></td>
+<td>SEO and readability analysis, Rank Math points</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_editor.go</code></td>
+<td>Editor box, REST routes (analyze, meta, link suggestions, get_head), term fields</td>
+</tr>
+<tr>
+<td><code>internal/server/seogo_admin.go</code></td>
+<td>Admin screens, wizard, import, bulk editor, Image SEO</td>
+</tr>
+<tr>
+<td><code>web/admin/templates/pages/seogo.html</code></td>
+<td>Admin screens, the editor box, the term box</td>
+</tr>
+<tr>
+<td><code>web/wp-admin/js/seogo-*.js</code>, <code>web/wp-admin/css/seogo.css</code></td>
+<td>Editor box, Gotenberg blocks, admin helpers, styles</td>
+</tr>
+<tr>
+<td><code>internal/db/migrations/0010_seogo.sql</code></td>
+<td>Redirects columns, 404 log</td>
+</tr>
+</tbody>
+</table>
+<p>Hooks into shared files are one or two lines each and are marked &quot;SEO-Go&quot;. They are in
+<code>plugins.go</code>, <code>admin.go</code>, <code>server.go</code>, <code>site.go</code>, <code>site_head.go</code>, <code>site_view.go</code>, <code>feed.go</code>,
+<code>admin_posts.go</code>, <code>rest_posts.go</code>, <code>admin_terms.go</code> and <code>wxr.go</code>.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/" rel="prev"><small>← Previous</small>Built-in plugins</a>
+          <a class="next" href="../../../docs/built-in-plugins/acf-go/" rel="next"><small>Next →</small>ACF-Go</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#design-decisions">Design decisions</a></li><li class="toc-h2"><a href="#feature-map">Feature map</a></li><li class="toc-h3"><a href="#setup-and-dashboard">Setup and dashboard</a></li><li class="toc-h3"><a href="#per-post-seo-box-classic-editor-meta-box--gotenberg-sidebar">Per-post SEO box (classic editor meta box &#43; Gotenberg sidebar)</a></li><li class="toc-h3"><a href="#site-wide-settings">Site-wide settings</a></li><li class="toc-h3"><a href="#head-output-and-schema">Head output and schema</a></li><li class="toc-h3"><a href="#breadcrumbs">Breadcrumbs</a></li><li class="toc-h3"><a href="#sitemaps-robots-and-indexing">Sitemaps, robots and indexing</a></li><li class="toc-h3"><a href="#redirections-and-404-monitor">Redirections and 404 monitor</a></li><li class="toc-h3"><a href="#links-and-bulk-editing">Links and bulk editing</a></li><li class="toc-h3"><a href="#images-import-rest">Images, import, REST</a></li><li class="toc-h2"><a href="#left-out-and-why">Left out (and why)</a></li><li class="toc-h2"><a href="#where-the-code-is">Where the code is</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

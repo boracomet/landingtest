@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACF-Go — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Custom fields: field groups, field types, location rules, options pages, blocks and REST (Advanced Custom Fields PRO).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/" aria-current="page">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">ACF-Go</span>
+      </nav>
+      <header class="docs-head">
+        <h1>ACF-Go</h1>
+        <p class="lead">Custom fields: field groups, field types, location rules, options pages, blocks and REST (Advanced Custom Fields PRO).</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>ACF-Go is Pursae's native (compiled-in) clone of <strong>Advanced Custom Fields PRO</strong> 6.x. This file is
+the inventory of what ACF PRO does, written from ACF's documentation (advancedcustomfields.com/resources),
+the wordpress.org plugin page and the <code>AdvancedCustomFields/acf</code> source, and what ACF-Go does with each
+item. Status: <strong>✓</strong> implemented, <strong>◐</strong> implemented in a reduced form (the note says how), <strong>✗</strong> left out
+(the note says why).</p>
+<p>ACF-Go is a native plugin like Classic Editor, WPGo Cache and Golementor: it is listed on Plugins,
+starts <strong>off</strong>, adds nothing to the site while off (no menu, screens, meta boxes, REST field, template
+output, routes answer 404) and keeps every field group and saved value when deactivated.</p>
+<h2 id="1-field-groups">1. Field groups</h2>
+<table>
+<thead>
+<tr>
+<th>ACF PRO</th>
+<th>ACF-Go</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Field groups stored as <code>acf-field-group</code> posts, fields as <code>acf-field</code> posts</td>
+<td>✓ field groups are <code>acf-field-group</code> posts (content type registered on activation); the group's JSON (ACF's export format, fields nested) is the post content. Fields are not separate posts — the export/import format is unchanged</td>
+</tr>
+<tr>
+<td>List screen (ACF › Field Groups): Title, Description, Key, Location, Local JSON, Fields columns</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Views: All / Active / Inactive / Sync available / Trash</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Row actions: Edit, Duplicate, Trash; Restore, Delete Permanently in Trash</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Bulk actions: Activate, Deactivate, Move to Trash, Sync changes, Restore, Delete</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Search field groups</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Add / edit screen: title, field list with drag-and-drop ordering (also between sub field lists), add field, duplicate field, delete field</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>&quot;Move&quot; a field to another field group (a modal in ACF)</td>
+<td>✗ export/import or re-create the field</td>
+</tr>
+<tr>
+<td>Field settings in tabs: General, Validation, Presentation, Conditional Logic</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Group settings: Location Rules, Presentation, Group Settings tabs</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Active toggle, Show in REST API toggle, description, menu order</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Field group key <code>group_…</code>, field key <code>field_…</code> (unique ids)</td>
+<td>✓ (same 13-hex style keys)</td>
+</tr>
+<tr>
+<td>Local JSON (save to/load from <code>acf-json</code> folders, Sync)</td>
+<td>✓ folder <code>&lt;data&gt;/acf-json</code> (next to uploads) and <code>acf-json/</code> in the active theme package; written on save when the folder exists; &quot;Sync available&quot; when the file is newer than the database or not imported</td>
+</tr>
+<tr>
+<td><code>acf_add_local_field_group()</code> (PHP)</td>
+<td>◐ registration from Go code (<code>acfgoRegisterLocalGroup</code>) and from local JSON; PHP does not exist in Pursae</td>
+</tr>
+<tr>
+<td>Revisions of field values with post revisions</td>
+<td>✗ Pursae revisions keep title/content/excerpt only</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-field-types-all-with-acfs-settings">2. Field types (all with ACF's settings)</h2>
+<p>General settings on every field: Label, Name, Key, Type, Instructions, Required, Default value
+(where it applies), Wrapper width / class / id, Conditional Logic, <code>aria-label</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Settings</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text</td>
+<td>default, placeholder, prepend, append, character limit</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Text Area</td>
+<td>default, placeholder, character limit, rows, new lines (wpautop / br / none)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>default, placeholder, prepend, append, min, max, step</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>default, min, max, step, prepend, append</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>default, placeholder, prepend, append</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>default, placeholder</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>placeholder, prepend, append</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>return format (array/url/id), library (all/uploadedTo), preview size, min/max width/height/size, allowed file types</td>
+<td>✓ (pickers use the WordPress media modal)</td>
+</tr>
+<tr>
+<td>File</td>
+<td>return format, library, min/max size, allowed types</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>WYSIWYG Editor</td>
+<td>default, tabs (all/visual/text), toolbar (full/basic), media upload, delay</td>
+<td>◐ TinyMCE (with the basic/full toolbar) on screens that load the classic editor; a textarea with formatting buttons elsewhere (Gotenberg, users, terms, options pages)</td>
+</tr>
+<tr>
+<td>oEmbed</td>
+<td>width, height</td>
+<td>✓ (preview through Pursae's oEmbed proxy)</td>
+</tr>
+<tr>
+<td>Gallery</td>
+<td>return format, library, min/max, insert, min/max dimensions/size, types</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Select</td>
+<td>choices, default, return format (value/label/array), allow null, multiple, stylised UI, ajax, placeholder</td>
+<td>✓ (stylised UI / ajax ◐: settings are kept, the control is a native select)</td>
+</tr>
+<tr>
+<td>Checkbox</td>
+<td>choices, default, return format, layout, toggle all, allow custom, save custom</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Radio Button</td>
+<td>choices, default, return format, layout, allow null, other, save other</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Button Group</td>
+<td>choices, default, return format, allow null, layout</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>True / False</td>
+<td>default, message, stylised UI, on/off text</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Link</td>
+<td>return format (array/url)</td>
+<td>◐ URL / link text / new-tab inputs instead of the wpLink modal</td>
+</tr>
+<tr>
+<td>Post Object</td>
+<td>post type, post status, taxonomy filter, return format (object/id), allow null, multiple, bidirectional</td>
+<td>✓ (bidirectional ✗)</td>
+</tr>
+<tr>
+<td>Page Link</td>
+<td>post type, taxonomy, allow null, allow archives URLs, multiple</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Relationship</td>
+<td>post type, post status, taxonomy, filters (search/post type/taxonomy), elements (featured image), min/max, return format, bidirectional</td>
+<td>✓ (bidirectional ✗)</td>
+</tr>
+<tr>
+<td>Taxonomy</td>
+<td>taxonomy, appearance (checkbox/multi select/radio/select), create terms, save terms, load terms, return format (object/id), allow null</td>
+<td>✓ (new terms are created when the post is saved)</td>
+</tr>
+<tr>
+<td>User</td>
+<td>role filter, allow null, multiple, return format (array/object/id)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Google Map</td>
+<td>center lat/lng, zoom, height</td>
+<td>◐ address + lat/lng/zoom inputs with a map preview link; the Google Maps JS picker needs an API key (<code>acfgo_google_api_key</code> setting enables the picker)</td>
+</tr>
+<tr>
+<td>Date Picker</td>
+<td>display format, return format, week starts on</td>
+<td>✓ stored <code>Ymd</code> like ACF, return format applied; ◐ the editing control is the browser's date input (display format / week start are kept but the browser decides)</td>
+</tr>
+<tr>
+<td>Date Time Picker</td>
+<td>display format, return format, week starts on</td>
+<td>✓ stored <code>Y-m-d H:i:s</code>; ◐ browser datetime input</td>
+</tr>
+<tr>
+<td>Time Picker</td>
+<td>display format, return format</td>
+<td>✓ stored <code>H:i:s</code>; ◐ browser time input</td>
+</tr>
+<tr>
+<td>Color Picker</td>
+<td>default, enable opacity, return format (string/array)</td>
+<td>✓ (swatch + text input; rgba() accepted with opacity)</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>message, new lines, escape HTML</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Accordion</td>
+<td>open, multi-expand, endpoint</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Tab</td>
+<td>placement (top/left), endpoint, selected</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Group</td>
+<td>sub fields, layout (block/table/row)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Repeater (PRO)</td>
+<td>sub fields, collapsed, min/max rows, layout (table/block/row), button label, pagination, rows per page</td>
+<td>✓ add / insert / duplicate / remove / drag / collapse rows; pagination ◐ setting kept, all rows on one page</td>
+</tr>
+<tr>
+<td>Flexible Content (PRO)</td>
+<td>layouts (label, name, layout, sub fields, min/max), button label, min/max</td>
+<td>✓ layout picker, insert / duplicate / remove / drag / collapse</td>
+</tr>
+<tr>
+<td>Clone (PRO)</td>
+<td>fields/groups to clone, display (seamless/group), layout, prefix label, prefix field names</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Icon Picker (6.3)</td>
+<td>tabs (dashicons/media library/url), return format (string/array), library</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Value storage is exactly ACF's: post meta <code>name</code> → value and <code>_name</code> → field key; repeater rows as
+<code>name</code> = row count and <code>name_{i}_{sub}</code>; flexible content <code>name</code> = array of layout names; group
+<code>name_{sub}</code>; options as <code>options_{name}</code> / <code>_options_{name}</code>; users in user meta, terms in term
+meta, comments in comment meta. Values written by ACF export tools (WXR with ACF meta) read back the same way.</p>
+<h2 id="3-location-rules">3. Location rules</h2>
+<p>OR groups of AND rules, operators <code>==</code> / <code>!=</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post Type, Post Template, Post Status, Post Format, Post Category, Post Taxonomy, Post</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Page Template, Page Type (front/posts/top level/parent/child), Page Parent, Page</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Current User (logged in, viewing front end, viewing back end), Current User Role</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>User Form (add/edit/register/all), User Role</td>
+<td>✓ (register ◐: there is no public registration form)</td>
+</tr>
+<tr>
+<td>Taxonomy (term edit/add screens)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Attachment</td>
+<td>✓ (attachment edit screen; values in the media item's meta)</td>
+</tr>
+<tr>
+<td>Comment</td>
+<td>✓ (comment edit screen; values in comment meta)</td>
+</tr>
+<tr>
+<td>Widget, Menu, Menu Item</td>
+<td>✗ widgets and nav menu items in Pursae have no meta storage that ACF could attach to; the rule types are listed (marked unavailable) and never match</td>
+</tr>
+<tr>
+<td>Block (ACF Blocks)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Options Page</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-presentation-and-group-settings">4. Presentation and group settings</h2>
+<p>Style (standard/WP box, seamless), Position (high after title, normal, side), Label placement
+(top/left), Instruction placement (below labels/below fields, tooltip), Order No., Description,
+Hide on screen (permalink, the content editor, excerpt, discussion, comments, revisions, slug,
+author, format, page attributes, featured image, categories, tags, send trackbacks) — <strong>✓</strong> in the
+classic editor. In Gotenberg the boxes sit in the editor's meta box pane (normal and side) and are
+saved with the post through the meta box request, like ACF; <code>acf_after_title</code> falls back to normal
+and hide-on-screen applies to the classic editor only (ACF behaves the same).</p>
+<h2 id="5-conditional-logic">5. Conditional logic</h2>
+<p>Show this field if (OR groups of AND rules) against other fields of the group: has any value, has
+no value, value is equal to, not equal to, matches pattern, contains, greater than, less than,
+selection is greater/less than. <strong>✓</strong> in the editor (live) and on save (hidden fields are disabled,
+so their stored values stay untouched, as in ACF).</p>
+<h2 id="6-validation">6. Validation</h2>
+<p>Required, character limit, min/max number, email/URL format, min/max rows/selections/images, image
+dimensions/size, file types — <strong>✓</strong> ajax validation before submit (<code>acf/validate_save_post</code>
+equivalent) and server-side on REST writes. Custom <code>acf/validate_value</code> filters ✗ (no PHP hooks;
+Wasm plugins can use REST).</p>
+<h2 id="7-options-pages-pro-ui-created-since-62">7. Options pages (PRO, UI-created since 6.2)</h2>
+<p>ACF › Options Pages: page title, menu slug, parent page (top level or under any menu), menu
+position, icon (dashicon), menu title, capability, redirect to first child, update button label,
+updated message, description, data storage (options or a custom post id <code>post_id</code>), autoload — <strong>✓</strong>.
+Each options page is <code>/wp-admin/admin?page=&lt;slug&gt;</code> with the field groups whose location is that page.</p>
+<h2 id="8-post-types-and-taxonomies-ui-61">8. Post Types and Taxonomies UI (6.1+)</h2>
+<p>ACF › Post Types / Taxonomies: labels (all generated from singular/plural, editable), public,
+hierarchical, supports, taxonomies, menu icon/position, show in REST, REST base, archive, rewrite slug,
+capability type, exclude from search, delete with user… — <strong>✓</strong> stored as <code>acf-post-type</code> /
+<code>acf-taxonomy</code> posts; on save the type/taxonomy is registered (content_types / taxonomies rows),
+gets its admin menu (All / Add New, its taxonomies), the core's list, add and edit screens (classic
+editor) and term screens, and every role receives the type's capabilities (capability type &quot;post&quot;).
+◐ Gotenberg, REST routes (<code>/wp/v2/&lt;rest_base&gt;</code>) and front-end permalinks/archives of custom post types
+need core support for arbitrary types and are not built (see &quot;Left out&quot;).</p>
+<h2 id="9-acf-blocks-pro">9. ACF Blocks (PRO)</h2>
+<p><code>block.json</code> with an <code>acf</code> key (<code>renderTemplate</code>, <code>mode</code>), registered with <code>register_block_type()</code> —
+<strong>◐</strong> ACF-Go registers blocks from <code>acf-blocks/&lt;name&gt;/block.json</code> folders (in <code>&lt;data&gt;/acf-blocks</code> or the
+active theme package) with a Go <code>html/template</code> render template (<code>render.html</code>); the block appears in
+Gotenberg's inserter (category from block.json), its fields are edited in the block (Edit/Preview
+toggle, server-rendered preview), values live in the block's <code>data</code> attribute like ACF, and the front
+end renders the template with <code>get_field</code> reading the block's data. Field groups target blocks with
+the Block location rule.</p>
+<h2 id="10-rest-api">10. REST API</h2>
+<p><code>acf</code> object for field groups with &quot;Show in REST API&quot;: <strong>✓</strong> <code>/wp/v2/posts</code> and <code>/pages</code> read and
+write (<code>POST {&quot;acf&quot;: {&quot;field_name&quot;: value}}</code> with sub fields by name, validated before the post is
+saved, unknown names rejected), <code>/users</code> and <code>/categories</code> / <code>/tags</code> read. <code>?acf_format=standard</code>
+returns formatted values, the default (<code>light</code>) stored values with typed IDs/numbers/booleans.
+◐ Writes to users/terms and the <code>/comments</code>, <code>/media</code> objects are not built.</p>
+<h2 id="11-template-functions">11. Template functions</h2>
+<p><code>get_field</code>, <code>the_field</code>, <code>get_field_object</code>, <code>get_fields</code>, <code>get_field_objects</code>, <code>have_rows</code> /
+<code>get_sub_field</code> / <code>the_sub_field</code> / <code>get_row_layout</code> / <code>get_row_index</code> / <code>get_row</code> — <strong>✓</strong> as template
+functions for every theme (bundled and theme packages; Go templates take the post explicitly and
+range over rows instead of <code>the_row()</code>), and <code>acfGetField</code>, <code>acfGetFieldObject</code>, <code>acfGetFields</code>,
+<code>acfUpdateField</code> (update_field), <code>acfDeleteField</code> (delete_field) for Go code.
+Wasm plugins: <strong>✓</strong> <code>get_post</code> (host API, <code>posts:read</code>) returns an <code>acf</code> object with the post's field
+values (stored format) while ACF-Go is active (<code>PostData.ACF</code> in the Go SDK).</p>
+<p>Theme template usage:</p>
+<pre><code>{{get_field &quot;subtitle&quot; .Post}}                 value (formatted) of the post in the loop
+{{the_field &quot;subtitle&quot; .Post}}                 the same, HTML-escaped for output
+{{get_field &quot;phone&quot; &quot;option&quot;}}                 options page value; &quot;user_3&quot;, &quot;term_5&quot;, &quot;comment_9&quot; too
+{{range have_rows &quot;slides&quot; .Post}}{{get_sub_field &quot;title&quot; .}} ({{.Index}}){{end}}
+{{range have_rows &quot;sections&quot; .Post}}{{if eq .Layout &quot;hero&quot;}}…{{end}}{{end}}   flexible content
+{{with get_field_object &quot;price&quot; .Post}}{{.label}}: {{.value}}{{end}}
+</code></pre>
+<h2 id="12-tools">12. Tools</h2>
+<p>ACF › Tools: Export field groups, post types, taxonomies and options pages (download a .json file or
+show the JSON), Import JSON (any of them; existing items with the same key are updated) — <strong>✓</strong>.
+Generate PHP ✗ (no PHP; the JSON is what local JSON and <code>acfgoRegisterLocalGroup</code> take). Import from
+CPT UI ✗.</p>
+<h2 id="13-settings--misc">13. Settings / misc</h2>
+<p>The ACF menu needs <code>manage_options</code>; option <code>acfgo_show_admin</code> = &quot;0&quot; hides it (ACF's <code>show_admin</code>
+setting) ✓. Field group / field keys visible in the editor and list ✓. ACF › Updates (licence) ✗ —
+nothing to license.</p>
+<h2 id="how-it-is-wired">How it is wired</h2>
+<p>Native plugin switch <code>native_acfgo</code> (Plugins screen, default off). Code: <code>internal/server/acfgo*.go</code>,
+templates <code>web/admin/templates/pages/acfgo.html</code>, assets <code>web/admin/assets/acfgo/</code>. No migration:
+field groups, post types, taxonomies and options pages are posts of the <code>acf-*</code> content types
+(created on activation). Values live in <code>posts.meta</code>, <code>users.meta</code>, <code>terms.meta</code>, <code>comments.meta</code>,
+<code>media.meta</code> and the options table. The core's edit screens are reached through one gin middleware
+(it queues the boxes, which <code>acfgo-input.js</code> moves into the form, and saves <code>acf[...]</code> before the
+core's handler runs) plus small hooks: menu (adminPage), admin-ajax, REST serializers and post
+writes, the template FuncMap, <code>admin?page=</code> options pages, label lookups for ACF post
+types/taxonomies, the Wasm <code>get_post</code> payload.</p>
+<h2 id="left-out-and-why">Left out (and why)</h2>
+<ul>
+<li>Widget, nav menu and nav menu item locations: no meta storage in Pursae for them.</li>
+<li>Field value revisions: core revisions do not store meta.</li>
+<li>Bidirectional relationships (6.2): updating the other post's field on save.</li>
+<li>PHP APIs/hooks (<code>acf/load_value</code>, <code>acf/format_value</code>, <code>acf/validate_value</code> filters, <code>acf_form()</code>
+front-end forms): there is no PHP; Wasm plugins read values through <code>get_post</code> and write through REST.</li>
+<li>Repeater pagination, select2 &quot;stylised UI&quot;/ajax selects, the wpLink modal, jQuery UI date
+pickers and the Google Maps JS picker: replaced by simpler native controls (settings are kept
+and exported unchanged).</li>
+<li>Custom post types: Gotenberg editing, REST routes and front-end single/archive routing (the
+core only routes post and page). ACF taxonomies on posts/pages work everywhere the core's
+term screens and post terms do; their front-end archives are not routed either.</li>
+<li>REST writes for users and terms; <code>acf</code> on <code>/comments</code> and <code>/media</code> responses.</li>
+</ul>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/seo-go/" rel="prev"><small>← Previous</small>SEO-Go</a>
+          <a class="next" href="../../../docs/built-in-plugins/goocommerce/" rel="next"><small>Next →</small>Goocommerce</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-field-groups">1. Field groups</a></li><li class="toc-h2"><a href="#2-field-types-all-with-acfs-settings">2. Field types (all with ACF&#39;s settings)</a></li><li class="toc-h2"><a href="#3-location-rules">3. Location rules</a></li><li class="toc-h2"><a href="#4-presentation-and-group-settings">4. Presentation and group settings</a></li><li class="toc-h2"><a href="#5-conditional-logic">5. Conditional logic</a></li><li class="toc-h2"><a href="#6-validation">6. Validation</a></li><li class="toc-h2"><a href="#7-options-pages-pro-ui-created-since-62">7. Options pages (PRO, UI-created since 6.2)</a></li><li class="toc-h2"><a href="#8-post-types-and-taxonomies-ui-61">8. Post Types and Taxonomies UI (6.1&#43;)</a></li><li class="toc-h2"><a href="#9-acf-blocks-pro">9. ACF Blocks (PRO)</a></li><li class="toc-h2"><a href="#10-rest-api">10. REST API</a></li><li class="toc-h2"><a href="#11-template-functions">11. Template functions</a></li><li class="toc-h2"><a href="#12-tools">12. Tools</a></li><li class="toc-h2"><a href="#13-settings--misc">13. Settings / misc</a></li><li class="toc-h2"><a href="#how-it-is-wired">How it is wired</a></li><li class="toc-h2"><a href="#left-out-and-why">Left out (and why)</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

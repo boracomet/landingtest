@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Packaging and signing — Dokümantasyon · Pursae</title>
+  <meta name="description" content="The package format, the wpgo-pkg tool, Ed25519 signatures and how sites decide what to trust.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/" aria-current="page">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/plugins/">Plugin development</a><span>/</span><span aria-current="page">Packaging and signing</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Packaging and signing</h1>
+        <p class="lead">The package format, the wpgo-pkg tool, Ed25519 signatures and how sites decide what to trust.</p>
+      </header>
+      <div class="entry-content docs-content">
+        <h2 id="package-layout">Package layout</h2>
+<p>A package is a zip with these files at its root and nothing else:</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Required</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>plugin.json</code></td>
+<td>yes</td>
+<td>64 KiB (<a href="../../../docs/plugins/manifest/">manifest</a>)</td>
+</tr>
+<tr>
+<td><code>plugin.wasm</code></td>
+<td>yes</td>
+<td>64 MiB; a WASI reactor built with <code>-buildmode=c-shared</code></td>
+</tr>
+<tr>
+<td><code>readme.md</code></td>
+<td>no</td>
+<td>1 MiB; Markdown shown on the marketplace page</td>
+</tr>
+<tr>
+<td><code>icon.svg</code></td>
+<td>no</td>
+<td>256 KiB; the marketplace icon</td>
+</tr>
+<tr>
+<td><code>assets/…</code></td>
+<td>no</td>
+<td>2 MiB per file, 16 MiB total (<a href="../../../docs/plugins/assets/">assets</a>)</td>
+</tr>
+<tr>
+<td><code>signature</code></td>
+<td>if the site requires signatures</td>
+<td>1 KiB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wpgo-pkg">wpgo-pkg</h2>
+<p>The tool lives in the Pursae repository:</p>
+<pre><code class="language-bash">go build -o wpgo-pkg ./internal/plugins/cmd/wpgo-pkg
+
+wpgo-pkg keygen -out mykey [-comment &quot;My plugins key&quot;]
+#   writes mykey.pub (publish this) and mykey.key (mode 0600; keep it private); existing files are kept
+wpgo-pkg pack -dir ./my-plugin -wasm plugin.wasm -key mykey.key -out my-plugin-1.0.0.zip
+#   packs plugin.json, readme.md, icon.svg and assets/** from -dir; omit -key for an unsigned package
+wpgo-pkg verify -pub mykey.pub my-plugin-1.0.0.zip
+#   verifies the signature and prints the manifest summary
+</code></pre>
+<p>Key files are base64 with optional <code>#</code> comment lines — the same format <code>WPGO_PLUGIN_KEYS</code> and
+the <code>plugin_trusted_keys</code> option expect.</p>
+<p><code>tools/build-plugins.sh [plugin-dir …]</code> builds and packs the example plugins (or the directories
+you pass) into <code>examples/plugins/dist/</code>, generating a development key there if none exists. Use
+<code>WPGO_SIGNING_KEY=/path/to/key</code> to sign with your own.</p>
+<h2 id="the-signature">The signature</h2>
+<pre><code class="language-text">digest    = SHA-256(&quot;wpgo-plugin-v1\n&quot; || u64be(len(plugin.json)) || plugin.json || u64be(len(plugin.wasm)) || plugin.wasm)
+signature = base64(Ed25519.Sign(privateKey, digest)) + &quot;\n&quot;
+</code></pre>
+<p>The length prefixes make the concatenation unambiguous; the domain prefix keeps a plugin
+signature from being confused with any other signature made with the same key. Assets are not
+in the digest directly: <code>pack</code> writes their SHA-256 into <code>plugin.json</code>, which is. <code>readme.md</code>
+and <code>icon.svg</code> are not signed (they are display-only).</p>
+<h2 id="what-a-site-accepts">What a site accepts</h2>
+<table>
+<thead>
+<tr>
+<th>Site configuration</th>
+<th>Signed by a trusted key</th>
+<th>Signed by an unknown key</th>
+<th>Unsigned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>default (keys configured, <code>plugin_allow_unsigned</code> off)</td>
+<td>installs</td>
+<td>rejected</td>
+<td>rejected</td>
+</tr>
+<tr>
+<td><code>plugin_allow_unsigned</code> on</td>
+<td>installs</td>
+<td>rejected (a bad signature is never accepted)</td>
+<td>installs</td>
+</tr>
+<tr>
+<td>no trusted keys at all</td>
+<td>—</td>
+<td>rejected</td>
+<td>rejected unless unsigned allowed</td>
+</tr>
+</tbody>
+</table>
+<p>Trusted keys come from <code>WPGO_PLUGIN_KEYS</code> (comma-separated), the <code>plugin_trusted_keys</code> option,
+the Hub's key list, and — in development only — the <code>dev-key.pub</code> next to the example packages
+when <code>WPGO_TRUST_DEV_KEY=1</code>.</p>
+<p>The install screen records the package digest; the Plugins screen shows the plugin's name,
+version, author and permissions read from the package, and the last lines of its log.</p>
+<h2 id="versioning">Versioning</h2>
+<p>Bump <code>version</code> for every release. The Hub refuses a version that already exists or is lower than
+the latest published one; a site re-installing the same slug replaces the package file.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/plugins/permissions/" rel="prev"><small>← Previous</small>Permissions</a>
+          <a class="next" href="../../../docs/plugins/publishing/" rel="next"><small>Next →</small>Publishing to the Hub</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#package-layout">Package layout</a></li><li class="toc-h2"><a href="#wpgo-pkg">wpgo-pkg</a></li><li class="toc-h2"><a href="#the-signature">The signature</a></li><li class="toc-h2"><a href="#what-a-site-accepts">What a site accepts</a></li><li class="toc-h2"><a href="#versioning">Versioning</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gontact Form — Dokümantasyon · Pursae</title>
+  <meta name="description" content="Contact forms: form tags, mail, validation, spam protection (Contact Form 7).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../../docs/docs.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%233858e9'/%3E%3Cpath d='M11 23V9h6a4.5 4.5 0 0 1 0 9h-6' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>window.SITE_ROOT="../../../"</script>
+</head>
+<body class="docs-page">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../../../" aria-label="Pursae ana sayfa">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Pursae</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menüyü aç">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="../../../#ozellikler">Özellikler</a>
+      <a href="../../../#mimari">Mimari</a>
+      <a href="../../../#eklentiler">Eklentiler</a>
+      <a href="../../../#golementor">Golementor</a>
+      <a href="../../../docs/">Dokümantasyon</a>
+      <a href="../../../#yol-haritasi">Yol haritası</a>
+      <a href="../../../#sss">SSS</a>
+      <a class="btn btn-primary btn-sm" href="../../../#kurulum">Pursae'yi edinin</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<div class="container docs-layout has-toc">
+  
+<aside class="docs-sidebar" aria-label="Documentation">
+  <div class="docs-search">
+    <label class="sr-only" for="docs-search-input">Search the docs</label>
+    <input id="docs-search-input" type="search" placeholder="Search docs…" autocomplete="off" data-search-index="../../../docs/search.json">
+    <kbd>/</kbd>
+    <div class="docs-search-results" id="docs-search-results" hidden></div>
+  </div>
+  <button class="docs-nav-toggle" type="button" aria-expanded="false" aria-controls="docs-nav">Browse the docs</button>
+  <nav id="docs-nav" class="docs-nav">
+    
+    
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/getting-started/">Getting started</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/getting-started/install-docker/">Install with Docker</a></li>
+          
+            <li><a href="../../../docs/getting-started/install-binary/">Install the binary</a></li>
+          
+            <li><a href="../../../docs/getting-started/first-site/">Your first site</a></li>
+          
+            <li><a href="../../../docs/getting-started/upgrading/">Upgrading</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/plugins/">Plugin development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/plugins/your-first-plugin/">Your first plugin</a></li>
+          
+            <li><a href="../../../docs/plugins/manifest/">plugin.json</a></li>
+          
+            <li><a href="../../../docs/plugins/hooks/">Hooks</a></li>
+          
+            <li><a href="../../../docs/plugins/host-api/">Host API reference</a></li>
+          
+            <li><a href="../../../docs/plugins/shortcodes/">Shortcodes</a></li>
+          
+            <li><a href="../../../docs/plugins/rest-routes/">REST routes</a></li>
+          
+            <li><a href="../../../docs/plugins/settings-pages/">Settings pages</a></li>
+          
+            <li><a href="../../../docs/plugins/scheduled-events/">Scheduled events</a></li>
+          
+            <li><a href="../../../docs/plugins/assets/">Assets (CSS and JavaScript)</a></li>
+          
+            <li><a href="../../../docs/plugins/permissions/">Permissions</a></li>
+          
+            <li><a href="../../../docs/plugins/packaging-and-signing/">Packaging and signing</a></li>
+          
+            <li><a href="../../../docs/plugins/publishing/">Publishing to the Hub</a></li>
+          
+            <li><a href="../../../docs/plugins/testing/">Testing plugins</a></li>
+          
+            <li><a href="../../../docs/plugins/limits-and-sandbox/">Limits and the sandbox</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/themes/">Theme development</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/themes/your-first-theme/">Your first theme</a></li>
+          
+            <li><a href="../../../docs/themes/theme-json/">theme.json</a></li>
+          
+            <li><a href="../../../docs/themes/templates/">Templates</a></li>
+          
+            <li><a href="../../../docs/themes/customizer/">Customizer</a></li>
+          
+            <li><a href="../../../docs/themes/styles-and-scripts/">Styles and scripts</a></li>
+          
+            <li><a href="../../../docs/themes/block-editor-support/">Block editor support</a></li>
+          
+            <li><a href="../../../docs/themes/golementor/">Golementor and Hello Golementor</a></li>
+          
+            <li><a href="../../../docs/themes/file-editor/">Theme File Editor</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section open">
+        <h3><a href="../../../docs/built-in-plugins/">Built-in plugins</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/built-in-plugins/seo-go/">SEO-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/acf-go/">ACF-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/goocommerce/">Goocommerce</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/headlessgo/">HeadlessGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gocdn/">GoCDN</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gontact-form/" aria-current="page">Gontact Form</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/golylang/">Golylang</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/adminsecgo/">AdminSecGo</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/gooike/">Gooike</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/maintenance-go/">Maintenance-Go</a></li>
+          
+            <li><a href="../../../docs/built-in-plugins/wpgo-mail-smtp/">WPGO Mail SMTP</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/rest-api/">REST API</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/rest-api/authentication/">Authentication</a></li>
+          
+            <li><a href="../../../docs/rest-api/endpoints/">Endpoints</a></li>
+          
+            <li><a href="../../../docs/rest-api/plugin-routes/">Plugin routes</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/hub/">Hub &amp; marketplace</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/hub/marketplace/">Marketplace</a></li>
+          
+            <li><a href="../../../docs/hub/publishing/">Publishing</a></li>
+          
+            <li><a href="../../../docs/hub/running-your-own-hub/">Running your own Hub</a></li>
+          
+        </ul>
+        
+      </section>
+    
+      <section class="docs-nav-section">
+        <h3><a href="../../../docs/operations/">Running in production</a></h3>
+        
+        <ul>
+          
+            <li><a href="../../../docs/operations/configuration/">Configuration</a></li>
+          
+            <li><a href="../../../docs/operations/docker/">Docker</a></li>
+          
+            <li><a href="../../../docs/operations/backups/">Backups</a></li>
+          
+            <li><a href="../../../docs/operations/reverse-proxy-and-tls/">Reverse proxy and TLS</a></li>
+          
+            <li><a href="../../../docs/operations/caching/">Caching (WPGo Cache)</a></li>
+          
+            <li><a href="../../../docs/operations/mail/">Mail</a></li>
+          
+            <li><a href="../../../docs/operations/cron/">Scheduled events (cron)</a></li>
+          
+            <li><a href="../../../docs/operations/security/">Security</a></li>
+          
+            <li><a href="../../../docs/operations/troubleshooting/">Troubleshooting</a></li>
+          
+        </ul>
+        
+      </section>
+    
+  </nav>
+</aside>
+
+  <div class="docs-main">
+    <article class="docs-article">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="../../../docs/">Docs</a><span>/</span>
+        <a href="../../../docs/built-in-plugins/">Built-in plugins</a><span>/</span><span aria-current="page">Gontact Form</span>
+      </nav>
+      <header class="docs-head">
+        <h1>Gontact Form</h1>
+        <p class="lead">Contact forms: form tags, mail, validation, spam protection (Contact Form 7).</p>
+      </header>
+      <div class="entry-content docs-content">
+        <p>Gontact Form is Pursae's native (compiled-in) clone of <strong>Contact Form 7</strong> (studied at CF7 6.2.3,
+<code>rocklobster-in/contact-form-7</code>, plus contactform7.com docs). Like Classic Editor, WPGo Cache and Golementor it is
+listed under Plugins, <strong>off on a fresh install</strong>, and while off it adds nothing: no menu, no screens (404/403), no
+REST namespace, no shortcode, no block, no front-end assets.</p>
+<p>Legend: ✅ implemented · ◐ implemented differently / partly · ✗ left out (with the reason).</p>
+<h2 id="1-data-model">1. Data model</h2>
+<table>
+<thead>
+<tr>
+<th>CF7</th>
+<th>Gontact Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custom post type <code>wpcf7_contact_form</code></td>
+<td>✅ same post type (non-public <code>content_types</code> row created on activation)</td>
+</tr>
+<tr>
+<td>Post meta <code>_form</code>, <code>_mail</code>, <code>_mail_2</code>, <code>_messages</code>, <code>_additional_settings</code>, <code>_locale</code>, <code>_hash</code></td>
+<td>✅ same keys in the post's <code>meta</code> jsonb; <code>post_content</code> keeps the form template too</td>
+</tr>
+<tr>
+<td>Default form, Mail, Mail (2), messages templates (<code>WPCF7_ContactFormTemplate</code>)</td>
+<td>✅ identical defaults</td>
+</tr>
+<tr>
+<td>&quot;Contact form 1&quot; created on first activation</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Flamingo storage of submissions</td>
+<td>✗ Flamingo is a separate plugin; not part of CF7</td>
+</tr>
+<tr>
+<td>Capabilities <code>wpcf7_edit_contact_form(s)</code>, <code>wpcf7_read_contact_forms</code>, <code>wpcf7_delete_contact_form</code>, <code>wpcf7_manage_integration</code>, <code>wpcf7_submit</code></td>
+<td>◐ mapped like CF7's <code>map_meta_cap</code> defaults: edit/delete → <code>publish_pages</code>, read → <code>edit_posts</code>, integration → <code>manage_options</code>, submit → <code>read</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-admin-screens-menu-contact-dashicons-email-after-comments">2. Admin screens (menu <strong>Contact</strong>, <code>dashicons-email</code>, after Comments)</h2>
+<table>
+<thead>
+<tr>
+<th>CF7</th>
+<th>Gontact Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contact › Contact Forms (<code>admin.php?page=wpcf7</code>): list table with Title, Shortcode, Author, Date; search; bulk Delete; row actions Edit / Duplicate; pagination</td>
+<td>✅ (<code>/wp-admin/admin?page=wpcf7</code>)</td>
+</tr>
+<tr>
+<td>Contact › Add Contact Form (<code>page=wpcf7-new</code>)</td>
+<td>✅ prefilled with the default templates</td>
+</tr>
+<tr>
+<td>Edit screen (<code>page=wpcf7&amp;post=ID&amp;action=edit</code>): title, shortcode box, Status box (Duplicate, Delete, Save), &quot;Do you need help?&quot; box</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Editor tabs <strong>Form</strong>, <strong>Mail</strong>, <strong>Messages</strong>, <strong>Additional Settings</strong></td>
+<td>✅ same panels, field names (<code>wpcf7-form</code>, <code>wpcf7-mail[…]</code>, <code>wpcf7-mail-2[…]</code>, <code>wpcf7-messages[…]</code>, <code>wpcf7-additional-settings</code>)</td>
+</tr>
+<tr>
+<td>Form tab tag generator buttons: text, email, URL, tel, number, date, text area, drop-down menu, checkboxes, radio buttons, acceptance, quiz, CAPTCHA (image), CAPTCHA (answer), file, submit</td>
+<td>✅ dialog with Field type (required), Name, Default value / placeholder, options, id/class, &quot;Insert Tag&quot;</td>
+</tr>
+<tr>
+<td>Mail tab: To, From, Subject, Additional headers, Message body, Exclude lines with blank mail-tags, Use HTML content type, File attachments; list of available mail-tags</td>
+<td>✅ (the mail-tag list refreshes on save, not live while typing)</td>
+</tr>
+<tr>
+<td>Mail (2) with &quot;Use Mail (2)&quot; switch</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Messages tab: every message with its description</td>
+<td>✅ all messages of the active modules</td>
+</tr>
+<tr>
+<td>Additional Settings</td>
+<td>✅ see §6</td>
+</tr>
+<tr>
+<td>Configuration validator (warnings on the edit screen)</td>
+<td>◐ the common checks: empty/invalid To, From not an e-mail, unknown mail-tags in the mail templates, file attachment tag missing, invalid additional headers</td>
+</tr>
+<tr>
+<td>Help tabs (screen-meta)</td>
+<td>✗ the general Pursae help panel is shown instead</td>
+</tr>
+<tr>
+<td>Contact › Integration (<code>page=wpcf7-integration</code>)</td>
+<td>✅ see §8</td>
+</tr>
+<tr>
+<td>Welcome panel / dashboard news</td>
+<td>✗ promotional</td>
+</tr>
+<tr>
+<td>Legacy &quot;Contact Form 7&quot; admin REST (<code>/contact-forms</code> CRUD)</td>
+<td>✅ GET/POST <code>/contact-forms</code>, GET/POST(PUT)/DELETE <code>/contact-forms/{id}</code> for users with the caps</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-embedding">3. Embedding</h2>
+<table>
+<thead>
+<tr>
+<th>CF7</th>
+<th>Gontact Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[contact-form-7 id=&quot;&lt;hash or id&gt;&quot; title=&quot;…&quot;]</code> and <code>[contact-form …]</code></td>
+<td>✅ through the core shortcode parser (<code>wp.DoShortcode</code>) in <code>theContent</code></td>
+</tr>
+<tr>
+<td>Shortcode attributes <code>html_id</code>, <code>html_name</code>, <code>html_title</code>, <code>html_class</code>, <code>output=&quot;raw_form&quot;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>7-char hash ids (CF7 5.8+), legacy numeric ids, lookup by title</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Block <code>contact-form-7/contact-form-selector</code></td>
+<td>✅ registered in Gotenberg while on (select a form); saved markup is CF7's: a <code>wp-block-contact-form-7-contact-form-selector</code> div holding the shortcode</td>
+</tr>
+<tr>
+<td>Widgets / text widget shortcode</td>
+<td>◐ wherever Pursae renders <code>the_content</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-form-tags">4. Form-tags</h2>
+<p>Syntax <code>[type* name option:value &quot;value&quot; 'value']</code>, escaped <code>[[tag]]</code>, enclosing <code>[acceptance x]…[/acceptance]</code>,
+pipes <code>&quot;Label|value&quot;</code>, <code>default:get</code> / <code>default:post_meta</code> / <code>default:user_*</code> / <code>default:1_2</code>. Unknown tags are left as is.</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Options</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code>, <code>email</code>, <code>url</code>, <code>tel</code> (+<code>*</code>)</td>
+<td><code>size:</code>/<code>maxlength:</code>/<code>minlength:</code> (<code>40/400</code>), <code>placeholder</code>/<code>watermark</code>, <code>default:</code>, <code>id:</code>, <code>class:</code>, <code>autocomplete:</code>, <code>readonly</code>, <code>tabindex:</code>, <code>list:</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>textarea</code></td>
+<td><code>cols/rows</code> (<code>40x10</code>), <code>maxlength</code> (2000), <code>minlength</code>, placeholder, default, enclosed content as default</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>number</code>, <code>range</code></td>
+<td><code>min:</code>, <code>max:</code>, <code>step:</code>, placeholder</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>min:</code>, <code>max:</code> (YYYY-MM-DD or <code>today</code>, <code>today+7days</code>…), <code>step:</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>select</code></td>
+<td><code>multiple</code>, <code>include_blank</code>, <code>first_as_label</code>, <code>default:N</code>, <code>data:</code></td>
+<td>◐ <code>data:</code> lists (countries etc.) not shipped</td>
+</tr>
+<tr>
+<td><code>checkbox</code>, <code>radio</code></td>
+<td><code>label_first</code>, <code>use_label_element</code>, <code>exclusive</code>, <code>free_text</code>, <code>default:</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>acceptance</code></td>
+<td><code>optional</code>, <code>invert</code>, enclosed condition text</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>quiz</code></td>
+<td>`&quot;Question</td>
+<td>answer&quot;` pairs, random question, hashed answer</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td><code>limit:</code> (1mb default, <code>kb</code>/<code>mb</code>), <code>filetypes:</code> (`jpg</td>
+<td>pdf</td>
+</tr>
+<tr>
+<td><code>submit</code></td>
+<td>value, id, class</td>
+<td>✅ (<code>has-spinner</code>)</td>
+</tr>
+<tr>
+<td><code>hidden</code></td>
+<td>default</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>count</code> (character counter)</td>
+<td><code>down</code>, <code>id</code> of the target</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>response</code> (custom response output position)</td>
+<td></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>captchac</code> (CAPTCHA image, the Really Simple CAPTCHA engine)</td>
+<td><code>size:s|m|l</code> (60×20, 72×24, 84×28), <code>fg:#rrggbb</code>, <code>bg:#rrggbb</code>, <code>id:</code>, <code>class:</code></td>
+<td>✅ built in, no plugin or external service; see §8</td>
+</tr>
+<tr>
+<td><code>captchar</code> (CAPTCHA answer field, same name as its <code>captchac</code>)</td>
+<td><code>size:</code>, <code>maxlength:</code>, <code>minlength:</code>, <code>placeholder</code>, <code>id:</code>, <code>class:</code>, <code>tabindex:</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>stripe</code></td>
+<td></td>
+<td>✗ payments are out of scope</td>
+</tr>
+<tr>
+<td><code>reflection</code>, <code>listo</code> data lists</td>
+<td></td>
+<td>✗ rarely used, would need data files</td>
+</tr>
+</tbody>
+</table>
+<p>Front-end markup matches CF7 exactly: <code>div.wpcf7.no-js#wpcf7-f{id}-p{post}-o{n}</code> with <code>data-wpcf7-id</code>, the
+<code>screen-reader-response</code> block, <code>form.wpcf7-form.init</code> with <code>data-status</code>, the hidden <code>fieldset.hidden-fields-container</code>
+(<code>_wpcf7</code>, <code>_wpcf7_version</code>, <code>_wpcf7_locale</code>, <code>_wpcf7_unit_tag</code>, <code>_wpcf7_container_post</code>, <code>_wpcf7_posted_data_hash</code>,
+<code>_wpnonce</code> for logged-in users), <code>span.wpcf7-form-control-wrap[data-name]</code>, <code>wpcf7-form-control wpcf7-text wpcf7-validates-as-required …</code> classes, <code>wpcf7-not-valid-tip</code>, <code>wpcf7-response-output</code>, <code>wpcf7-list-item(-label)</code>,
+<code>wpcf7-spinner</code>. Forms are wrapped with <code>wpcf7_autop</code> (paragraphs/line breaks) like CF7 (<code>WPCF7_AUTOP</code>).</p>
+<h2 id="5-submission-validation-and-response">5. Submission, validation and response</h2>
+<table>
+<thead>
+<tr>
+<th>CF7</th>
+<th>Gontact Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>REST <code>POST /wp-json/contact-form-7/v1/contact-forms/{id}/feedback</code> (multipart only, 415 otherwise; 404 <code>wpcf7_not_found</code>; 400 <code>wpcf7_unit_tag_not_found</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Response <code>{contact_form_id, status, message, invalid_fields:[{field,message,idref,error_id}], posted_data_hash, into, demo_mode?}</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Statuses <code>validation_failed</code>, <code>acceptance_missing</code>, <code>spam</code>, <code>aborted</code>, <code>mail_sent</code>, <code>mail_failed</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>GET …/feedback/schema</code> (SWV rules), <code>GET …/refill</code></td>
+<td>✅ schema with <code>required</code>, <code>email</code>, <code>url</code>, <code>tel</code>, <code>number</code>, <code>date</code>, <code>minlength</code>/<code>maxlength</code>, <code>file</code>, <code>minnumber</code>/<code>maxnumber</code>, <code>mindate</code>/<code>maxdate</code>, <code>enum</code>; refill returns quiz refresh and new CAPTCHA images (<code>captcha: {name: url}</code>)</td>
+</tr>
+<tr>
+<td>Server-side validation and messages (<code>invalid_required</code>, <code>invalid_too_long/short</code>, <code>invalid_email/url/tel/number/date</code>, <code>number_too_small/large</code>, <code>date_too_early/late</code>, <code>quiz_answer_not_correct</code>, <code>captcha_not_match</code>, <code>upload_*</code>, <code>accept_terms</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Non-JS fallback (plain POST back to the page, <code>#unit-tag</code> action) with &quot;hangover&quot; values and inline errors</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>posted_data_hash</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Mail-tags <code>[field]</code>, <code>[_raw_field]</code>, <code>[_format_field &quot;Y-m-d&quot;]</code> (date), pipes, special tags <code>_remote_ip</code>, <code>_user_agent</code>, <code>_url</code>, <code>_date</code>, <code>_time</code>, <code>_invalid_fields</code>, <code>_contact_form_title</code>, <code>_serial_number</code>, <code>_post_id/_name/_title/_url/_author/_author_email</code>, <code>_site_title/_description/_url/_domain/_admin_email</code>, <code>_user_login/_email/_url/_first_name/_last_name/_nickname/_display_name</code></td>
+<td>✅ (<code>_serial_number</code> = submission count kept in meta)</td>
+</tr>
+<tr>
+<td>Mail sent through <code>wp_mail()</code></td>
+<td>✅ the core mailer queue (<code>sendMail</code>), From/Reply-To/Cc/Bcc from the template</td>
+</tr>
+<tr>
+<td>Exclude blank lines, HTML mail (body wrapped in CF7's HTML template)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>File attachments (<code>[your-file]</code> in the attachments field, plus <code>uploads/…</code> paths)</td>
+<td>✅ attached to the queued mail; temporary files removed afterwards</td>
+</tr>
+<tr>
+<td>Upload dir <code>wpcf7_uploads</code> with deny-all, random sub-dirs, file name sanitizing</td>
+<td>✅ under <code>&lt;data&gt;/gontact_uploads</code> (never web-served)</td>
+</tr>
+<tr>
+<td>Hooks <code>wpcf7_before_send_mail</code>, <code>wpcf7_spam</code>, <code>wpcf7_validate_*</code>, <code>wpcf7_mail_sent</code>…</td>
+<td>◐ the Wasm plugin filters <code>wpcf7_spam</code> and <code>wpcf7_mail_sent</code> actions are fired through the core plugin registry</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-additional-settings">6. Additional settings</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>demo_mode: on</code> (no mail, <code>demo</code> class, <code>demo_mode: true</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>skip_mail: on</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>subscribers_only: true</code></td>
+<td>✅ form replaced with the notice; REST answers <code>error</code> for visitors; spam checks skipped for members</td>
+</tr>
+<tr>
+<td><code>acceptance_as_validation: on</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>do_not_store: true</code></td>
+<td>✅ accepted (nothing is stored anyway)</td>
+</tr>
+<tr>
+<td><code>flamingo_*</code>, <code>akismet: …</code>, <code>on_sent_ok</code>/<code>on_submit</code> (removed in CF7 5.0)</td>
+<td>✗</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-javascript-own-file-same-behaviour-and-dom-events">7. JavaScript (own file, same behaviour and DOM events)</h2>
+<p><code>wpcf7</code> global (<code>api.root</code>, <code>api.namespace</code>, <code>cached</code>), <code>no-js</code> → <code>js</code>, AJAX submit with <code>FormData</code>, status classes
+(<code>init</code>, <code>submitting</code>, <code>invalid</code>, <code>unaccepted</code>, <code>spam</code>, <code>aborted</code>, <code>sent</code>, <code>failed</code>, <code>resetting</code>, <code>custom-*</code>),
+<code>data-status</code>, events <code>wpcf7beforesubmit</code>, <code>wpcf7submit</code>, <code>wpcf7invalid</code>, <code>wpcf7unaccepted</code>, <code>wpcf7spam</code>,
+<code>wpcf7mailsent</code>, <code>wpcf7mailfailed</code>, <code>wpcf7aborted</code>, <code>wpcf7statuschanged</code>, <code>wpcf7reset</code> (all bubbling, CF7's <code>detail</code>
+shape), inline tips + screen-reader list, reset after <code>mail_sent</code>, acceptance disabling the submit button, exclusive
+checkboxes, free text, URL auto-prefix, character counters, quiz and CAPTCHA refresh (after every submission, on load of
+a page from the page cache, and from the CAPTCHA refresh button), spinner, <code>inert-on-*</code>, live validation on
+change via the schema. ✅</p>
+<h2 id="8-spam-protection--integrations">8. Spam protection &amp; integrations</h2>
+<table>
+<thead>
+<tr>
+<th>CF7</th>
+<th>Gontact Form</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short User-Agent → spam; nonce check for logged-in users</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Disallowed comment keys (Settings › Discussion <code>disallowed_keys</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Quiz</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>reCAPTCHA v3 (Integration: site key / secret, score threshold 0.5, <code>wpcf7_recaptcha_response</code>)</td>
+<td>✅ keys on Integration, server verification against Google</td>
+</tr>
+<tr>
+<td>Cloudflare Turnstile (site key / secret, <code>_wpcf7_turnstile_response</code>)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Akismet (<code>akismet:author</code> …)</td>
+<td>✗ no Akismet in Pursae</td>
+</tr>
+<tr>
+<td>Constant Contact, Brevo (Sendinblue), Stripe</td>
+<td>✗ third-party marketing/payment accounts, not relevant to a contact form clone here</td>
+</tr>
+<tr>
+<td>Really Simple CAPTCHA (<code>[captchac]</code> / <code>[captchar]</code>)</td>
+<td>✅ built in, see below</td>
+</tr>
+</tbody>
+</table>
+<h3 id="image-captcha-captchac--captchar">Image CAPTCHA (<code>[captchac]</code> / <code>[captchar]</code>)</h3>
+<p>CF7 needs the Really Simple CAPTCHA plugin for these tags; Gontact Form generates the images itself, in pure Go:</p>
+<ul>
+<li><strong>Challenge</strong>: 4 characters from <code>ABCDEFGHJKLMNPQRSTUVWXYZ23456789</code> (no 0/O, 1/I/l), drawn with the Go Bold font
+(<code>golang.org/x/image/font/gofont</code>, BSD licence, compiled in) at 3× the displayed size, each character rotated up to
+±17° and shifted a little, over noise dots and lines in tints between <code>fg</code> and <code>bg</code>.</li>
+<li><strong>Storage</strong>: table <code>gontact_captcha</code> (migration <code>0012_gontact_captcha.sql</code>): random numeric prefix → HMAC-SHA256 of
+prefix + answer (keyed with <code>gontact_form_secret</code>) and the PNG. The answer itself is never stored.</li>
+<li><strong>Image URL</strong>: <code>/wp-content/gontact-captcha/{prefix}.png</code>, <code>Cache-Control: no-store</code> (the page cache never keeps it);
+404 for unknown, used or expired prefixes, and while the plugin is off.</li>
+<li><strong>Markup</strong> (CF7's): <code>&lt;input type=&quot;hidden&quot; name=&quot;_wpcf7_captcha_challenge_{name}&quot; value=&quot;{prefix}&quot;&gt;</code> +
+<code>&lt;img class=&quot;wpcf7-form-control wpcf7-captchac wpcf7-captcha-{name}&quot; width height alt src&gt;</code>; the answer field is
+<code>&lt;input class=&quot;wpcf7-form-control wpcf7-captchar wpcf7-text&quot; autocomplete=&quot;off&quot;&gt;</code> in the usual wrap. The image has a
+descriptive <code>alt</code>, and a refresh control (<code>.wpcf7-captcha-refresh</code>, a <code>span role=&quot;button&quot;</code> so it never steals the
+<code>&lt;label&gt;</code> of the answer field) that the script shows and that fetches a new image.</li>
+<li><strong>Validation</strong>: the answer is canonicalized (case and blanks ignored) and checked against the posted prefix; the
+challenge is deleted on its first check, right or wrong (single use). Wrong, reused, expired or missing →
+<code>captcha_not_match</code> &quot;Your entered code is incorrect.&quot; in <code>invalid_fields</code> (editable on the Messages tab).</li>
+<li><strong>Expiry</strong>: an hour. The hourly core event <code>gontact_captcha_cleanup</code> deletes older rows.</li>
+<li><strong>Page cache</strong>: a cached page carries one stale challenge; with <code>wpcf7.cached</code> the script resets the form on load and
+the refill endpoint (<code>GET …/contact-forms/{id}/refill</code>, never cached) returns
+<code>{&quot;captcha&quot;: {&quot;your-captcha&quot;: &quot;…/{new prefix}.png&quot;}}</code>, which the script puts into the image and the hidden field. The
+feedback response carries the same <code>captcha</code> key, so every submission shows a new image. CF7's own front-end script
+works unchanged against this response (it reads the prefix from the URL).</li>
+<li><strong>Accessibility</strong>: there is no audio CAPTCHA. The tag generator says so and points to the <code>[quiz]</code> tag as the
+accessible alternative (a text question works with screen readers).</li>
+</ul>
+<h2 id="9-not-ported-summary">9. Not ported (summary)</h2>
+<p>Flamingo, Akismet, Constant Contact, Brevo, Stripe, <code>data:</code> option lists, reflection/listo,
+translations (UI is English), CF7's welcome panel and promotional notices, multisite bits.</p>
+<h2 id="10-implementation-map">10. Implementation map</h2>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>On/off gate, activation (post type row, secret, &quot;Contact form 1&quot;), form model, Contact menu</td>
+<td><code>internal/server/gontact_plugin.go</code></td>
+</tr>
+<tr>
+<td>Form-tag scanner and options</td>
+<td><code>internal/server/gontact_formtags.go</code></td>
+</tr>
+<tr>
+<td>Shortcode, <code>form_html()</code>, tag handlers, asset tags</td>
+<td><code>internal/server/gontact_render.go</code></td>
+</tr>
+<tr>
+<td>Submission, validation, spam, uploads, REST (feedback, schema, refill, CRUD), non-JS fallback</td>
+<td><code>internal/server/gontact_submit.go</code></td>
+</tr>
+<tr>
+<td>Mail-tags and mail composition (queued through the core <code>wp_mail</code> job)</td>
+<td><code>internal/server/gontact_mail.go</code></td>
+</tr>
+<tr>
+<td>Admin screens, config validator, Integration, block assets</td>
+<td><code>internal/server/gontact_admin.go</code>, <code>web/admin/templates/pages/gontact-*.html</code></td>
+</tr>
+<tr>
+<td>Front-end and admin CSS/JS, Gotenberg block</td>
+<td><code>web/admin/assets/gontact/</code> (served at <code>/wp-content/gontact-form/</code> only while on)</td>
+</tr>
+<tr>
+<td>Image CAPTCHA (<code>[captchac]</code>/<code>[captchar]</code>): generation, storage, image route, refill, cleanup</td>
+<td><code>internal/server/gontact_captcha.go</code>, <code>internal/db/migrations/0012_gontact_captcha.sql</code></td>
+</tr>
+<tr>
+<td>Tests</td>
+<td><code>internal/server/gontact_test.go</code>, <code>internal/server/gontact_captcha_test.go</code></td>
+</tr>
+</tbody>
+</table>
+<p>Core changes (small hooks): <code>internal/mail</code> <code>Message</code> gained <code>From</code>, <code>Cc</code>, <code>Bcc</code> and <code>Attachments</code> (multipart/mixed);
+the REST cookie check also reads <code>_wpnonce</code> from multipart bodies (WordPress reads <code>$_REQUEST</code>); the site handler lets
+a non-JS form POST render the page; plus one-line registrations in <code>plugins.go</code>, <code>admin.go</code>, <code>wpgocache.go</code>
+(<code>pluginAdmin</code>), <code>rest.go</code> (namespace hidden while off), <code>site_view.go</code>, <code>server.go</code> and <code>editor_block.go</code>; <code>scheduler.go</code> has the <code>gontact_captcha_cleanup</code> event.
+Options: <code>native_gontact_form</code>, <code>gontact_form_installed</code>, <code>gontact_form_secret</code>, <code>gontact_recaptcha_sitekey/secret</code>,
+<code>gontact_turnstile_sitekey/secret</code>.</p>
+
+      </div>
+      
+      <footer class="docs-foot">
+        <nav class="post-nav docs-nav-links" aria-label="Previous and next page">
+          <a href="../../../docs/built-in-plugins/gocdn/" rel="prev"><small>← Previous</small>GoCDN</a>
+          <a class="next" href="../../../docs/built-in-plugins/golylang/" rel="next"><small>Next →</small>Golylang</a>
+        </nav>
+      </footer>
+    </article>
+  </div>
+  
+  <aside class="docs-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>
+      <li class="toc-h2"><a href="#1-data-model">1. Data model</a></li><li class="toc-h2"><a href="#2-admin-screens-menu-contact-dashicons-email-after-comments">2. Admin screens (menu Contact, dashicons-email, after Comments)</a></li><li class="toc-h2"><a href="#3-embedding">3. Embedding</a></li><li class="toc-h2"><a href="#4-form-tags">4. Form-tags</a></li><li class="toc-h2"><a href="#5-submission-validation-and-response">5. Submission, validation and response</a></li><li class="toc-h2"><a href="#6-additional-settings">6. Additional settings</a></li><li class="toc-h2"><a href="#7-javascript-own-file-same-behaviour-and-dom-events">7. JavaScript (own file, same behaviour and DOM events)</a></li><li class="toc-h2"><a href="#8-spam-protection--integrations">8. Spam protection &amp; integrations</a></li><li class="toc-h3"><a href="#image-captcha-captchac--captchar">Image CAPTCHA ([captchac] / [captchar])</a></li><li class="toc-h2"><a href="#9-not-ported-summary">9. Not ported (summary)</a></li><li class="toc-h2"><a href="#10-implementation-map">10. Implementation map</a></li>
+    </ol>
+  </aside>
+  
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../../../">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pursae</span>
+      </a>
+      <p>Tanıdığınız WordPress, Go'nun hızıyla. Açık kaynak, GPL-2.0-or-later.</p>
+    </div>
+    <div>
+      <h4>Ürün</h4>
+      <a href="../../../#ozellikler">Özellikler</a><a href="../../../#mimari">Mimari</a><a href="../../../#eklentiler">Eklentiler</a><a href="../../../#golementor">Golementor</a><a href="../../../#gelistiriciler">Geliştiriciler</a><a href="../../../#yol-haritasi">Yol haritası</a>
+    </div>
+    <div>
+      <h4>Kaynaklar</h4>
+      <a href="../../../#kurulum">Kurulum</a><a href="../../../#sss">SSS</a><a href="../../../docs/">Belgeler</a><a href="../../../docs/plugins/">Eklenti geliştirme</a><a href="../../../docs/rest-api/">REST API</a>
+    </div>
+    <div>
+      <h4>Topluluk</h4>
+      <a href="https://github.com/boracomet/wordpress-go">GitHub</a><a href="https://github.com/boracomet/wordpress-go/issues">Sorunlar</a><a href="https://github.com/boracomet/wordpress-go/discussions">Tartışmalar</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Pursae katkıcıları</span>
+    <span>"WordPress" sahibinin ticari markasıdır. Pursae onunla bağlantılı değildir.</span>
+  </div>
+</footer>
+<script src="../../../script.js"></script>
+<script src="../../../docs/docs.js" defer></script>
+</body>
+</html>
